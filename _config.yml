@@ -27,7 +27,7 @@ author:
   bio              : "BS in MechE & MS in Robotics"
   location         : "Boston, MA"
   employer         : "Northeastern University"
-  uri              : https://www.linkedin.com/in/zihanwenzhou/
+  uri              : 
   email            : "lin.zihan@northeastern.edu" 
 
   # Academic websites
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : https://www.linkedin.com/in/zihanwenzhou/
+  linkedin         : zihanwenzhou
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
