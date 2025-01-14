@@ -22,13 +22,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Zihan Lin"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+  bio              : "BS in MechE & MS in Robotics"
+  location         : "Boston, MA"
+  employer         : "Northeastern University"
+  uri              : https://cnclb.github.io/lin.zihan.github.io
+  email            : "lin.zihan@northeastern.edu" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
