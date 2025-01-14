@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Zihan Lin / My Personal Website"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Zihan Lin (Luke)"
 description              : &description "personal description"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -27,7 +27,7 @@ author:
   bio              : "BS in MechE & MS in Robotics"
   location         : "Boston, MA"
   employer         : "Northeastern University"
-  uri              : https://cnclb.github.io/lin.zihan.github.io
+  uri              : https://neulinzihan.github.io/site/
   email            : "lin.zihan@northeastern.edu" 
 
   # Academic websites
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : https://www.linkedin.com/in/zihanwenzhou/
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
