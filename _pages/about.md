@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "👋🏼 Hello there, I’m Zihan!"
+title: "👋🏼 Hello there, I’m Zihan! This website is still in maintaining, only the information on homepage is accurate. Thanks to academicpages.github.io! "
 author_profile: true
 redirect_from: 
   - /about/
