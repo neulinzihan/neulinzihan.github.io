@@ -16,14 +16,13 @@ redirect_from:
 📽️ I am also interested in assisting others on their path in the world of Mechanical Engineering, Electrical Engineering, Computer Science and academia.
 
 
-👨🏻‍🔬 Professional Experience
-======
+## 👨🏻‍🔬 Professional Experience
 Since 2022, I have worked as a Part-time Student Researcher at a lab at the Northeastern University under the supervision of candidates of PhD. Duo Wen studying on Indenting thick gel with a solid spherical inclusion. Additionally, I have professional experience working as an Mechanical Engineer at Shark Ninja, and Production Engineer and Design Engineer at HiRain Technology. I will introduce my experience below:
 
 
-Internship Experience
-======
-Mechanical Engineering Co-op, Product Quality Team                                                                Jan-Jun. 2023
+## Internship Experience
+
+### Mechanical Engineering Co-op, Product Quality Team                                                                Jan-Jun. 2023
 Shark Ninja, Needham, MA
 - Developed a standardized test methodology for mesh pre-filter lifetime validation, enabling product teams to support official filter life claims.
 - Designed and optimized multiple debris dispenser prototypes using CFD and rapid prototyping to simulate real-world conditions.
@@ -31,7 +30,7 @@ Shark Ninja, Needham, MA
 - Achieved uniform particulate dispersion through comparative feasibility testing of multiple fiber distribution methods.
 - Integrated Prometheus and Arduino to monitor PMS9305 sensor data, supporting data-driven filter evaluation.
 - Contributed to Odor Neutralizer Module and UV aging fixture design, accelerating airflow characterization and material degradation testing.
-Production/Design Engineer Co-op, Product Management Team                                         July-Dec. 2021
+### Production/Design Engineer Co-op, Product Management Team                                         July-Dec. 2021
 HiRain Technologies, Wangjing, Beijing
 - Created detailed 2D/3D models of PCBA enclosures using AutoCAD, SolidWorks, and CREO to support rapid manufacturing.
 - Updated and revised manufacturing manuals for PCB cases to ensure accuracy in factory production workflows.
@@ -42,35 +41,35 @@ HiRain Technologies, Wangjing, Beijing
 - Collaborated with cross-team technicians on assembly and soldering tasks, gaining hands-on experience in electronic manufacturing.
 
 
-Research & Technical Projects
-======
-Part-time Laboratory Assistant (Project-based)                                      Aug. 2022-Present
+## Research & Technical Projects
+
+### Part-time Laboratory Assistant (Project-based)                                      Aug. 2022-Present
 - Design testing acrylic box, purchasing and preparing necessary material.
 - Assisted in the design and testing of linear actuators for robotics applications, contributing to enhanced precision and load capacity.
 - Sourced and prepared mechanical components and materials for experimental use, ensuring timely execution of lab tasks.
 - Conducted hands-on mechanical experiments and contributed to formal test plans, pass/fail evaluations, and documentation of mechanical prototypes under Phd’s guidance.
 - Assisted with graduate students and faculty on multiple projects involving mechatronic system design and data collection.
-Course Project: AI and Reinforcement Learning (CS)                                          Spring 2025
+### Course Project: AI and Reinforcement Learning (CS)                                          Spring 2025
 - Designed and trained a Q-learning-based drone placement policy to maximize LTE coverage with minimal overlap on dynamic grid maps, achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines.
 - Developed a global environment mapping module, stitching local drone scans to update a 2D map in real time, enabling path planning and state feedback for reinforcement learning.
 - Implemented an A* pathfinding algorithm on the constructed map to guide emergency responders efficiently through partially scanned disaster zones while avoiding obstacles.
 - Contributed to the simulation architecture and reward design, balancing factors like coverage gain, overlap penalties, and drone resource constraints. System convergence verified over 20,000+ training episodes across multiple grid sizes.
-Course Project:  Assistive Robotics (EE)                                                                           Fall 2024 
+### Course Project:  Assistive Robotics (EE)                                                                           Fall 2024 
 - Developed a real-time obstacle detection wearable assistive navigation system using a ToF depth camera and Raspberry Pi-based haptic feedback.
 - Implemented vibration motors with PWM modulation to alert users to obstacles across three ROIs (left, center, right).
 - Optimized user comfort and sensor performance via dual-motor setup and depth noise filtering under dynamic lighting.
-Mechatronic Control System (ME)                                                                           Summer 2024
+### Course Project: Mechatronic Control System (ME)                                                                           Summer 2024
 - Developed Simulink/Simscape models for position and speed control using encoder and Arduino.
 - Estimated transfer functions across PWM duty cycles; validated with <5% error.
 - Applied PID tuning and FFT analysis to enhance response stability under simulated noise.
-Robotics Sensing & Navigation, Embedded System (EE)                                    Spring 2024
+### Course Project: Robotics Sensing & Navigation, Embedded System (EE)                                    Spring 2024
 - Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions in soft-tissue simulants.
 - Applied Kalman, Butterworth, and moving average filters to refine accelerometer and gyroscope data for tumor trajectory mapping.
 - Demonstrated non-invasive lump localization with potential for home-use biomedical diagnostics.
 
 
-Education
-======
+## Education Experience
+
 Northeastern University, Boston, MA
 MS in Robotics, ME Concentration
 HighestGPA: 3.67                           Jan. 2024 - Aug. 2025
