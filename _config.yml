@@ -28,6 +28,7 @@ author:
   location         : "Waltham, MA 02451"
   employer         : "Northeastern University"
   uri              : 
+  # 修改邮箱格式在_includes里的author-profule.html中
   email            : 
     - lin.zihan@northeastern.edu
     - lukelinfree@gmail.com
