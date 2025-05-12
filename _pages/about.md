@@ -22,7 +22,10 @@ Since 2022, I have worked as a Part-time Student Researcher at a lab at the Nort
 
 ## 💼 Internship Experience
 
-### Mechanical Engineering Co-op, Product Quality Team                                                                Jan-Jun. 2023
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Production/Design Engineer Co-op, Product Management Team</span>
+  <span style="font-style: italic;">July–Dec. 2021</span>
+</div>
 Shark Ninja, Needham, MA
 - Developed a standardized test methodology for mesh pre-filter lifetime validation, enabling product teams to support official filter life claims.
 - Designed and optimized multiple debris dispenser prototypes using CFD and rapid prototyping to simulate real-world conditions.
@@ -31,7 +34,10 @@ Shark Ninja, Needham, MA
 - Integrated Prometheus and Arduino to monitor PMS9305 sensor data, supporting data-driven filter evaluation.
 - Contributed to Odor Neutralizer Module and UV aging fixture design, accelerating airflow characterization and material degradation testing.
 
-### Production/Design Engineer Co-op, Product Management Team                                         July-Dec. 2021
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Mechanical Engineering Co-op, Product Quality Team</span>
+  <span style="font-style: italic;">Jan–Jun. 2023</span>
+</div>
 HiRain Technologies, Wangjing, Beijing
 - Created detailed 2D/3D models of PCBA enclosures using AutoCAD, SolidWorks, and CREO to support rapid manufacturing.
 - Updated and revised manufacturing manuals for PCB cases to ensure accuracy in factory production workflows.
@@ -44,30 +50,46 @@ HiRain Technologies, Wangjing, Beijing
 
 ## 📜 Research & Technical Projects
 
-### Part-time Laboratory Assistant (Project-based) _[Aug. 2022-Present]_
+
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Part-time Laboratory Assistant (Project-based)</span>
+  <span style="font-style: italic;">Aug 2022 – Present</span>
+</div>
 - Design testing acrylic box, purchasing and preparing necessary material.
 - Assisted in the design and testing of linear actuators for robotics applications, contributing to enhanced precision and load capacity.
 - Sourced and prepared mechanical components and materials for experimental use, ensuring timely execution of lab tasks.
 - Conducted hands-on mechanical experiments and contributed to formal test plans, pass/fail evaluations, and documentation of mechanical prototypes under Phd’s guidance.
 - Assisted with graduate students and faculty on multiple projects involving mechatronic system design and data collection.
 
-### Course Project: AI and Reinforcement Learning (CS) _[Spring 2025]_
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Course Project: AI and Reinforcement Learning (CS)</span>
+  <span style="font-style: italic;">Spring 2025</span>
+</div>
 - Designed and trained a Q-learning-based drone placement policy to maximize LTE coverage with minimal overlap on dynamic grid maps, achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines.
 - Developed a global environment mapping module, stitching local drone scans to update a 2D map in real time, enabling path planning and state feedback for reinforcement learning.
 - Implemented an A* pathfinding algorithm on the constructed map to guide emergency responders efficiently through partially scanned disaster zones while avoiding obstacles.
 - Contributed to the simulation architecture and reward design, balancing factors like coverage gain, overlap penalties, and drone resource constraints. System convergence verified over 20,000+ training episodes across multiple grid sizes.
 
-### Course Project:  Assistive Robotics (EE) _[Fall 2024 ]_
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Course Project: Assistive Robotics (EE)</span>
+  <span style="font-style: italic;">Fall 2024</span>
+</div>
 - Developed a real-time obstacle detection wearable assistive navigation system using a ToF depth camera and Raspberry Pi-based haptic feedback.
 - Implemented vibration motors with PWM modulation to alert users to obstacles across three ROIs (left, center, right).
 - Optimized user comfort and sensor performance via dual-motor setup and depth noise filtering under dynamic lighting.
 
-### Course Project: Mechatronic Control System (ME) _[Summer 2024]_
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Course Project: Mechatronic Control System (ME)</span>
+  <span style="font-style: italic;">Summer 2024</span>
+</div>
 - Developed Simulink/Simscape models for position and speed control using encoder and Arduino.
 - Estimated transfer functions across PWM duty cycles; validated with <5% error.
 - Applied PID tuning and FFT analysis to enhance response stability under simulated noise.
 
-### Course Project: Robotics Sensing & Navigation, Embedded System (EE) _[Spring 2024]_
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Course Project: Robotics Sensing & Navigation, Embedded System (EE)</span>
+  <span style="font-style: italic;">Spring 2024</span>
+</div>
 - Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions in soft-tissue simulants.
 - Applied Kalman, Butterworth, and moving average filters to refine accelerometer and gyroscope data for tumor trajectory mapping.
 - Demonstrated non-invasive lump localization with potential for home-use biomedical diagnostics.
@@ -76,14 +98,20 @@ HiRain Technologies, Wangjing, Beijing
 ## Education Experience
 
 ### Northeastern University, Boston, MA
-#### MS in Robotics, ME Concentration _[Jan. 2024 - Aug. 2025]_
-LastTerm GPA: 3.67                           
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>MS in Robotics, ME Concentration</span>
+  <span style="font-style: italic;">Jan. 2024 – Aug. 2025</span>
+</div>
+FinalTerm GPA: 3.67                           
 Major Coursework: 
 ME 5245 Mechatronic Systems; ME 5659 Control Systems Engineering; EECE5554 Robotics Sensing & Navigation; EECE5552 Assistive Robotics
 CS 5100 Foundations Artificial Intelligence; CS 5180 Reinforcement Learning/Seq Decision Mak.
 Involvement: NUCCF
 
-#### BS in Mechanical Engineering, Minor in Math _[May. 2019 - Dec. 2023]_
+<div style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>BS in Mechanical Engineering, Minor in Math</span>
+  <span style="font-style: italic;">May. 2019 – Dec. 2023</span>
+</div>
 GPA: 3.3                                              
 Honor: COS Dean's List Fall 2020, Candidates of Presidential Global Scholars Award.
 Major Coursework: 
@@ -91,7 +119,11 @@ Statics and Solid Mechanics, Mechanics of Materials, Thermodynamics, Material Sc
 Involvement: Society of Asian Scientists and Engineers, NU Marine Biology Club, NUCCF
 
 ### Beijing No.35 High School, Beijing, Dual Degree
-GPA: 3.7                                             Sep. 2016 - April. 2019
+
+<div style="text-align: right; font-style: italic; margin-top: -1.2em; margin-bottom: 1em;">
+  Sep. 2016 – April. 2019
+</div>
+GPA: 3.7
 Coursework: Engineering Design, Calculus I–II, Chemistry I, Physics, 3D Printing,
 Involvement: Mock Business Competition, Diplomacy Department of Student Union, Basketball League.
 Exchange Program: 
