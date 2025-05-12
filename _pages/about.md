@@ -98,7 +98,8 @@ HiRain Technologies, Wangjing, Beijing
 
 ### Northeastern University, Boston, MA
 
-#### MS in Robotics, ME Concentration
+<h3 style="font-weight: normal;">MS in Robotics, ME Concentration</h3>
+
 <div style="text-align: right; font-style: italic; margin-top: -1em;">
   Jan. 2024 – Aug. 2025
 </div>
@@ -108,7 +109,8 @@ ME 5245 Mechatronic Systems; ME 5659 Control Systems Engineering; EECE5554 Robot
 CS 5100 Foundations Artificial Intelligence; CS 5180 Reinforcement Learning/Seq Decision Mak.
 Involvement: NUCCF
 
-#### BS in Mechanical Engineering, Minor in Math
+<h3 style="font-weight: normal;">BS in Mechanical Engineering, Minor in Math</h3>
+
 <div style="text-align: right; font-style: italic; margin-top: -1em;">
   May. 2019 – Dec. 2023
 </div>
