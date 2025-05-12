@@ -50,9 +50,8 @@ HiRain Technologies, Wangjing, Beijing
 
 ## 📜 Research & Technical Projects
 
-
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Part-time Laboratory Assistant (Project-based)</span>
+### Part-time Laboratory Assistant (Project-based)
+<div style="display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Aug 2022 – Present</span>
 </div>
 - Design testing acrylic box, purchasing and preparing necessary material.
@@ -61,8 +60,8 @@ HiRain Technologies, Wangjing, Beijing
 - Conducted hands-on mechanical experiments and contributed to formal test plans, pass/fail evaluations, and documentation of mechanical prototypes under Phd’s guidance.
 - Assisted with graduate students and faculty on multiple projects involving mechatronic system design and data collection.
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Course Project: AI and Reinforcement Learning (CS)</span>
+### Course Project: AI and Reinforcement Learning (CS)
+<div style="display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Spring 2025</span>
 </div>
 - Designed and trained a Q-learning-based drone placement policy to maximize LTE coverage with minimal overlap on dynamic grid maps, achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines.
@@ -70,24 +69,24 @@ HiRain Technologies, Wangjing, Beijing
 - Implemented an A* pathfinding algorithm on the constructed map to guide emergency responders efficiently through partially scanned disaster zones while avoiding obstacles.
 - Contributed to the simulation architecture and reward design, balancing factors like coverage gain, overlap penalties, and drone resource constraints. System convergence verified over 20,000+ training episodes across multiple grid sizes.
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Course Project: Assistive Robotics (EE)</span>
+### Course Project: Assistive Robotics (EE)
+<div style="display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Fall 2024</span>
 </div>
 - Developed a real-time obstacle detection wearable assistive navigation system using a ToF depth camera and Raspberry Pi-based haptic feedback.
 - Implemented vibration motors with PWM modulation to alert users to obstacles across three ROIs (left, center, right).
 - Optimized user comfort and sensor performance via dual-motor setup and depth noise filtering under dynamic lighting.
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Course Project: Mechatronic Control System (ME)</span>
+### Course Project: Mechatronic Control System (ME)
+<div style="display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Summer 2024</span>
 </div>
 - Developed Simulink/Simscape models for position and speed control using encoder and Arduino.
 - Estimated transfer functions across PWM duty cycles; validated with <5% error.
 - Applied PID tuning and FFT analysis to enhance response stability under simulated noise.
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Course Project: Robotics Sensing & Navigation, Embedded System (EE)</span>
+### Course Project: Robotics Sensing & Navigation, Embedded System (EE)
+<div style="display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Spring 2024</span>
 </div>
 - Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions in soft-tissue simulants.
@@ -99,9 +98,9 @@ HiRain Technologies, Wangjing, Beijing
 
 ### Northeastern University, Boston, MA
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>MS in Robotics, ME Concentration</span>
-  <span style="font-style: italic;">Jan. 2024 – Aug. 2025</span>
+#### MS in Robotics, ME Concentration
+<div style="text-align: right; font-style: italic; margin-top: -1em;">
+  Jan. 2024 – Aug. 2025
 </div>
 FinalTerm GPA: 3.67                           
 Major Coursework: 
@@ -109,10 +108,11 @@ ME 5245 Mechatronic Systems; ME 5659 Control Systems Engineering; EECE5554 Robot
 CS 5100 Foundations Artificial Intelligence; CS 5180 Reinforcement Learning/Seq Decision Mak.
 Involvement: NUCCF
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>BS in Mechanical Engineering, Minor in Math</span>
-  <span style="font-style: italic;">May. 2019 – Dec. 2023</span>
+#### BS in Mechanical Engineering, Minor in Math
+<div style="text-align: right; font-style: italic; margin-top: -1em;">
+  May. 2019 – Dec. 2023
 </div>
+
 GPA: 3.3                                              
 Honor: COS Dean's List Fall 2020, Candidates of Presidential Global Scholars Award.
 Major Coursework: 
@@ -121,7 +121,7 @@ Involvement: Society of Asian Scientists and Engineers, NU Marine Biology Club, 
 
 ### Beijing No.35 High School, Beijing, Dual Degree
 
-<div style="text-align: right; font-weight: bold; font-style: italic; margin-top: -1.2em; margin-bottom: 1em;">
+<div style="text-align: right; font-style: italic; margin-top: -1.2em; margin-bottom: 1em;">
   Sep. 2016 – April. 2019
 </div>
 GPA: 3.7
