@@ -95,9 +95,10 @@ HiRain Technologies, Wangjing, Beijing
 - Demonstrated non-invasive lump localization with potential for home-use biomedical diagnostics.
 
 
-## Education Experience
+## 🎓 Education Experience
 
 ### Northeastern University, Boston, MA
+
 <div style="display: flex; justify-content: space-between; font-weight: bold;">
   <span>MS in Robotics, ME Concentration</span>
   <span style="font-style: italic;">Jan. 2024 – Aug. 2025</span>
