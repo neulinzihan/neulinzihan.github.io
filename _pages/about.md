@@ -15,6 +15,91 @@ redirect_from:
 
 📽️ I am also interested in assisting others on their path in the world of Mechanical Engineering, Electrical Engineering, Computer Science and academia.
 
+
+👨🏻‍🔬 Professional Experience
+======
+Since 2022, I have worked as a Part-time Student Researcher at a lab at the Northeastern University under the supervision of candidates of PhD. Duo Wen studying on Indenting thick gel with a solid spherical inclusion. Additionally, I have professional experience working as an Mechanical Engineer at Shark Ninja, and Production Engineer and Design Engineer at HiRain Technology. I will introduce my experience below:
+
+
+Internship Experience
+======
+Mechanical Engineering Co-op, Product Quality Team                                                                Jan-Jun. 2023
+Shark Ninja, Needham, MA
+- Developed a standardized test methodology for mesh pre-filter lifetime validation, enabling product teams to support official filter life claims.
+- Designed and optimized multiple debris dispenser prototypes using CFD and rapid prototyping to simulate real-world conditions.
+- Built a custom negative-pressure loading chamber for mesh filter fatigue testing; defined procedures and BOM for repeatable testing.
+- Achieved uniform particulate dispersion through comparative feasibility testing of multiple fiber distribution methods.
+- Integrated Prometheus and Arduino to monitor PMS9305 sensor data, supporting data-driven filter evaluation.
+- Contributed to Odor Neutralizer Module and UV aging fixture design, accelerating airflow characterization and material degradation testing.
+Production/Design Engineer Co-op, Product Management Team                                         July-Dec. 2021
+HiRain Technologies, Wangjing, Beijing
+- Created detailed 2D/3D models of PCBA enclosures using AutoCAD, SolidWorks, and CREO to support rapid manufacturing.
+- Updated and revised manufacturing manuals for PCB cases to ensure accuracy in factory production workflows.
+- Supported cross-functional teams by preparing CAD documentation and assisting with component layout optimization.
+- Used SAP, Excel, and Access to initiate, track, and update PCB production orders and testing progress.
+- Verified inventory accuracy by counting outgoing components and delivered PCBAs.
+- Supported quality assurance by inspecting PCB assemblies and assisting with firmware flashing and validation.
+- Collaborated with cross-team technicians on assembly and soldering tasks, gaining hands-on experience in electronic manufacturing.
+
+
+Research & Technical Projects
+======
+Part-time Laboratory Assistant (Project-based)                                      Aug. 2022-Present
+- Design testing acrylic box, purchasing and preparing necessary material.
+- Assisted in the design and testing of linear actuators for robotics applications, contributing to enhanced precision and load capacity.
+- Sourced and prepared mechanical components and materials for experimental use, ensuring timely execution of lab tasks.
+- Conducted hands-on mechanical experiments and contributed to formal test plans, pass/fail evaluations, and documentation of mechanical prototypes under Phd’s guidance.
+- Assisted with graduate students and faculty on multiple projects involving mechatronic system design and data collection.
+Course Project: AI and Reinforcement Learning (CS)                                          Spring 2025
+- Designed and trained a Q-learning-based drone placement policy to maximize LTE coverage with minimal overlap on dynamic grid maps, achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines.
+- Developed a global environment mapping module, stitching local drone scans to update a 2D map in real time, enabling path planning and state feedback for reinforcement learning.
+- Implemented an A* pathfinding algorithm on the constructed map to guide emergency responders efficiently through partially scanned disaster zones while avoiding obstacles.
+- Contributed to the simulation architecture and reward design, balancing factors like coverage gain, overlap penalties, and drone resource constraints. System convergence verified over 20,000+ training episodes across multiple grid sizes.
+Course Project:  Assistive Robotics (EE)                                                                           Fall 2024 
+- Developed a real-time obstacle detection wearable assistive navigation system using a ToF depth camera and Raspberry Pi-based haptic feedback.
+- Implemented vibration motors with PWM modulation to alert users to obstacles across three ROIs (left, center, right).
+- Optimized user comfort and sensor performance via dual-motor setup and depth noise filtering under dynamic lighting.
+Mechatronic Control System (ME)                                                                           Summer 2024
+- Developed Simulink/Simscape models for position and speed control using encoder and Arduino.
+- Estimated transfer functions across PWM duty cycles; validated with <5% error.
+- Applied PID tuning and FFT analysis to enhance response stability under simulated noise.
+Robotics Sensing & Navigation, Embedded System (EE)                                    Spring 2024
+- Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions in soft-tissue simulants.
+- Applied Kalman, Butterworth, and moving average filters to refine accelerometer and gyroscope data for tumor trajectory mapping.
+- Demonstrated non-invasive lump localization with potential for home-use biomedical diagnostics.
+
+
+Education
+======
+Northeastern University, Boston, MA
+MS in Robotics, ME Concentration
+HighestGPA: 3.67                           Jan. 2024 - Aug. 2025
+Major Coursework: 
+ME 5245 Mechatronic Systems; ME 5659 Control Systems Engineering; EECE5554 Robotics Sensing & Navigation; EECE5552 Assistive Robotics
+CS 5100 Foundations Artificial Intelligence; CS 5180 Reinforcement Learning/Seq Decision Mak.
+Involvement: NUCCF
+
+BS in Mechanical Engineering, Minor in Math
+GPA: 3.3                                             May. 2019 - Dec. 2023 
+Honor: COS Dean's List Fall 2020, Candidates of Presidential Global Scholars Award.
+Major Coursework: 
+Statics and Solid Mechanics, Mechanics of Materials, Thermodynamics, Material Science, Cornerstone of Engineering, Principles of Macroeconomics, Physics I–II, Calculus III.
+Involvement: Society of Asian Scientists and Engineers, NU Marine Biology Club, NUCCF
+
+Beijing No.35 High School, Beijing, Dual Degree
+GPA: 3.7                                             Sep. 2016 - April. 2019
+Coursework: Engineering Design, Calculus I–II, Chemistry I, Physics, 3D Printing,
+Involvement: Mock Business Competition, Diplomacy Department of Student Union, Basketball League.
+Exchange Program: 
+Prince of Peace, CA, Summer 2017; Harvard Business School Camp, MA, Winter 2017
+
+
+
+
+
+
+
+
 This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
 
 A data-driven personal website
