@@ -120,7 +120,7 @@ Involvement: Society of Asian Scientists and Engineers, NU Marine Biology Club, 
 
 ### Beijing No.35 High School, Beijing, Dual Degree
 
-<div style="text-align: right; font-style: italic; margin-top: -1.2em; margin-bottom: 1em;">
+<div style="text-align: right; font-weight: bold; font-style: italic; margin-top: -1.2em; margin-bottom: 1em;">
   Sep. 2016 – April. 2019
 </div>
 GPA: 3.7
