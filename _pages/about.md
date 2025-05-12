@@ -98,22 +98,23 @@ HiRain Technologies, Wangjing, Beijing
 
 ### Northeastern University, Boston, MA
 
-<h4 style="font-weight: bold;">MS in Robotics, ME Concentration</h4>
-
 <div style="text-align: right; font-style: italic; margin-top: -1em;">
   Jan. 2024 – Aug. 2025
 </div>
+
+<h4 style="font-weight: bold;">MS in Robotics, ME Concentration</h4>
+
 FinalTerm GPA: 3.67                           
 Major Coursework: 
 ME 5245 Mechatronic Systems; ME 5659 Control Systems Engineering; EECE5554 Robotics Sensing & Navigation; EECE5552 Assistive Robotics
 CS 5100 Foundations Artificial Intelligence; CS 5180 Reinforcement Learning/Seq Decision Mak.
 Involvement: NUCCF
 
-<h4 style="font-weight: bold;">BS in Mechanical Engineering, Minor in Math</h4>
-
 <div style="text-align: right; font-style: italic; margin-top: -1em;">
   May. 2019 – Dec. 2023
 </div>
+
+<h4 style="font-weight: bold;">BS in Mechanical Engineering, Minor in Math</h4>
 
 GPA: 3.3                                              
 Honor: COS Dean's List Fall 2020, Candidates of Presidential Global Scholars Award.
