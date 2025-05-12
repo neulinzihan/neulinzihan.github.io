@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Luke's Homepage' "
+title                    : "Luke's Homepage"
 title_separator          : "-"
 name                     : &name "Zihan Lin (Luke)"
 description              : &description "personal description"
@@ -24,11 +24,11 @@ author:
   avatar           : "zihan_linkedin_avatar.jpeg"
   name             : "Zihan Lin"
   pronouns         : # example: "she/her"  
-  bio              : "BS in MechE & MS in Robotics"
-  location         : "Boston, MA"
+  bio              : "Bechlor of Science Degree in Mechanical Engineering & Master of Science Degree in Robotics"
+  location         : "Waltham, MA 02451"
   employer         : "Northeastern University"
   uri              : 
-  email            : "lin.zihan@northeastern.edu" 
+  email            : "lin.zihan@northeastern.edu and lukelinfree@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
