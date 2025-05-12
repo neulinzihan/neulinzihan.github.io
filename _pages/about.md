@@ -62,12 +62,12 @@ HiRain Technologies, Wangjing, Beijing
 - Implemented vibration motors with PWM modulation to alert users to obstacles across three ROIs (left, center, right).
 - Optimized user comfort and sensor performance via dual-motor setup and depth noise filtering under dynamic lighting.
 
-### Course Project: Mechatronic Control System (ME)                                                                           Summer 2024
+### Course Project: Mechatronic Control System (ME) _[Summer 2024]_
 - Developed Simulink/Simscape models for position and speed control using encoder and Arduino.
 - Estimated transfer functions across PWM duty cycles; validated with <5% error.
 - Applied PID tuning and FFT analysis to enhance response stability under simulated noise.
 
-### Course Project: Robotics Sensing & Navigation, Embedded System (EE)                                    Spring 2024
+### Course Project: Robotics Sensing & Navigation, Embedded System (EE) _[Spring 2024]_
 - Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions in soft-tissue simulants.
 - Applied Kalman, Butterworth, and moving average filters to refine accelerometer and gyroscope data for tumor trajectory mapping.
 - Demonstrated non-invasive lump localization with potential for home-use biomedical diagnostics.
@@ -76,15 +76,15 @@ HiRain Technologies, Wangjing, Beijing
 ## Education Experience
 
 ### Northeastern University, Boston, MA
-#### MS in Robotics, ME Concentration
-HighestGPA: 3.67                           Jan. 2024 - Aug. 2025
+#### MS in Robotics, ME Concentration _[Jan. 2024 - Aug. 2025]_
+LastTerm GPA: 3.67                           
 Major Coursework: 
 ME 5245 Mechatronic Systems; ME 5659 Control Systems Engineering; EECE5554 Robotics Sensing & Navigation; EECE5552 Assistive Robotics
 CS 5100 Foundations Artificial Intelligence; CS 5180 Reinforcement Learning/Seq Decision Mak.
 Involvement: NUCCF
 
-#### BS in Mechanical Engineering, Minor in Math
-GPA: 3.3                                             May. 2019 - Dec. 2023 
+#### BS in Mechanical Engineering, Minor in Math _[May. 2019 - Dec. 2023]_
+GPA: 3.3                                              
 Honor: COS Dean's List Fall 2020, Candidates of Presidential Global Scholars Award.
 Major Coursework: 
 Statics and Solid Mechanics, Mechanics of Materials, Thermodynamics, Material Science, Cornerstone of Engineering, Principles of Macroeconomics, Physics I–II, Calculus III.
