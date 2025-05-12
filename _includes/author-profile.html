@@ -36,13 +36,17 @@
       {% if author.email %}
         <li>
           <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
-          <strong>University:</strong><br>
-          <a href="mailto:{{ author.email[0] }}" style="display:inline-block; padding-left: 1.2em;">{{ author.email[0] }}</a>
+          <strong>University:</strong>
+          <span style="margin-left: 2em;">
+            <a href="mailto:{{ author.email[0] }}">{{ author.email[0] }}</a>
+          </span>
         </li>
         <li>
           <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
-          <strong>Personal:</strong><br>
-          <a href="mailto:{{ author.email[1] }}" style="display:inline-block; padding-left: 1.2em;">{{ author.email[1] }}</a>
+          <strong>Personal:</strong>
+          <span style="margin-left: 2em;">
+            <a href="mailto:{{ author.email[1] }}">{{ author.email[1] }}</a>
+          </span>
         </li>
       {% endif %}
 
