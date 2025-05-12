@@ -36,12 +36,12 @@
       {% if author.email %}
         <li>
           <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
-          <strong>University:</strong>
+          <strong>University:</strong><br>
           <a href="mailto:{{ author.email[0] }}" style="display: inline-block;">{{ author.email[0] }}</a>
         </li>
         <li>
           <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
-          <strong>Personal:</strong>
+          <strong>Personal:</strong><br>
           <a href="mailto:{{ author.email[1] }}" style="display: inline-block;">{{ author.email[0] }}</a>
         </li>
       {% endif %}
