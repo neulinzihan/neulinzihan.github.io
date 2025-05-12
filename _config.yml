@@ -25,7 +25,7 @@ author:
   name             : "Zihan Lin"
   pronouns         : # example: "she/her"  
   bio              : "Bechlor of Science Degree in Mechanical Engineering & Master of Science Degree in Robotics"
-  location         : "Waltham, MA 02451"
+  location         : "North Waltham, MA 02451"
   employer         : "Northeastern University"
   uri              : 
   # 修改邮箱格式在_includes里的author-profule.html中
@@ -61,7 +61,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : zihanwenzhou
+  linkedin         : https://www.linkedin.com/in/wenzhoulongwan/
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
