@@ -22,8 +22,8 @@ Since 2022, I have worked as a Part-time Student Researcher at a lab at the Nort
 
 ## 💼 Internship Experience
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Production/Design Engineer Co-op, Product Management Team</span>
+### Production/Design Engineer Co-op, Product Management Team
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">July–Dec. 2021</span>
 </div>
 Shark Ninja, Needham, MA
@@ -34,8 +34,8 @@ Shark Ninja, Needham, MA
 - Integrated Prometheus and Arduino to monitor PMS9305 sensor data, supporting data-driven filter evaluation.
 - Contributed to Odor Neutralizer Module and UV aging fixture design, accelerating airflow characterization and material degradation testing.
 
-<div style="display: flex; justify-content: space-between; font-weight: bold;">
-  <span>Mechanical Engineering Co-op, Product Quality Team</span>
+### Mechanical Engineering Co-op, Product Quality Team
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Jan–Jun. 2023</span>
 </div>
 HiRain Technologies, Wangjing, Beijing
@@ -51,7 +51,7 @@ HiRain Technologies, Wangjing, Beijing
 ## 📜 Research & Technical Projects
 
 ### Part-time Laboratory Assistant (Project-based)
-<div style="display: flex; justify-content: space-between;">
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Aug 2022 – Present</span>
 </div>
 - Design testing acrylic box, purchasing and preparing necessary material.
@@ -61,7 +61,7 @@ HiRain Technologies, Wangjing, Beijing
 - Assisted with graduate students and faculty on multiple projects involving mechatronic system design and data collection.
 
 ### Course Project: AI and Reinforcement Learning (CS)
-<div style="display: flex; justify-content: space-between;">
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Spring 2025</span>
 </div>
 - Designed and trained a Q-learning-based drone placement policy to maximize LTE coverage with minimal overlap on dynamic grid maps, achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines.
@@ -70,7 +70,7 @@ HiRain Technologies, Wangjing, Beijing
 - Contributed to the simulation architecture and reward design, balancing factors like coverage gain, overlap penalties, and drone resource constraints. System convergence verified over 20,000+ training episodes across multiple grid sizes.
 
 ### Course Project: Assistive Robotics (EE)
-<div style="display: flex; justify-content: space-between;">
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Fall 2024</span>
 </div>
 - Developed a real-time obstacle detection wearable assistive navigation system using a ToF depth camera and Raspberry Pi-based haptic feedback.
@@ -78,7 +78,7 @@ HiRain Technologies, Wangjing, Beijing
 - Optimized user comfort and sensor performance via dual-motor setup and depth noise filtering under dynamic lighting.
 
 ### Course Project: Mechatronic Control System (ME)
-<div style="display: flex; justify-content: space-between;">
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Summer 2024</span>
 </div>
 - Developed Simulink/Simscape models for position and speed control using encoder and Arduino.
@@ -86,7 +86,7 @@ HiRain Technologies, Wangjing, Beijing
 - Applied PID tuning and FFT analysis to enhance response stability under simulated noise.
 
 ### Course Project: Robotics Sensing & Navigation, Embedded System (EE)
-<div style="display: flex; justify-content: space-between;">
+<div style="text-align: right; display: flex; justify-content: space-between;">
   <span style="font-style: italic;">Spring 2024</span>
 </div>
 - Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions in soft-tissue simulants.
