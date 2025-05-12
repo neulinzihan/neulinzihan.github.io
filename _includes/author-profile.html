@@ -22,6 +22,22 @@
 
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">Follow</button>
+
+    {% if author.email %}
+      <div class="author__email-section" style="user-select: text; margin-bottom: 1rem;">
+        <div>
+          <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
+          <strong>University:</strong>
+          <a href="mailto:{{ author.email[0] }}">{{ author.email[0] }}</a>
+        </div>
+        <div>
+          <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
+          <strong>Personal:</strong>
+          <a href="mailto:{{ author.email[1] }}">{{ author.email[1] }}</a>
+        </div>
+      </div>
+    {% endif %}
+    
     <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
