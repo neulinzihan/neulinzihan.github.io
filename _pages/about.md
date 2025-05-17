@@ -27,25 +27,24 @@ Since 2022, I have worked as a Part-time Student Researcher at a lab at the Nort
   July–Dec. 2021
 </div>
 Shark Ninja, Needham, MA
-- Developed a standardized test methodology for mesh pre-filter lifetime validation, enabling product teams to support official filter life claims.
-- Designed and optimized multiple debris dispenser prototypes using CFD and rapid prototyping to simulate real-world conditions.
-- Built a custom negative-pressure loading chamber for mesh filter fatigue testing; defined procedures and BOM for repeatable testing.
-- Achieved uniform particulate dispersion through comparative feasibility testing of multiple fiber distribution methods.
-- Integrated Prometheus and Arduino to monitor PMS9305 sensor data, supporting data-driven filter evaluation.
-- Contributed to Odor Neutralizer Module and UV aging fixture design, accelerating airflow characterization and material degradation testing.
+- Helped develop and document a testing process for mesh pre-filter.
+- Assisted in designing and refining debris dispenser prototypes, using CFD and 3D printing. Designed a sealed loading chamber for debris attaching testing.
+- Supported data logging for PMS9305 sensors by integrating Arduino and Prometheus into the test setup.
+- Helped with airflow testing and UV fixture setup for the odor neutralizer module and component aging validation.
+- Assisted technicians with regular testing tasks.
 
 ### Mechanical Engineering Co-op, Product Quality Team
 <div style="text-align: right; font-style: italic; margin-top: -1em;">
   Jan–Jun. 2023
 </div>
 HiRain Technologies, Wangjing, Beijing
-- Created detailed 2D/3D models of PCBA enclosures using AutoCAD, SolidWorks, and CREO to support rapid manufacturing.
-- Updated and revised manufacturing manuals for PCB cases to ensure accuracy in factory production workflows.
-- Supported cross-functional teams by preparing CAD documentation and assisting with component layout optimization.
-- Used SAP, Excel, and Access to initiate, track, and update PCB production orders and testing progress.
+- Used SAP, Excel, and Access to initiate, track, and updated PCB production orders and testing progress.
 - Verified inventory accuracy by counting outgoing components and delivered PCBAs.
-- Supported quality assurance by inspecting PCB assemblies and assisting with firmware flashing and validation.
-- Collaborated with cross-team technicians on assembly and soldering tasks, gaining hands-on experience in electronic manufacturing.
+- Supported quality assurance by inspecting PCB assemblies, assisting with firmware flashing and validation.
+- Assisted technicians with basic assembly and soldering tasks in the electronics lab.
+- Helped prepare 2D/3D models of PCBA case in SolidWorks, and CREO for review and production use.
+- Edited and updated PCB case documentation to support the manufacturing process.
+- Provided CAD drawings and layout support to engineering and production teams during design iterations.
 
 
 ## 📜 Research & Technical Projects
