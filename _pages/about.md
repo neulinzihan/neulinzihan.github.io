@@ -15,10 +15,8 @@ redirect_from:
 
 📽️ I am also interested in assisting others on their path in the world of Mechanical Engineering, Electrical Engineering, Computer Science and academia.
 
-
 ## 👨🏻‍🔬 Professional Experience
 Since 2022, I have worked as a Part-time Student Researcher at a lab at the Northeastern University under the supervision of candidates of PhD. Duo Wen studying on Indenting thick gel with a solid spherical inclusion. Additionally, I have professional experience working as an Mechanical Engineer at Shark Ninja, and Production Engineer and Design Engineer at HiRain Technology. I will introduce my experience below:
-
 
 ## 💼 Internship Experience
 
@@ -45,7 +43,6 @@ HiRain Technologies, Wangjing, Beijing
 - Helped prepare 2D/3D models of PCBA case in SolidWorks, and CREO for review and production use.
 - Edited and updated PCB case documentation to support the manufacturing process.
 - Provided CAD drawings and layout support to engineering and production teams during design iterations.
-
 
 ## 📜 Research & Technical Projects
 
