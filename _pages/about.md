@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "👋🏼 Hello there, I’m Zihan! This website is still in maintaining, only the information on homepage is accurate. The website is designed based on work of academicpages.github.io! "
+title: "👋🏼 Hello there, I’m Zihan!"
 author_profile: true
 redirect_from: 
   - /about/
@@ -11,9 +11,9 @@ redirect_from:
 
 🔬 My interests are in project design, computer aid design, AI - reinforcement learning, healthcare product, fluid mechanics, material science, and robotics!
 
-📚 I’m currently looking for a full-time job starting at June 2025.
+📚 I’m currently looking for a intern/full-time job starting at July 2025.
 
-📽️ I am also interested in assisting others on their path in the world of Mechanical Engineering, Electrical Engineering, Computer Science and academia.
+<!-- 📽️ I am also interested in assisting others on their path in the world of Mechanical Engineering. -->
 
 ## 👨🏻‍🔬 Professional Experience
 Since 2022, I have worked as a Part-time Student Researcher at a lab at the Northeastern University under the supervision of candidates of PhD. Duo Wen studying on Indenting thick gel with a solid spherical inclusion. Additionally, I have professional experience working as an Mechanical Engineer at Shark Ninja, and Production Engineer and Design Engineer at HiRain Technology. I will introduce my experience below:
