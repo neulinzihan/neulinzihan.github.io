@@ -37,7 +37,7 @@ Designed a flexible robotic finger with dual IMU sensors to detect subdermal inc
 
 ## Experience
 
-- **Part-time Lab Researcher**, Northeastern University (2022–Present)  
+- **Part-time Lab Researcher**, Northeastern University (2022–2025)  
   Soft material mechanics research under PhD candidate Duo Wen
 
 - **Production/Design Engineer Co-op**, SharkNinja (2021)  
