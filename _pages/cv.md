@@ -106,5 +106,5 @@ Duo Wen, **Zihan Lin**, Yustianto Tjiptowidjojo, Kai-tak Wan
 
 - **Email**: [lin.zihan@northeastern.edu]
 - **LinkedIn**: [https://www.linkedin.com/in/zihalin/]
-- **GitHub**: [github.com/yourusername]
-- **Phone**: [Your Phone Number]
+- **GitHub**: [https://github.com/neulinzihan]
+- **Phone**: [8572945016]
