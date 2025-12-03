@@ -48,8 +48,8 @@ Designed a flexible robotic finger with dual IMU sensors to detect subdermal inc
 
 ## Education
 
-- **M.S. in Robotics**, Northeastern University (2024–2025) — GPA: 3.67
-- **B.S. in Mechanical Engineering**, Northeastern University (2019–2023) — GPA: 3.3
+- **M.S. in Robotics**, Northeastern University (2024–2025)
+- **B.S. in Mechanical Engineering**, Northeastern University (2019–2023)
 
 ---
 
