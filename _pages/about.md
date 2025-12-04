@@ -9,7 +9,7 @@ redirect_from:
 
 I am a Robotics M.S. graduate from Northeastern University with a B.S. in Mechanical Engineering. My research interests span **robotics**, **reinforcement learning**, **mechatronic systems**, and **healthcare technology**.
 
-I am currently seeking **full-time opportunities** starting July 2025 in robotics, mechanical engineering, or AI-related roles.
+I am currently seeking **full-time opportunities** starting Jan 2026 in robotics, mechanical engineering, or AI-related roles.
 
 ## News
 
