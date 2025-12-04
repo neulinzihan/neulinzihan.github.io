@@ -12,8 +12,7 @@ redirect_from:
 ## Education
 
 **Northeastern University**, Boston, MA  
-*M.S. in Robotics (ME Concentration)* | Jan 2024 – Aug 2025  
-- GPA: 3.67/4.0  
+*M.S. in Robotics (ME Concentration)* | Jan 2024 – Dec 2025  
 - Coursework: Mechatronic Systems, Control Systems Engineering, Robotics Sensing & Navigation, Assistive Robotics, Foundations of AI, Reinforcement Learning
 
 **Northeastern University**, Boston, MA  
