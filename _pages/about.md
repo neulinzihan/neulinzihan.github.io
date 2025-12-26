@@ -1,16 +1,21 @@
+---
+permalink: /
+title: "Zihan Lin - Robotics Engineer"
+author_profile: false
+redirect_from: 
+  - /about/
+  - /about.html
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zihan Lin - Robotics Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ===== Reset ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
@@ -45,9 +50,7 @@
       transition: transform 0.3s;
     }
     
-    .navbar.hidden {
-      transform: translateY(-100%);
-    }
+    .navbar.hidden { transform: translateY(-100%); }
     
     .nav-logo {
       font-size: 1.5rem;
@@ -64,15 +67,13 @@
       transition: color 0.3s;
     }
     
-    .nav-links a:hover {
-      color: #3498db;
-    }
+    .nav-links a:hover { color: #3498db; }
     
-    /* ===== Hero 视差区域 ===== */
+    /* ===== Hero ===== */
     .hero {
       height: 100vh;
       background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,152,219,0.8)),
-                  url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920') center/cover fixed;
+                  url('{{ site.baseurl }}/images/hero-bg.jpg') center/cover fixed;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -109,9 +110,7 @@
       animation: fadeInUp 1s ease 0.4s both;
     }
     
-    .hero-buttons {
-      animation: fadeInUp 1s ease 0.6s both;
-    }
+    .hero-buttons { animation: fadeInUp 1s ease 0.6s both; }
     
     .hero-buttons a {
       display: inline-block;
@@ -123,25 +122,10 @@
       transition: all 0.3s;
     }
     
-    .btn-primary {
-      background: white;
-      color: #2c3e50;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    
-    .btn-secondary {
-      border: 2px solid white;
-      color: white;
-    }
-    
-    .btn-secondary:hover {
-      background: white;
-      color: #2c3e50;
-    }
+    .btn-primary { background: white; color: #2c3e50; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .btn-secondary { border: 2px solid white; color: white; }
+    .btn-secondary:hover { background: white; color: #2c3e50; }
     
     .scroll-down {
       position: absolute;
@@ -151,11 +135,7 @@
       animation: bounce 2s infinite;
     }
     
-    .scroll-down i {
-      font-size: 2rem;
-      color: white;
-      opacity: 0.7;
-    }
+    .scroll-down i { font-size: 2rem; color: white; opacity: 0.7; }
     
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -167,7 +147,7 @@
       50% { transform: translateX(-50%) translateY(10px); }
     }
     
-    /* ===== 通用 Section ===== */
+    /* ===== Sections ===== */
     .section {
       padding: 100px 20px;
       max-width: 1100px;
@@ -195,51 +175,22 @@
     }
     
     /* ===== 滚动动画 ===== */
-    .scroll-reveal {
+    .scroll-reveal, .scroll-zoom, .scroll-left, .scroll-right {
       opacity: 0;
-      transform: translateY(40px);
       transition: all 0.8s ease;
     }
     
-    .scroll-reveal.visible {
+    .scroll-reveal { transform: translateY(40px); }
+    .scroll-zoom { transform: scale(0.9); }
+    .scroll-left { transform: translateX(-60px); }
+    .scroll-right { transform: translateX(60px); }
+    
+    .scroll-reveal.visible, .scroll-zoom.visible, .scroll-left.visible, .scroll-right.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) translateX(0) scale(1);
     }
     
-    .scroll-zoom {
-      opacity: 0;
-      transform: scale(0.9);
-      transition: all 0.8s ease;
-    }
-    
-    .scroll-zoom.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-    .scroll-left {
-      opacity: 0;
-      transform: translateX(-60px);
-      transition: all 0.8s ease;
-    }
-    
-    .scroll-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .scroll-right {
-      opacity: 0;
-      transform: translateX(60px);
-      transition: all 0.8s ease;
-    }
-    
-    .scroll-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    /* ===== About 区域 ===== */
+    /* ===== About ===== */
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -247,9 +198,7 @@
       align-items: center;
     }
     
-    .about-image {
-      position: relative;
-    }
+    .about-image { position: relative; }
     
     .about-image img {
       width: 100%;
@@ -269,16 +218,8 @@
       z-index: -1;
     }
     
-    .about-text p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1.5rem;
-    }
-    
-    .about-text .highlight {
-      color: #3498db;
-      font-weight: 600;
-    }
+    .about-text p { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; }
+    .about-text .highlight { color: #3498db; font-weight: 600; }
     
     .status-badge {
       display: inline-block;
@@ -290,19 +231,12 @@
       margin-top: 1rem;
     }
     
-    .status-badge i {
-      margin-right: 8px;
-    }
+    .status-badge i { margin-right: 8px; }
     
-    /* ===== News 区域 ===== */
-    .news-section {
-      background: #f8f9fa;
-    }
+    /* ===== News ===== */
+    .news-section { background: #f8f9fa; }
     
-    .news-list {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+    .news-list { max-width: 800px; margin: 0 auto; }
     
     .news-item {
       display: flex;
@@ -332,17 +266,10 @@
       margin-right: 20px;
     }
     
-    .news-content h4 {
-      color: #2c3e50;
-      margin-bottom: 5px;
-    }
+    .news-content h4 { color: #2c3e50; margin-bottom: 5px; }
+    .news-content p { color: #666; font-size: 0.95rem; }
     
-    .news-content p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-    
-    /* ===== Research Interests ===== */
+    /* ===== Interests ===== */
     .interests-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -372,12 +299,9 @@
       margin-bottom: 20px;
     }
     
-    .interest-card h3 {
-      color: #2c3e50;
-      font-size: 1.1rem;
-    }
+    .interest-card h3 { color: #2c3e50; font-size: 1.1rem; }
     
-    /* ===== Projects 视差分隔 ===== */
+    /* ===== Parallax ===== */
     .parallax-divider {
       height: 50vh;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -389,15 +313,8 @@
       text-align: center;
     }
     
-    .parallax-divider h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    
-    .parallax-divider p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+    .parallax-divider h2 { font-size: 3rem; margin-bottom: 1rem; }
+    .parallax-divider p { font-size: 1.2rem; opacity: 0.9; }
     
     /* ===== Projects ===== */
     .project-card {
@@ -412,18 +329,10 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     }
     
-    .project-card:nth-child(even) {
-      direction: rtl;
-    }
+    .project-card:nth-child(even) { direction: rtl; }
+    .project-card:nth-child(even) > * { direction: ltr; }
     
-    .project-card:nth-child(even) > * {
-      direction: ltr;
-    }
-    
-    .project-image {
-      border-radius: 15px;
-      overflow: hidden;
-    }
+    .project-image { border-radius: 15px; overflow: hidden; }
     
     .project-image img {
       width: 100%;
@@ -432,31 +341,13 @@
       transition: transform 0.5s;
     }
     
-    .project-card:hover .project-image img {
-      transform: scale(1.05);
-    }
+    .project-card:hover .project-image img { transform: scale(1.05); }
     
-    .project-info .project-date {
-      color: #3498db;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
+    .project-info .project-date { color: #3498db; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
+    .project-info h3 { font-size: 1.5rem; color: #2c3e50; margin-bottom: 15px; }
+    .project-info p { color: #666; line-height: 1.8; }
     
-    .project-info h3 {
-      font-size: 1.5rem;
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
-    
-    .project-info p {
-      color: #666;
-      line-height: 1.8;
-    }
-    
-    .project-tags {
-      margin-top: 20px;
-    }
+    .project-tags { margin-top: 20px; }
     
     .project-tags span {
       display: inline-block;
@@ -469,7 +360,7 @@
       margin-bottom: 10px;
     }
     
-    /* ===== Experience 时间线 ===== */
+    /* ===== Timeline ===== */
     .timeline {
       position: relative;
       max-width: 900px;
@@ -524,37 +415,17 @@
       transition: all 0.3s;
     }
     
-    .timeline-item:nth-child(even) .timeline-content {
-      margin-right: 0;
-      margin-left: 30px;
-    }
+    .timeline-item:nth-child(even) .timeline-content { margin-right: 0; margin-left: 30px; }
     
     .timeline-content:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     }
     
-    .timeline-content .date {
-      color: #3498db;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    
-    .timeline-content h3 {
-      color: #2c3e50;
-      margin-bottom: 5px;
-    }
-    
-    .timeline-content .company {
-      color: #9b59b6;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    
-    .timeline-content p {
-      color: #666;
-      font-size: 0.95rem;
-    }
+    .timeline-content .date { color: #3498db; font-weight: 700; margin-bottom: 10px; }
+    .timeline-content h3 { color: #2c3e50; margin-bottom: 5px; }
+    .timeline-content .company { color: #9b59b6; font-weight: 500; margin-bottom: 10px; }
+    .timeline-content p { color: #666; font-size: 0.95rem; }
     
     /* ===== Education ===== */
     .education-grid {
@@ -588,28 +459,12 @@
       background: linear-gradient(90deg, #3498db, #9b59b6);
     }
     
-    .education-card .degree {
-      font-size: 1.3rem;
-      color: #2c3e50;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    
-    .education-card .school {
-      color: #3498db;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    
-    .education-card .year {
-      color: #999;
-      font-size: 0.9rem;
-    }
+    .education-card .degree { font-size: 1.3rem; color: #2c3e50; font-weight: 700; margin-bottom: 10px; }
+    .education-card .school { color: #3498db; font-weight: 600; margin-bottom: 5px; }
+    .education-card .year { color: #999; font-size: 0.9rem; }
     
     /* ===== Skills ===== */
-    .skills-section {
-      background: #f8f9fa;
-    }
+    .skills-section { background: #f8f9fa; }
     
     .skills-grid {
       display: grid;
@@ -631,14 +486,9 @@
       align-items: center;
     }
     
-    .skill-category h3 i {
-      margin-right: 10px;
-      color: #3498db;
-    }
+    .skill-category h3 i { margin-right: 10px; color: #3498db; }
     
-    .skill-bar {
-      margin-bottom: 15px;
-    }
+    .skill-bar { margin-bottom: 15px; }
     
     .skill-bar .skill-name {
       display: flex;
@@ -663,9 +513,7 @@
       transition: width 1.5s ease;
     }
     
-    .skill-bar.visible .progress {
-      width: var(--progress);
-    }
+    .skill-bar.visible .progress { width: var(--progress); }
     
     /* ===== CTA ===== */
     .cta-section {
@@ -675,16 +523,8 @@
       padding: 100px 20px;
     }
     
-    .cta-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .cta-section p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-    }
+    .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .cta-section p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
     
     .cta-buttons a {
       display: inline-block;
@@ -696,23 +536,12 @@
       transition: all 0.3s;
     }
     
-    .cta-buttons .btn-white {
-      background: white;
-      color: #2c3e50;
-    }
-    
-    .cta-buttons .btn-outline {
-      border: 2px solid white;
-      color: white;
-    }
-    
-    .cta-buttons a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
+    .cta-buttons .btn-white { background: white; color: #2c3e50; }
+    .cta-buttons .btn-outline { border: 2px solid white; color: white; }
+    .cta-buttons a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
     
     /* ===== Footer ===== */
-    footer {
+    .site-footer {
       background: #1a252f;
       color: white;
       padding: 60px 20px 30px;
@@ -726,51 +555,18 @@
       gap: 50px;
     }
     
-    .footer-about h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
+    .footer-about h3 { font-size: 1.5rem; margin-bottom: 15px; }
+    .footer-about p { color: #aaa; line-height: 1.8; }
     
-    .footer-about p {
-      color: #aaa;
-      line-height: 1.8;
-    }
+    .footer-links h4, .footer-contact h4 { margin-bottom: 20px; font-size: 1.1rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links a { color: #aaa; text-decoration: none; display: block; padding: 8px 0; transition: color 0.3s; }
+    .footer-links a:hover { color: #3498db; }
     
-    .footer-links h4,
-    .footer-contact h4 {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
+    .footer-contact p { color: #aaa; margin-bottom: 10px; }
+    .footer-contact i { margin-right: 10px; color: #3498db; }
     
-    .footer-links ul {
-      list-style: none;
-    }
-    
-    .footer-links a {
-      color: #aaa;
-      text-decoration: none;
-      display: block;
-      padding: 8px 0;
-      transition: color 0.3s;
-    }
-    
-    .footer-links a:hover {
-      color: #3498db;
-    }
-    
-    .footer-contact p {
-      color: #aaa;
-      margin-bottom: 10px;
-    }
-    
-    .footer-contact i {
-      margin-right: 10px;
-      color: #3498db;
-    }
-    
-    .social-links {
-      margin-top: 20px;
-    }
+    .social-links { margin-top: 20px; }
     
     .social-links a {
       display: inline-flex;
@@ -785,10 +581,7 @@
       transition: all 0.3s;
     }
     
-    .social-links a:hover {
-      background: #3498db;
-      transform: translateY(-3px);
-    }
+    .social-links a:hover { background: #3498db; transform: translateY(-3px); }
     
     .footer-bottom {
       max-width: 1100px;
@@ -801,107 +594,58 @@
     
     /* ===== 响应式 ===== */
     @media (max-width: 992px) {
-      .about-content,
-      .project-card,
-      .education-grid,
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
+      .about-content, .project-card, .education-grid, .skills-grid, .footer-content { grid-template-columns: 1fr; }
+      .interests-grid { grid-template-columns: repeat(2, 1fr); }
       
-      .interests-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .timeline::before {
-        left: 20px;
-      }
-      
-      .timeline-item,
-      .timeline-item:nth-child(even) {
-        padding-left: 60px;
-        padding-right: 0;
-        justify-content: flex-start;
-      }
-      
-      .timeline-item::before {
-        left: 20px;
-      }
-      
-      .timeline-content,
-      .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-      }
-      
-      .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      .timeline::before { left: 20px; }
+      .timeline-item, .timeline-item:nth-child(even) { padding-left: 60px; padding-right: 0; justify-content: flex-start; }
+      .timeline-item::before { left: 20px; }
+      .timeline-content, .timeline-item:nth-child(even) .timeline-content { margin-left: 0; margin-right: 0; width: 100%; }
+      .footer-content { text-align: center; }
     }
     
     @media (max-width: 768px) {
-      .navbar {
-        padding: 15px 20px;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      
-      .interests-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .project-card:nth-child(even) {
-        direction: ltr;
-      }
+      .navbar { padding: 15px 20px; }
+      .nav-links { display: none; }
+      .hero-content h1 { font-size: 2.5rem; }
+      .interests-grid { grid-template-columns: 1fr; }
+      .project-card:nth-child(even) { direction: ltr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 滚动进度条 -->
   <div class="scroll-indicator" id="scrollIndicator"></div>
 
-  <!-- 导航栏 -->
   <nav class="navbar" id="navbar">
     <a href="/" class="nav-logo">Zihan Lin</a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="/cv/">CV</a>
-      <a href="/publications/">Publications</a>
+      <a href="{{ site.baseurl }}/cv/">CV</a>
+      <a href="{{ site.baseurl }}/publications/">Publications</a>
     </div>
   </nav>
 
-  <!-- Hero 区域 -->
   <section class="hero">
     <div class="hero-content">
       <h1>Hello, I'm <span>Zihan!</span></h1>
       <p class="subtitle">Robotics Engineer | AI & Mechatronics</p>
       <p class="tagline">M.S. in Robotics from Northeastern University with research interests in reinforcement learning, mechatronic systems, and healthcare technology.</p>
       <div class="hero-buttons">
-        <a href="/cv/" class="btn-primary">View CV</a>
+        <a href="{{ site.baseurl }}/cv/" class="btn-primary">View CV</a>
         <a href="#projects" class="btn-secondary">See Projects</a>
       </div>
     </div>
-    <div class="scroll-down">
-      <i class="fas fa-chevron-down"></i>
-    </div>
+    <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
   </section>
 
-  <!-- About 区域 -->
   <section class="section" id="about">
     <h2 class="section-title scroll-reveal">About Me</h2>
     <div class="about-content">
       <div class="about-image scroll-left">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Profile">
+        <img src="{{ site.baseurl }}/images/profile.png" alt="Zihan Lin">
       </div>
       <div class="about-text scroll-right">
         <p>I am a <span class="highlight">Robotics M.S. graduate</span> from Northeastern University with a B.S. in Mechanical Engineering.</p>
@@ -915,7 +659,6 @@
     </div>
   </section>
 
-  <!-- News 区域 -->
   <section class="section news-section">
     <h2 class="section-title scroll-reveal">Latest News</h2>
     <div class="news-list">
@@ -943,30 +686,16 @@
     </div>
   </section>
 
-  <!-- Research Interests -->
   <section class="section">
     <h2 class="section-title scroll-reveal">Research Interests</h2>
     <div class="interests-grid">
-      <div class="interest-card scroll-zoom">
-        <i class="fas fa-robot"></i>
-        <h3>Robotics & Mechatronics</h3>
-      </div>
-      <div class="interest-card scroll-zoom">
-        <i class="fas fa-brain"></i>
-        <h3>Reinforcement Learning & AI</h3>
-      </div>
-      <div class="interest-card scroll-zoom">
-        <i class="fas fa-heartbeat"></i>
-        <h3>Healthcare & Assistive Tech</h3>
-      </div>
-      <div class="interest-card scroll-zoom">
-        <i class="fas fa-drafting-compass"></i>
-        <h3>CAD & Simulation</h3>
-      </div>
+      <div class="interest-card scroll-zoom"><i class="fas fa-robot"></i><h3>Robotics & Mechatronics</h3></div>
+      <div class="interest-card scroll-zoom"><i class="fas fa-brain"></i><h3>Reinforcement Learning & AI</h3></div>
+      <div class="interest-card scroll-zoom"><i class="fas fa-heartbeat"></i><h3>Healthcare & Assistive Tech</h3></div>
+      <div class="interest-card scroll-zoom"><i class="fas fa-drafting-compass"></i><h3>CAD & Simulation</h3></div>
     </div>
   </section>
 
-  <!-- Projects 视差分隔 -->
   <section class="parallax-divider" id="projects">
     <div class="scroll-reveal">
       <h2>Selected Projects</h2>
@@ -974,61 +703,38 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section class="section">
     <div class="project-card scroll-reveal">
-      <div class="project-image">
-        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone">
-      </div>
+      <div class="project-image"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone"></div>
       <div class="project-info">
         <div class="project-date">Spring 2025</div>
         <h3>Drone Coverage Optimization with Reinforcement Learning</h3>
-        <p>Designed a Q-learning-based drone placement policy achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines. Implemented A* pathfinding for emergency responder navigation in disaster zones.</p>
-        <div class="project-tags">
-          <span>Q-Learning</span>
-          <span>Python</span>
-          <span>A* Pathfinding</span>
-          <span>Multi-Agent</span>
-        </div>
+        <p>Designed a Q-learning-based drone placement policy achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines. Implemented A* pathfinding for emergency responder navigation.</p>
+        <div class="project-tags"><span>Q-Learning</span><span>Python</span><span>A* Pathfinding</span></div>
       </div>
     </div>
     
     <div class="project-card scroll-reveal">
-      <div class="project-image">
-        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Wearable">
-      </div>
+      <div class="project-image"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Wearable"></div>
       <div class="project-info">
         <div class="project-date">Fall 2024</div>
         <h3>Wearable Assistive Navigation System</h3>
-        <p>Built a real-time obstacle detection system using ToF depth camera and Raspberry Pi with haptic feedback for visually impaired users. Implemented PWM-modulated vibration motors for directional alerts.</p>
-        <div class="project-tags">
-          <span>Raspberry Pi</span>
-          <span>ToF Camera</span>
-          <span>Haptic Feedback</span>
-          <span>Assistive Tech</span>
-        </div>
+        <p>Built a real-time obstacle detection system using ToF depth camera and Raspberry Pi with haptic feedback for visually impaired users.</p>
+        <div class="project-tags"><span>Raspberry Pi</span><span>ToF Camera</span><span>Haptic Feedback</span></div>
       </div>
     </div>
     
     <div class="project-card scroll-reveal">
-      <div class="project-image">
-        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Medical">
-      </div>
+      <div class="project-image"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Medical"></div>
       <div class="project-info">
         <div class="project-date">Spring 2024</div>
         <h3>Robotic Finger for Tumor Detection</h3>
-        <p>Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions, demonstrating potential for home-use biomedical diagnostics. Applied Kalman filtering for precise trajectory mapping.</p>
-        <div class="project-tags">
-          <span>IMU Sensors</span>
-          <span>Kalman Filter</span>
-          <span>Medical Robotics</span>
-          <span>Signal Processing</span>
-        </div>
+        <p>Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions, demonstrating potential for home-use biomedical diagnostics.</p>
+        <div class="project-tags"><span>IMU Sensors</span><span>Kalman Filter</span><span>Medical Robotics</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Experience 时间线 -->
   <section class="section" id="experience">
     <h2 class="section-title scroll-reveal">Experience</h2>
     <div class="timeline">
@@ -1037,31 +743,28 @@
           <div class="date">2022 - 2025</div>
           <h3>Part-time Lab Researcher</h3>
           <div class="company">Northeastern University</div>
-          <p>Soft material mechanics research under PhD candidate Duo Wen. Published in European Journal of Mechanics - A/Solids.</p>
+          <p>Soft material mechanics research. Published in European Journal of Mechanics.</p>
         </div>
       </div>
-      
       <div class="timeline-item scroll-right">
         <div class="timeline-content">
           <div class="date">2023</div>
           <h3>Mechanical Engineering Co-op</h3>
           <div class="company">HiRain Technologies, Beijing</div>
-          <p>PCB quality assurance, CAD modeling in SolidWorks/CREO, production order management.</p>
+          <p>PCB quality assurance, CAD modeling in SolidWorks/CREO.</p>
         </div>
       </div>
-      
       <div class="timeline-item scroll-left">
         <div class="timeline-content">
           <div class="date">2021</div>
           <h3>Production/Design Engineer Co-op</h3>
           <div class="company">SharkNinja, Needham MA</div>
-          <p>CFD simulation, 3D printing prototypes, sensor integration with Arduino and Prometheus.</p>
+          <p>CFD simulation, 3D printing prototypes, sensor integration.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
   <section class="section">
     <h2 class="section-title scroll-reveal">Education</h2>
     <div class="education-grid">
@@ -1078,72 +781,40 @@
     </div>
   </section>
 
-  <!-- Skills -->
   <section class="section skills-section">
     <h2 class="section-title scroll-reveal">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-category scroll-reveal">
         <h3><i class="fas fa-code"></i> Programming</h3>
-        <div class="skill-bar" style="--progress: 90%">
-          <div class="skill-name"><span>Python</span><span>90%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
-        <div class="skill-bar" style="--progress: 85%">
-          <div class="skill-name"><span>MATLAB</span><span>85%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
-        <div class="skill-bar" style="--progress: 70%">
-          <div class="skill-name"><span>C++</span><span>70%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
+        <div class="skill-bar" style="--progress: 90%"><div class="skill-name"><span>Python</span><span>90%</span></div><div class="bar"><div class="progress"></div></div></div>
+        <div class="skill-bar" style="--progress: 85%"><div class="skill-name"><span>MATLAB</span><span>85%</span></div><div class="bar"><div class="progress"></div></div></div>
+        <div class="skill-bar" style="--progress: 70%"><div class="skill-name"><span>C++</span><span>70%</span></div><div class="bar"><div class="progress"></div></div></div>
       </div>
-      
       <div class="skill-category scroll-reveal">
         <h3><i class="fas fa-cube"></i> CAD & Simulation</h3>
-        <div class="skill-bar" style="--progress: 85%">
-          <div class="skill-name"><span>SolidWorks</span><span>85%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
-        <div class="skill-bar" style="--progress: 80%">
-          <div class="skill-name"><span>Simulink</span><span>80%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
-        <div class="skill-bar" style="--progress: 75%">
-          <div class="skill-name"><span>AutoCAD</span><span>75%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
+        <div class="skill-bar" style="--progress: 85%"><div class="skill-name"><span>SolidWorks</span><span>85%</span></div><div class="bar"><div class="progress"></div></div></div>
+        <div class="skill-bar" style="--progress: 80%"><div class="skill-name"><span>Simulink</span><span>80%</span></div><div class="bar"><div class="progress"></div></div></div>
+        <div class="skill-bar" style="--progress: 75%"><div class="skill-name"><span>AutoCAD</span><span>75%</span></div><div class="bar"><div class="progress"></div></div></div>
       </div>
-      
       <div class="skill-category scroll-reveal">
         <h3><i class="fas fa-microchip"></i> Hardware</h3>
-        <div class="skill-bar" style="--progress: 80%">
-          <div class="skill-name"><span>Arduino</span><span>80%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
-        <div class="skill-bar" style="--progress: 75%">
-          <div class="skill-name"><span>Raspberry Pi</span><span>75%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
-        <div class="skill-bar" style="--progress: 70%">
-          <div class="skill-name"><span>ROS</span><span>70%</span></div>
-          <div class="bar"><div class="progress"></div></div>
-        </div>
+        <div class="skill-bar" style="--progress: 80%"><div class="skill-name"><span>Arduino</span><span>80%</span></div><div class="bar"><div class="progress"></div></div></div>
+        <div class="skill-bar" style="--progress: 75%"><div class="skill-name"><span>Raspberry Pi</span><span>75%</span></div><div class="bar"><div class="progress"></div></div></div>
+        <div class="skill-bar" style="--progress: 70%"><div class="skill-name"><span>ROS</span><span>70%</span></div><div class="bar"><div class="progress"></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
     <h2 class="scroll-reveal">Let's Connect!</h2>
-    <p class="scroll-reveal">Interested in robotics, AI, or just want to chat?</p>
+    <p class="scroll-reveal">Interested in robotics, AI, or collaboration?</p>
     <div class="cta-buttons scroll-reveal">
-      <a href="/cv/" class="btn-white">View Full CV</a>
-      <a href="/publications/" class="btn-outline">Publications</a>
+      <a href="{{ site.baseurl }}/cv/" class="btn-white">View Full CV</a>
+      <a href="{{ site.baseurl }}/publications/" class="btn-outline">Publications</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-about">
         <h3>Zihan Lin</h3>
@@ -1159,9 +830,8 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="/cv/">CV</a></li>
-          <li><a href="/publications/">Publications</a></li>
+          <li><a href="{{ site.baseurl }}/cv/">CV</a></li>
+          <li><a href="{{ site.baseurl }}/publications/">Publications</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -1170,61 +840,35 @@
         <p><i class="fas fa-map-marker-alt"></i> Boston, MA</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Zihan Lin. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Zihan Lin. All rights reserved.</p></div>
   </footer>
 
   <script>
-    // 滚动进度条
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
+      document.getElementById('scrollIndicator').style.width = (scrollTop / docHeight) * 100 + '%';
     });
 
-    // 导航栏滚动隐藏/显示
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
       const navbar = document.getElementById('navbar');
-      
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        navbar.classList.add('hidden');
-      } else {
-        navbar.classList.remove('hidden');
-      }
-      lastScroll = currentScroll;
+      if (window.scrollY > lastScroll && window.scrollY > 100) navbar.classList.add('hidden');
+      else navbar.classList.remove('hidden');
+      lastScroll = window.scrollY;
     });
-
-    // 滚动动画观察器
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    // 观察所有需要动画的元素
-    document.querySelectorAll('.scroll-reveal, .scroll-zoom, .scroll-left, .scroll-right, .skill-bar').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.scroll-reveal, .scroll-zoom, .scroll-left, .scroll-right, .skill-bar').forEach(el => observer.observe(el));
 
-    // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
