@@ -644,7 +644,7 @@ redirect_from:
     <h2 class="section-title scroll-reveal">About Me</h2>
     <div class="about-content">
       <div class="about-image scroll-left">
-        <img src="{{ site.baseurl }}/images/profile.png" alt="Zihan Lin">
+        <img src="{{ site.baseurl }}/images/zihan_linkedin_avatar.jpeg" alt="Zihan Lin">
       </div>
       <div class="about-text scroll-right">
         <p>I am a <span class="highlight">Robotics M.S. graduate</span> from Northeastern University with a B.S. in Mechanical Engineering.</p>
