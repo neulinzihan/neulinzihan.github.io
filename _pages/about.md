@@ -1,7 +1,6 @@
 ---
 permalink: /
-title: "Zihan Lin - Robotics Engineer"
-author_profile: false
+layout: null
 redirect_from: 
   - /about/
   - /about.html
