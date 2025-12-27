@@ -2,13 +2,17 @@
 layout: archive
 title: "Curriculum Vitae"
 permalink: /cv/
-author_profile: false
-classes: wide custom-bg
+author_profile: true
 redirect_from:
   - /resume
 ---
 
 <style>
+/* 隐藏头像 */
+.author__avatar {
+  display: none;
+}
+
 /* 页面背景渐变 */
 .page {
   background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
