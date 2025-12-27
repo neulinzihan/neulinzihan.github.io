@@ -1,7 +1,7 @@
 ---
 title: "NMPC-Based Robotic Arm Trajectory Tracking"
-excerpt: "Nonlinear Model Predictive Control for precise robotic arm control<br/><img src='/images/portfolio/robot-arm.jpg'>"
-collection: portfolio
+excerpt: "Nonlinear Model Predictive Control for precise robotic arm control<br/><img src='/images/projects/robot-arm.jpg'>"
+collection: projects
 date: 2024-09-01
 ---
 

@@ -1,0 +1,113 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+<style>
+/* 隐藏头像 */
+.author__avatar {
+  display: none;
+}
+
+/* 页面背景渐变 */
+.page {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  min-height: 100vh;
+}
+
+/* 内容区域白色卡片 */
+.page__content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* 标题样式 */
+.page__title {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.page__title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 2px;
+}
+
+/* 项目卡片样式 */
+.archive__item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #3498db;
+}
+
+.archive__item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 项目标题 */
+.archive__item-title {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.archive__item-title a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.archive__item-title a:hover {
+  color: #3498db;
+}
+
+/* 项目描述 */
+.archive__item-excerpt {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* 项目图片 */
+.archive__item-excerpt img {
+  border-radius: 10px;
+  margin-top: 15px;
+  max-width: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 链接样式 */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #9b59b6;
+}
+</style>
+
+{% include base_path %}
+
+{% for post in site.projects %}
+  {% include archive-single.html %}
+{% endfor %}

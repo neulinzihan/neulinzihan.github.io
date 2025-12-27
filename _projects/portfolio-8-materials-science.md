@@ -1,7 +1,7 @@
 ---
 title: "Materials Science Laboratory Research"
-excerpt: "XRD analysis, metallography, and mechanical testing<br/><img src='/images/portfolio/materials-science.jpg'>"
-collection: portfolio
+excerpt: "XRD analysis, metallography, and mechanical testing<br/><img src='/images/projects/materials-science.jpg'>"
+collection: projects
 date: 2020-09-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Drones to the Rescue: AI Framework for Disaster Relief"
-excerpt: "Q-learning based UAV deployment for emergency network coverage<br/><img src='/images/portfolio/drone-rescue.jpg'>"
-collection: portfolio
+excerpt: "Q-learning based UAV deployment for emergency network coverage<br/><img src='/images/projects/drone-rescue.jpg'>"
+collection: projects
 date: 2025-01-01
 ---
 

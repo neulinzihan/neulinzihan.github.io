@@ -1,7 +1,7 @@
 ---
 title: "Scissor Forklift Design"
-excerpt: "Power screw driven scissor lift for indoor use<br/><img src='/images/portfolio/scissor-forklift.jpg'>"
-collection: portfolio
+excerpt: "Power screw driven scissor lift for indoor use<br/><img src='/images/projects/scissor-forklift.jpg'>"
+collection: projects
 date: 2022-09-01
 ---
 

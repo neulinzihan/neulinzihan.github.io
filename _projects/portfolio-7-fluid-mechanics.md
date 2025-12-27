@@ -1,7 +1,7 @@
 ---
 title: "Fluid Mechanics Computational Project"
-excerpt: "Tethered sphere system analysis for river velocity measurement<br/><img src='/images/portfolio/fluid-mechanics.jpg'>"
-collection: portfolio
+excerpt: "Tethered sphere system analysis for river velocity measurement<br/><img src='/images/projects/fluid-mechanics.jpg'>"
+collection: projects
 date: 2021-10-01
 ---
 

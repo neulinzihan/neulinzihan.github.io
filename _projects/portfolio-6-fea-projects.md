@@ -1,8 +1,7 @@
-
 ---
 title: "Finite Element Analysis Projects"
-excerpt: "Biomechanical, composite material, and engine block stress analysis<br/><img src='/images/portfolio/fea-projects.jpg'>"
-collection: portfolio
+excerpt: "Biomechanical, composite material, and engine block stress analysis<br/><img src='/images/projects/fea-projects.jpg'>"
+collection: projects
 date: 2022-01-01
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Wearable Vision Assistance Smart Glasses"
-excerpt: "ToF camera obstacle detection with vibrational feedback for visually impaired<br/><img src='/images/portfolio/smart-glasses.jpg'>"
-collection: portfolio
+excerpt: "ToF camera obstacle detection with vibrational feedback for visually impaired<br/><img src='/images/projects/smart-glasses.jpg'>"
+collection: projects
 date: 2024-09-01
 ---
 

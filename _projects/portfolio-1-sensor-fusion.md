@@ -1,7 +1,7 @@
 ---
 title: "Robotics Sensor Fusion and Navigation System"
-excerpt: "ROS2 driver development & GPS/IMU data integration for robot navigation<br/><img src='/images/portfolio/sensor-fusion.jpg'>"
-collection: portfolio
+excerpt: "ROS2 driver development & GPS/IMU data integration for robot navigation<br/><img src='/images/projects/sensor-fusion.jpg'>"
+collection: projects
 date: 2025-09-01
 ---
 

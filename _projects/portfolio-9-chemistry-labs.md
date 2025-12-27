@@ -1,7 +1,7 @@
 ---
 title: "General Chemistry Laboratory Series"
-excerpt: "Hands-on chemistry experiments and analysis<br/><img src='/images/portfolio/chemistry-lab.jpg'>"
-collection: portfolio
+excerpt: "Hands-on chemistry experiments and analysis<br/><img src='/images/projects/chemistry-lab.jpg'>"
+collection: projects
 date: 2019-06-01
 ---
 
