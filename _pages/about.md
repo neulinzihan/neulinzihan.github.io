@@ -5,7 +5,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,6 @@ redirect_from:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ===== Reset ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
@@ -22,7 +20,6 @@ redirect_from:
       line-height: 1.6;
     }
     
-    /* ===== 滚动进度条 ===== */
     .scroll-indicator {
       position: fixed;
       top: 0;
@@ -33,7 +30,7 @@ redirect_from:
       z-index: 1000;
     }
     
-    /* ===== 导航栏 ===== */
+    /* ===== 顶部导航栏 (简化版) ===== */
     .navbar {
       position: fixed;
       top: 0;
@@ -68,11 +65,58 @@ redirect_from:
     
     .nav-links a:hover { color: #3498db; }
     
-    /* ===== Hero ===== */
+    /* ===== 侧边导航栏 (新增) ===== */
+    .side-nav {
+      position: fixed;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #666;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      opacity: 0.8;
+    }
+    
+    .side-nav a:hover {
+      background: linear-gradient(135deg, #3498db, #9b59b6);
+      color: white;
+      transform: translateX(-5px);
+      opacity: 1;
+    }
+    
+    .side-nav a.active {
+      background: linear-gradient(135deg, #3498db, #9b59b6);
+      color: white;
+      opacity: 1;
+    }
+    
+    .side-nav a i {
+      margin-right: 8px;
+      font-size: 0.9rem;
+    }
+    
+    /* Hero */
     .hero {
       height: 100vh;
       background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,152,219,0.8)),
-                  url('{{ site.baseurl }}/images/hero-bg.jpg') center/cover fixed;
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920') center/cover fixed;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -146,7 +190,7 @@ redirect_from:
       50% { transform: translateX(-50%) translateY(10px); }
     }
     
-    /* ===== Sections ===== */
+    /* Sections */
     .section {
       padding: 100px 20px;
       max-width: 1100px;
@@ -173,7 +217,7 @@ redirect_from:
       border-radius: 2px;
     }
     
-    /* ===== 滚动动画 ===== */
+    /* 滚动动画 */
     .scroll-reveal, .scroll-zoom, .scroll-left, .scroll-right {
       opacity: 0;
       transition: all 0.8s ease;
@@ -189,7 +233,7 @@ redirect_from:
       transform: translateY(0) translateX(0) scale(1);
     }
     
-    /* ===== About ===== */
+    /* About */
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -232,7 +276,7 @@ redirect_from:
     
     .status-badge i { margin-right: 8px; }
     
-    /* ===== News ===== */
+    /* News */
     .news-section { background: #f8f9fa; }
     
     .news-list { max-width: 800px; margin: 0 auto; }
@@ -268,7 +312,7 @@ redirect_from:
     .news-content h4 { color: #2c3e50; margin-bottom: 5px; }
     .news-content p { color: #666; font-size: 0.95rem; }
     
-    /* ===== Interests ===== */
+    /* Interests */
     .interests-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -300,7 +344,7 @@ redirect_from:
     
     .interest-card h3 { color: #2c3e50; font-size: 1.1rem; }
     
-    /* ===== Parallax ===== */
+    /* Parallax */
     .parallax-divider {
       height: 50vh;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -315,7 +359,7 @@ redirect_from:
     .parallax-divider h2 { font-size: 3rem; margin-bottom: 1rem; }
     .parallax-divider p { font-size: 1.2rem; opacity: 0.9; }
     
-    /* ===== Projects ===== */
+    /* Projects */
     .project-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -359,7 +403,7 @@ redirect_from:
       margin-bottom: 10px;
     }
     
-    /* ===== Timeline ===== */
+    /* Timeline */
     .timeline {
       position: relative;
       max-width: 900px;
@@ -426,7 +470,7 @@ redirect_from:
     .timeline-content .company { color: #9b59b6; font-weight: 500; margin-bottom: 10px; }
     .timeline-content p { color: #666; font-size: 0.95rem; }
     
-    /* ===== Education ===== */
+    /* Education */
     .education-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -462,7 +506,7 @@ redirect_from:
     .education-card .school { color: #3498db; font-weight: 600; margin-bottom: 5px; }
     .education-card .year { color: #999; font-size: 0.9rem; }
     
-    /* ===== Skills ===== */
+    /* Skills */
     .skills-section { background: #f8f9fa; }
     
     .skills-grid {
@@ -514,7 +558,7 @@ redirect_from:
     
     .skill-bar.visible .progress { width: var(--progress); }
     
-    /* ===== CTA ===== */
+    /* CTA */
     .cta-section {
       background: linear-gradient(135deg, #2c3e50, #3498db);
       color: white;
@@ -539,7 +583,7 @@ redirect_from:
     .cta-buttons .btn-outline { border: 2px solid white; color: white; }
     .cta-buttons a:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
     
-    /* ===== Footer ===== */
+    /* Footer */
     .site-footer {
       background: #1a252f;
       color: white;
@@ -591,7 +635,7 @@ redirect_from:
       color: #666;
     }
     
-    /* ===== 响应式 ===== */
+    /* 响应式 */
     @media (max-width: 992px) {
       .about-content, .project-card, .education-grid, .skills-grid, .footer-content { grid-template-columns: 1fr; }
       .interests-grid { grid-template-columns: repeat(2, 1fr); }
@@ -601,6 +645,9 @@ redirect_from:
       .timeline-item::before { left: 20px; }
       .timeline-content, .timeline-item:nth-child(even) .timeline-content { margin-left: 0; margin-right: 0; width: 100%; }
       .footer-content { text-align: center; }
+      
+      /* 隐藏侧边导航 */
+      .side-nav { display: none; }
     }
     
     @media (max-width: 768px) {
@@ -616,15 +663,24 @@ redirect_from:
 
   <div class="scroll-indicator" id="scrollIndicator"></div>
 
+  <!-- 顶部导航栏：只保留跳转到其他页面的链接 -->
   <nav class="navbar" id="navbar">
     <a href="/" class="nav-logo">Zihan Lin</a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="{{ site.baseurl }}/cv/">CV</a>
-      <a href="{{ site.baseurl }}/publications/">Publications</a>
+      <a href="/cv/">CV</a>
+      <a href="/publications/">Publications</a>
     </div>
+  </nav>
+
+  <!-- 侧边导航栏：本页内锚点链接 -->
+  <nav class="side-nav" id="sideNav">
+    <a href="#about" data-section="about"><i class="fas fa-user"></i>About</a>
+    <a href="#news" data-section="news"><i class="fas fa-newspaper"></i>News</a>
+    <a href="#interests" data-section="interests"><i class="fas fa-lightbulb"></i>Interests</a>
+    <a href="#projects" data-section="projects"><i class="fas fa-folder-open"></i>Projects</a>
+    <a href="#experience" data-section="experience"><i class="fas fa-briefcase"></i>Experience</a>
+    <a href="#education" data-section="education"><i class="fas fa-graduation-cap"></i>Education</a>
+    <a href="#skills" data-section="skills"><i class="fas fa-cogs"></i>Skills</a>
   </nav>
 
   <section class="hero">
@@ -633,7 +689,7 @@ redirect_from:
       <p class="subtitle">Robotics Engineer | AI & Mechatronics</p>
       <p class="tagline">M.S. in Robotics from Northeastern University with research interests in reinforcement learning, mechatronic systems, and healthcare technology.</p>
       <div class="hero-buttons">
-        <a href="{{ site.baseurl }}/cv/" class="btn-primary">View CV</a>
+        <a href="/cv/" class="btn-primary">View CV</a>
         <a href="#projects" class="btn-secondary">See Projects</a>
       </div>
     </div>
@@ -644,7 +700,7 @@ redirect_from:
     <h2 class="section-title scroll-reveal">About Me</h2>
     <div class="about-content">
       <div class="about-image scroll-left">
-        <img src="{{ site.baseurl }}/images/zihan_linkedin_avatar.jpeg" alt="Zihan Lin">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Zihan Lin">
       </div>
       <div class="about-text scroll-right">
         <p>I am a <span class="highlight">Robotics M.S. graduate</span> from Northeastern University with a B.S. in Mechanical Engineering.</p>
@@ -658,7 +714,7 @@ redirect_from:
     </div>
   </section>
 
-  <section class="section news-section">
+  <section class="section news-section" id="news">
     <h2 class="section-title scroll-reveal">Latest News</h2>
     <div class="news-list">
       <div class="news-item scroll-reveal">
@@ -685,7 +741,7 @@ redirect_from:
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="interests">
     <h2 class="section-title scroll-reveal">Research Interests</h2>
     <div class="interests-grid">
       <div class="interest-card scroll-zoom"><i class="fas fa-robot"></i><h3>Robotics & Mechatronics</h3></div>
@@ -702,7 +758,7 @@ redirect_from:
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="projects-content">
     <div class="project-card scroll-reveal">
       <div class="project-image"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone"></div>
       <div class="project-info">
@@ -764,7 +820,7 @@ redirect_from:
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="education">
     <h2 class="section-title scroll-reveal">Education</h2>
     <div class="education-grid">
       <div class="education-card scroll-left">
@@ -780,7 +836,7 @@ redirect_from:
     </div>
   </section>
 
-  <section class="section skills-section">
+  <section class="section skills-section" id="skills">
     <h2 class="section-title scroll-reveal">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-category scroll-reveal">
@@ -808,8 +864,8 @@ redirect_from:
     <h2 class="scroll-reveal">Let's Connect!</h2>
     <p class="scroll-reveal">Interested in robotics, AI, or collaboration?</p>
     <div class="cta-buttons scroll-reveal">
-      <a href="{{ site.baseurl }}/cv/" class="btn-white">View Full CV</a>
-      <a href="{{ site.baseurl }}/publications/" class="btn-outline">Publications</a>
+      <a href="/cv/" class="btn-white">View Full CV</a>
+      <a href="/publications/" class="btn-outline">Publications</a>
     </div>
   </section>
 
@@ -829,8 +885,8 @@ redirect_from:
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="{{ site.baseurl }}/cv/">CV</a></li>
-          <li><a href="{{ site.baseurl }}/publications/">Publications</a></li>
+          <li><a href="/cv/">CV</a></li>
+          <li><a href="/publications/">Publications</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -843,12 +899,14 @@ redirect_from:
   </footer>
 
   <script>
+    // 滚动进度条
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       document.getElementById('scrollIndicator').style.width = (scrollTop / docHeight) * 100 + '%';
     });
 
+    // 隐藏/显示顶部导航栏
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
       const navbar = document.getElementById('navbar');
@@ -857,17 +915,41 @@ redirect_from:
       lastScroll = window.scrollY;
     });
 
+    // 滚动动画观察器
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.scroll-reveal, .scroll-zoom, .scroll-left, .scroll-right, .skill-bar').forEach(el => observer.observe(el));
 
+    // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // 侧边导航高亮当前section
+    const sections = document.querySelectorAll('section[id]');
+    const sideNavLinks = document.querySelectorAll('.side-nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      sideNavLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === current) {
+          link.classList.add('active');
+        }
       });
     });
   </script>

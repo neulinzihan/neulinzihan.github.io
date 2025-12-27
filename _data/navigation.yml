@@ -37,6 +37,5 @@ main:
   - title: "Publications"
     url: /publications/
 
-
   - title: "Projects"      # 添加这个
     url: /projects/
