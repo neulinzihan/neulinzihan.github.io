@@ -2,10 +2,92 @@
 layout: archive
 title: "Curriculum Vitae"
 permalink: /cv/
-author_profile: true
+author_profile: false
+classes: wide custom-bg
 redirect_from:
   - /resume
 ---
+
+<style>
+/* 页面背景渐变 */
+.page {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  min-height: 100vh;
+}
+
+/* 内容区域白色卡片 */
+.page__content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* 标题样式 */
+.page__title {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.page__title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 2px;
+}
+
+/* 二级标题 */
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+
+/* 链接样式 */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #9b59b6;
+}
+
+/* 强调文字 */
+strong {
+  color: #2c3e50;
+}
+
+/* 分隔线 */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3498db, transparent);
+  margin: 40px 0;
+}
+
+/* 列表样式 */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+</style>
 
 {% include base_path %}
 
@@ -103,7 +185,7 @@ Duo Wen, **Zihan Lin**, Yustianto Tjiptowidjojo, Kai-tak Wan
 
 ## Contact
 
-- **Email**: [lin.zihan@northeastern.edu]
-- **LinkedIn**: [https://www.linkedin.com/in/zihalin0577/]
-- **GitHub**: [https://github.com/neulinzihan]
-- **Phone**: [8572945016]
+- **Email**: lin.zihan@northeastern.edu
+- **LinkedIn**: [linkedin.com/in/zihalin0577](https://www.linkedin.com/in/zihalin0577/)
+- **GitHub**: [github.com/neulinzihan](https://github.com/neulinzihan)
+- **Phone**: 857-294-5016
