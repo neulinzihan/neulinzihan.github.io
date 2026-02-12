@@ -29,7 +29,7 @@ main:
 
 
   - title: "About"
-    url: /old/
+    url: /old/     # 本来是 /about/，但为了避免和新站冲突，暂时改成 /old/   ————ZihanLinFeb 12, 2026 
 
   - title: "CV"
     url: /cv/
