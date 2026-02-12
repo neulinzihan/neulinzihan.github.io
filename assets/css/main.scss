@@ -42,23 +42,26 @@
 
 
 
+
+
+
+
+
 // 让 greedy-nav 支持右推
 .greedy-nav {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
 }
-
 .greedy-nav .visible-links {
-  flex: 1;
+  flex: 1 !important;
 }
-
 .portal-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 5px 14px;
   margin-left: auto;
-  margin-right: 0;
   border-radius: 20px;
   background: rgba(34, 197, 94, 0.08);
   border: 1px solid rgba(34, 197, 94, 0.25);
