@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /old/
 ---
 
 I am a Robotics M.S. graduate from Northeastern University with a B.S. in Mechanical Engineering. My research interests span **robotics**, **reinforcement learning**, **mechatronic systems**, and **healthcare technology**.
