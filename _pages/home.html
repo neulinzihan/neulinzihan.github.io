@@ -1,10 +1,3 @@
----
-permalink: /
-layout: null
-redirect_from: 
-  - /about/
-  - /about.html
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,86 +23,162 @@ redirect_from:
       z-index: 1000;
     }
     
-    /* ===== 顶部导航栏 (简化版) ===== */
-    .navbar {
+    /* ===== 左侧固定导航栏 ===== */
+    .side-nav {
       position: fixed;
+      left: 0;
       top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      padding: 15px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      width: 220px;
+      height: 100vh;
+      background: linear-gradient(180deg, #1a252f 0%, #2c3e50 100%);
       z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 0;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+      overflow-y: auto;
     }
     
-    .navbar.hidden { transform: translateY(-100%); }
+    .side-nav-logo {
+      padding: 0 25px 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 20px;
+    }
     
-    .nav-logo {
-      font-size: 1.5rem;
+    .side-nav-logo a {
+      font-size: 1.4rem;
       font-weight: 700;
-      color: #2c3e50;
+      color: white;
       text-decoration: none;
     }
     
-    .nav-links a {
-      margin-left: 30px;
+    .side-nav-logo span {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      margin-top: 5px;
+    }
+    
+    .nav-section-title {
+      padding: 15px 25px 10px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.4);
+    }
+    
+    .side-nav-links {
+      flex: 1;
+    }
+    
+    .side-nav-links a {
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      color: #555;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
       font-weight: 500;
+      padding: 12px 25px;
+      transition: all 0.3s;
+      border-left: 3px solid transparent;
+      cursor: grab;
+    }
+    
+    .side-nav-links a:hover {
+      background: rgba(255,255,255,0.05);
+      color: white;
+      border-left-color: #3498db;
+    }
+    
+    .side-nav-links a.active {
+      background: rgba(52, 152, 219, 0.2);
+      color: white;
+      border-left-color: #3498db;
+    }
+    
+    .side-nav-links a.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+    
+    .side-nav-links a.drag-over {
+      border-top: 2px solid #3498db;
+    }
+    
+    .side-nav-links a i {
+      margin-right: 12px;
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+    }
+    
+    /* 进度指示器 */
+    .nav-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 0%;
+      background: linear-gradient(180deg, #3498db, #9b59b6);
+      transition: height 0.3s;
+    }
+    
+    /* 外部链接区域 */
+    .side-nav-external {
+      padding: 20px 25px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: auto;
+    }
+    
+    .side-nav-external a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      padding: 10px 0;
       transition: color 0.3s;
     }
     
-    .nav-links a:hover { color: #3498db; }
-    
-    /* ===== 侧边导航栏 (新增) ===== */
-    .side-nav {
-      position: fixed;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 998;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 8px;
+    .side-nav-external a:hover {
+      color: #3498db;
     }
     
-    .side-nav a {
+    .side-nav-external a i {
+      margin-right: 10px;
+      width: 16px;
+    }
+    
+    /* 社交链接 */
+    .side-nav-social {
+      padding: 15px 25px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .side-nav-social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
-      color: #666;
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       transition: all 0.3s;
-      opacity: 0.8;
     }
     
-    .side-nav a:hover {
-      background: linear-gradient(135deg, #3498db, #9b59b6);
+    .side-nav-social a:hover {
+      background: #3498db;
       color: white;
-      transform: translateX(-5px);
-      opacity: 1;
+      transform: translateY(-2px);
     }
     
-    .side-nav a.active {
-      background: linear-gradient(135deg, #3498db, #9b59b6);
-      color: white;
-      opacity: 1;
-    }
-    
-    .side-nav a i {
-      margin-right: 8px;
-      font-size: 0.9rem;
+    /* ===== 主内容区域偏移 ===== */
+    .main-content {
+      margin-left: 220px;
     }
     
     /* Hero */
@@ -126,7 +195,7 @@ redirect_from:
     }
     
     .hero-content h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
       animation: fadeInUp 1s ease;
     }
@@ -139,16 +208,16 @@ redirect_from:
     }
     
     .hero-content .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       opacity: 0.9;
       margin-bottom: 1.5rem;
       animation: fadeInUp 1s ease 0.2s both;
     }
     
     .hero-content .tagline {
-      font-size: 1.1rem;
+      font-size: 1rem;
       opacity: 0.8;
-      max-width: 600px;
+      max-width: 550px;
       margin: 0 auto 2rem;
       animation: fadeInUp 1s ease 0.4s both;
     }
@@ -192,13 +261,13 @@ redirect_from:
     
     /* Sections */
     .section {
-      padding: 100px 20px;
-      max-width: 1100px;
+      padding: 80px 40px;
+      max-width: 1000px;
       margin: 0 auto;
     }
     
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: #2c3e50;
       margin-bottom: 50px;
       text-align: center;
@@ -236,8 +305,8 @@ redirect_from:
     /* About */
     .about-content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 50px;
       align-items: center;
     }
     
@@ -252,16 +321,16 @@ redirect_from:
     .about-image::before {
       content: '';
       position: absolute;
-      top: -20px;
-      left: -20px;
-      right: 20px;
-      bottom: 20px;
+      top: -15px;
+      left: -15px;
+      right: 15px;
+      bottom: 15px;
       border: 3px solid #3498db;
       border-radius: 20px;
       z-index: -1;
     }
     
-    .about-text p { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; }
+    .about-text p { font-size: 1.05rem; color: #555; margin-bottom: 1.2rem; }
     .about-text .highlight { color: #3498db; font-weight: 600; }
     
     .status-badge {
@@ -272,6 +341,7 @@ redirect_from:
       border-radius: 30px;
       font-weight: 600;
       margin-top: 1rem;
+      font-size: 0.9rem;
     }
     
     .status-badge i { margin-right: 8px; }
@@ -279,15 +349,15 @@ redirect_from:
     /* News */
     .news-section { background: #f8f9fa; }
     
-    .news-list { max-width: 800px; margin: 0 auto; }
+    .news-list { max-width: 700px; margin: 0 auto; }
     
     .news-item {
       display: flex;
       align-items: flex-start;
-      padding: 25px;
+      padding: 20px;
       background: white;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -300,53 +370,53 @@ redirect_from:
     .news-date {
       background: linear-gradient(135deg, #3498db, #9b59b6);
       color: white;
-      padding: 10px 15px;
-      border-radius: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
       font-weight: 700;
-      font-size: 0.9rem;
-      min-width: 100px;
+      font-size: 0.8rem;
+      min-width: 90px;
       text-align: center;
-      margin-right: 20px;
+      margin-right: 15px;
     }
     
-    .news-content h4 { color: #2c3e50; margin-bottom: 5px; }
-    .news-content p { color: #666; font-size: 0.95rem; }
+    .news-content h4 { color: #2c3e50; margin-bottom: 5px; font-size: 1rem; }
+    .news-content p { color: #666; font-size: 0.9rem; }
     
     /* Interests */
     .interests-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
     
     .interest-card {
       background: white;
-      padding: 40px 25px;
-      border-radius: 20px;
+      padding: 35px 20px;
+      border-radius: 15px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: all 0.3s;
     }
     
     .interest-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     }
     
     .interest-card i {
-      font-size: 3rem;
+      font-size: 2.5rem;
       background: linear-gradient(135deg, #3498db, #9b59b6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     
-    .interest-card h3 { color: #2c3e50; font-size: 1.1rem; }
+    .interest-card h3 { color: #2c3e50; font-size: 1rem; }
     
     /* Parallax */
     .parallax-divider {
-      height: 50vh;
+      height: 40vh;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                   url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920') center/cover fixed;
       display: flex;
@@ -356,57 +426,57 @@ redirect_from:
       text-align: center;
     }
     
-    .parallax-divider h2 { font-size: 3rem; margin-bottom: 1rem; }
-    .parallax-divider p { font-size: 1.2rem; opacity: 0.9; }
+    .parallax-divider h2 { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .parallax-divider p { font-size: 1.1rem; opacity: 0.9; }
     
     /* Projects */
     .project-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
-      margin-bottom: 80px;
-      padding: 40px;
+      margin-bottom: 60px;
+      padding: 30px;
       background: white;
-      border-radius: 20px;
+      border-radius: 15px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     }
     
     .project-card:nth-child(even) { direction: rtl; }
     .project-card:nth-child(even) > * { direction: ltr; }
     
-    .project-image { border-radius: 15px; overflow: hidden; }
+    .project-image { border-radius: 12px; overflow: hidden; }
     
     .project-image img {
       width: 100%;
-      height: 280px;
+      height: 220px;
       object-fit: cover;
       transition: transform 0.5s;
     }
     
     .project-card:hover .project-image img { transform: scale(1.05); }
     
-    .project-info .project-date { color: #3498db; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
-    .project-info h3 { font-size: 1.5rem; color: #2c3e50; margin-bottom: 15px; }
-    .project-info p { color: #666; line-height: 1.8; }
+    .project-info .project-date { color: #3498db; font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
+    .project-info h3 { font-size: 1.3rem; color: #2c3e50; margin-bottom: 12px; }
+    .project-info p { color: #666; line-height: 1.7; font-size: 0.95rem; }
     
-    .project-tags { margin-top: 20px; }
+    .project-tags { margin-top: 15px; }
     
     .project-tags span {
       display: inline-block;
       background: #e8f4fc;
       color: #3498db;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-right: 10px;
-      margin-bottom: 10px;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
     }
     
     /* Timeline */
     .timeline {
       position: relative;
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
     }
     
@@ -415,7 +485,7 @@ redirect_from:
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 4px;
+      width: 3px;
       height: 100%;
       background: linear-gradient(to bottom, #3498db, #9b59b6);
       border-radius: 2px;
@@ -426,7 +496,7 @@ redirect_from:
       justify-content: flex-end;
       padding-right: 50%;
       position: relative;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .timeline-item:nth-child(even) {
@@ -440,47 +510,47 @@ redirect_from:
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: white;
-      border: 4px solid #3498db;
+      border: 3px solid #3498db;
       border-radius: 50%;
       z-index: 1;
     }
     
     .timeline-content {
       background: white;
-      padding: 30px;
-      border-radius: 15px;
+      padding: 25px;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       width: 90%;
-      margin-right: 30px;
+      margin-right: 25px;
       transition: all 0.3s;
     }
     
-    .timeline-item:nth-child(even) .timeline-content { margin-right: 0; margin-left: 30px; }
+    .timeline-item:nth-child(even) .timeline-content { margin-right: 0; margin-left: 25px; }
     
     .timeline-content:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     }
     
-    .timeline-content .date { color: #3498db; font-weight: 700; margin-bottom: 10px; }
-    .timeline-content h3 { color: #2c3e50; margin-bottom: 5px; }
-    .timeline-content .company { color: #9b59b6; font-weight: 500; margin-bottom: 10px; }
-    .timeline-content p { color: #666; font-size: 0.95rem; }
+    .timeline-content .date { color: #3498db; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; }
+    .timeline-content h3 { color: #2c3e50; margin-bottom: 5px; font-size: 1.1rem; }
+    .timeline-content .company { color: #9b59b6; font-weight: 500; margin-bottom: 8px; font-size: 0.95rem; }
+    .timeline-content p { color: #666; font-size: 0.9rem; }
     
     /* Education */
     .education-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 30px;
     }
     
     .education-card {
       background: white;
-      padding: 40px;
-      border-radius: 20px;
+      padding: 35px;
+      border-radius: 15px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.08);
       position: relative;
       overflow: hidden;
@@ -488,7 +558,7 @@ redirect_from:
     }
     
     .education-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     }
     
@@ -498,13 +568,13 @@ redirect_from:
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background: linear-gradient(90deg, #3498db, #9b59b6);
     }
     
-    .education-card .degree { font-size: 1.3rem; color: #2c3e50; font-weight: 700; margin-bottom: 10px; }
+    .education-card .degree { font-size: 1.2rem; color: #2c3e50; font-weight: 700; margin-bottom: 8px; }
     .education-card .school { color: #3498db; font-weight: 600; margin-bottom: 5px; }
-    .education-card .year { color: #999; font-size: 0.9rem; }
+    .education-card .year { color: #999; font-size: 0.85rem; }
     
     /* Skills */
     .skills-section { background: #f8f9fa; }
@@ -512,46 +582,47 @@ redirect_from:
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 25px;
     }
     
     .skill-category {
       background: white;
-      padding: 30px;
-      border-radius: 15px;
+      padding: 25px;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
     
     .skill-category h3 {
       color: #2c3e50;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
+      font-size: 1rem;
     }
     
     .skill-category h3 i { margin-right: 10px; color: #3498db; }
     
-    .skill-bar { margin-bottom: 15px; }
+    .skill-bar { margin-bottom: 12px; }
     
     .skill-bar .skill-name {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
       color: #555;
     }
     
     .skill-bar .bar {
-      height: 8px;
+      height: 6px;
       background: #e0e0e0;
-      border-radius: 4px;
+      border-radius: 3px;
       overflow: hidden;
     }
     
     .skill-bar .progress {
       height: 100%;
       background: linear-gradient(90deg, #3498db, #9b59b6);
-      border-radius: 4px;
+      border-radius: 3px;
       width: 0;
       transition: width 1.5s ease;
     }
@@ -563,15 +634,15 @@ redirect_from:
       background: linear-gradient(135deg, #2c3e50, #3498db);
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      padding: 80px 20px;
     }
     
-    .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .cta-section p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
+    .cta-section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .cta-section p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
     
     .cta-buttons a {
       display: inline-block;
-      padding: 15px 40px;
+      padding: 14px 35px;
       margin: 0 10px;
       border-radius: 30px;
       text-decoration: none;
@@ -587,75 +658,49 @@ redirect_from:
     .site-footer {
       background: #1a252f;
       color: white;
-      padding: 60px 20px 30px;
+      padding: 50px 20px 25px;
     }
     
     .footer-content {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 50px;
+      text-align: center;
     }
     
-    .footer-about h3 { font-size: 1.5rem; margin-bottom: 15px; }
-    .footer-about p { color: #aaa; line-height: 1.8; }
-    
-    .footer-links h4, .footer-contact h4 { margin-bottom: 20px; font-size: 1.1rem; }
-    .footer-links ul { list-style: none; }
-    .footer-links a { color: #aaa; text-decoration: none; display: block; padding: 8px 0; transition: color 0.3s; }
-    .footer-links a:hover { color: #3498db; }
-    
-    .footer-contact p { color: #aaa; margin-bottom: 10px; }
-    .footer-contact i { margin-right: 10px; color: #3498db; }
-    
-    .social-links { margin-top: 20px; }
-    
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #2c3e50;
-      border-radius: 50%;
-      margin-right: 10px;
-      color: white;
-      transition: all 0.3s;
-    }
-    
-    .social-links a:hover { background: #3498db; transform: translateY(-3px); }
+    .footer-content h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .footer-content p { color: #aaa; margin-bottom: 20px; }
     
     .footer-bottom {
-      max-width: 1100px;
-      margin: 40px auto 0;
-      padding-top: 30px;
+      margin-top: 30px;
+      padding-top: 20px;
       border-top: 1px solid #2c3e50;
-      text-align: center;
       color: #666;
+      font-size: 0.85rem;
     }
     
     /* 响应式 */
+    @media (max-width: 1100px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+    
     @media (max-width: 992px) {
-      .about-content, .project-card, .education-grid, .skills-grid, .footer-content { grid-template-columns: 1fr; }
+      .side-nav { display: none; }
+      .main-content { margin-left: 0; }
+      
+      .about-content, .project-card, .education-grid { grid-template-columns: 1fr; }
       .interests-grid { grid-template-columns: repeat(2, 1fr); }
       
       .timeline::before { left: 20px; }
-      .timeline-item, .timeline-item:nth-child(even) { padding-left: 60px; padding-right: 0; justify-content: flex-start; }
+      .timeline-item, .timeline-item:nth-child(even) { padding-left: 50px; padding-right: 0; justify-content: flex-start; }
       .timeline-item::before { left: 20px; }
       .timeline-content, .timeline-item:nth-child(even) .timeline-content { margin-left: 0; margin-right: 0; width: 100%; }
-      .footer-content { text-align: center; }
-      
-      /* 隐藏侧边导航 */
-      .side-nav { display: none; }
     }
     
     @media (max-width: 768px) {
-      .navbar { padding: 15px 20px; }
-      .nav-links { display: none; }
       .hero-content h1 { font-size: 2.5rem; }
       .interests-grid { grid-template-columns: 1fr; }
       .project-card:nth-child(even) { direction: ltr; }
+      .section { padding: 60px 20px; }
     }
   </style>
 </head>
@@ -663,256 +708,245 @@ redirect_from:
 
   <div class="scroll-indicator" id="scrollIndicator"></div>
 
-  <!-- 顶部导航栏：只保留跳转到其他页面的链接 -->
-  <nav class="navbar" id="navbar">
-    <a href="/" class="nav-logo">Zihan Lin</a>
-    <div class="nav-links">
-      <a href="/cv/">CV</a>
-      <a href="/publications/">Publications</a>
-    </div>
-  </nav>
-
-  <!-- 侧边导航栏：本页内锚点链接 -->
+  <!-- 左侧固定导航栏 -->
   <nav class="side-nav" id="sideNav">
-    <a href="#about" data-section="about"><i class="fas fa-user"></i>About</a>
-    <a href="#news" data-section="news"><i class="fas fa-newspaper"></i>News</a>
-    <a href="#interests" data-section="interests"><i class="fas fa-lightbulb"></i>Interests</a>
-    <a href="#projects" data-section="projects"><i class="fas fa-folder-open"></i>Projects</a>
-    <a href="#experience" data-section="experience"><i class="fas fa-briefcase"></i>Experience</a>
-    <a href="#education" data-section="education"><i class="fas fa-graduation-cap"></i>Education</a>
-    <a href="#skills" data-section="skills"><i class="fas fa-cogs"></i>Skills</a>
+    <div class="nav-progress" id="navProgress"></div>
+    
+    <div class="side-nav-logo">
+      <a href="/">Zihan Lin</a>
+      <span>Robotics Engineer</span>
+    </div>
+    
+    <div class="nav-section-title">Navigation</div>
+    <div class="side-nav-links" id="navLinks">
+      <a href="#about" data-section="about" draggable="true"><i class="fas fa-user"></i>About</a>
+      <a href="#news" data-section="news" draggable="true"><i class="fas fa-newspaper"></i>News</a>
+      <a href="#interests" data-section="interests" draggable="true"><i class="fas fa-lightbulb"></i>Interests</a>
+      <a href="#projects" data-section="projects" draggable="true"><i class="fas fa-folder-open"></i>Projects</a>
+      <a href="#experience" data-section="experience" draggable="true"><i class="fas fa-briefcase"></i>Experience</a>
+      <a href="#education" data-section="education" draggable="true"><i class="fas fa-graduation-cap"></i>Education</a>
+      <a href="#skills" data-section="skills" draggable="true"><i class="fas fa-cogs"></i>Skills</a>
+    </div>
+    
+    <div class="nav-section-title">Pages</div>
+    <div class="side-nav-external">
+      <a href="/cv/"><i class="fas fa-file-alt"></i>CV / Resume</a>
+      <a href="/publications/"><i class="fas fa-book"></i>Publications</a>
+    </div>
+    
+    <div class="side-nav-social">
+      <a href="https://github.com/neulinzihan"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/zihanlin"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://scholar.google.com/citations?user=0Yic6NcAAAAJ"><i class="fas fa-graduation-cap"></i></a>
+    </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm <span>Zihan!</span></h1>
-      <p class="subtitle">Robotics Engineer | AI & Mechatronics</p>
-      <p class="tagline">M.S. in Robotics from Northeastern University with research interests in reinforcement learning, mechatronic systems, and healthcare technology.</p>
-      <div class="hero-buttons">
-        <a href="/cv/" class="btn-primary">View CV</a>
-        <a href="#projects" class="btn-secondary">See Projects</a>
-      </div>
-    </div>
-    <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
-  </section>
-
-  <section class="section" id="about">
-    <h2 class="section-title scroll-reveal">About Me</h2>
-    <div class="about-content">
-      <div class="about-image scroll-left">
-        <img src="{{ site.baseurl }}/images/zihan_linkedin_avatar.jpeg" alt="Zihan Lin">
-      </div>
-      <div class="about-text scroll-right">
-        <p>I am a <span class="highlight">Robotics M.S. graduate</span> from Northeastern University with a B.S. in Mechanical Engineering.</p>
-        <p>My research interests span <span class="highlight">robotics</span>, <span class="highlight">reinforcement learning</span>, <span class="highlight">mechatronic systems</span>, and <span class="highlight">healthcare technology</span>.</p>
-        <p>I combine hands-on engineering experience from SharkNinja and HiRain Technologies with academic research in soft material mechanics and AI-driven robotics.</p>
-        <div class="status-badge">
-          <i class="fas fa-briefcase"></i>
-          Seeking full-time opportunities starting Jan 2026
+  <!-- 主内容区域 -->
+  <div class="main-content">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Hello, I'm <span>Zihan!</span></h1>
+        <p class="subtitle">Robotics Engineer | AI & Mechatronics</p>
+        <p class="tagline">M.S. in Robotics from Northeastern University with research interests in reinforcement learning, mechatronic systems, and healthcare technology.</p>
+        <div class="hero-buttons">
+          <a href="/cv/" class="btn-primary">View CV</a>
+          <a href="#projects" class="btn-secondary">See Projects</a>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+    </section>
 
-  <section class="section news-section" id="news">
-    <h2 class="section-title scroll-reveal">Latest News</h2>
-    <div class="news-list">
-      <div class="news-item scroll-reveal">
-        <div class="news-date">Aug 2025</div>
-        <div class="news-content">
-          <h4>🎓 Graduation</h4>
-          <p>Completed M.S. in Robotics at Northeastern University</p>
+    <section class="section" id="about">
+      <h2 class="section-title scroll-reveal">About Me</h2>
+      <div class="about-content">
+        <div class="about-image scroll-left">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Zihan Lin">
+        </div>
+        <div class="about-text scroll-right">
+          <p>I am a <span class="highlight">Robotics M.S. graduate</span> from Northeastern University with a B.S. in Mechanical Engineering.</p>
+          <p>My research interests span <span class="highlight">robotics</span>, <span class="highlight">reinforcement learning</span>, <span class="highlight">mechatronic systems</span>, and <span class="highlight">healthcare technology</span>.</p>
+          <p>I combine hands-on engineering experience from SharkNinja and HiRain Technologies with academic research in soft material mechanics and AI-driven robotics.</p>
+          <div class="status-badge">
+            <i class="fas fa-briefcase"></i>
+            Seeking full-time opportunities starting Jan 2026
+          </div>
         </div>
       </div>
-      <div class="news-item scroll-reveal">
-        <div class="news-date">May 2025</div>
-        <div class="news-content">
-          <h4>🤖 AI/RL Project</h4>
-          <p>Finished drone coverage optimization project using Q-learning</p>
+    </section>
+
+    <section class="section news-section" id="news">
+      <h2 class="section-title scroll-reveal">Latest News</h2>
+      <div class="news-list">
+        <div class="news-item scroll-reveal">
+          <div class="news-date">Aug 2025</div>
+          <div class="news-content">
+            <h4>🎓 Graduation</h4>
+            <p>Completed M.S. in Robotics at Northeastern University</p>
+          </div>
+        </div>
+        <div class="news-item scroll-reveal">
+          <div class="news-date">May 2025</div>
+          <div class="news-content">
+            <h4>🤖 AI/RL Project</h4>
+            <p>Finished drone coverage optimization project using Q-learning</p>
+          </div>
+        </div>
+        <div class="news-item scroll-reveal">
+          <div class="news-date">Dec 2024</div>
+          <div class="news-content">
+            <h4>👁️ Assistive Tech</h4>
+            <p>Developed wearable assistive navigation system for visually impaired users</p>
+          </div>
         </div>
       </div>
-      <div class="news-item scroll-reveal">
-        <div class="news-date">Dec 2024</div>
-        <div class="news-content">
-          <h4>👁️ Assistive Tech</h4>
-          <p>Developed wearable assistive navigation system for visually impaired users</p>
+    </section>
+
+    <section class="section" id="interests">
+      <h2 class="section-title scroll-reveal">Research Interests</h2>
+      <div class="interests-grid">
+        <div class="interest-card scroll-zoom"><i class="fas fa-robot"></i><h3>Robotics & Mechatronics</h3></div>
+        <div class="interest-card scroll-zoom"><i class="fas fa-brain"></i><h3>Reinforcement Learning & AI</h3></div>
+        <div class="interest-card scroll-zoom"><i class="fas fa-heartbeat"></i><h3>Healthcare & Assistive Tech</h3></div>
+        <div class="interest-card scroll-zoom"><i class="fas fa-drafting-compass"></i><h3>CAD & Simulation</h3></div>
+      </div>
+    </section>
+
+    <section class="parallax-divider" id="projects">
+      <div class="scroll-reveal">
+        <h2>Selected Projects</h2>
+        <p>Innovative solutions in robotics, AI, and healthcare</p>
+      </div>
+    </section>
+
+    <section class="section" id="projects-content">
+      <div class="project-card scroll-reveal">
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone"></div>
+        <div class="project-info">
+          <div class="project-date">Spring 2025</div>
+          <h3>Drone Coverage Optimization with RL</h3>
+          <p>Designed a Q-learning-based drone placement policy achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines.</p>
+          <div class="project-tags"><span>Q-Learning</span><span>Python</span><span>A* Pathfinding</span></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="interests">
-    <h2 class="section-title scroll-reveal">Research Interests</h2>
-    <div class="interests-grid">
-      <div class="interest-card scroll-zoom"><i class="fas fa-robot"></i><h3>Robotics & Mechatronics</h3></div>
-      <div class="interest-card scroll-zoom"><i class="fas fa-brain"></i><h3>Reinforcement Learning & AI</h3></div>
-      <div class="interest-card scroll-zoom"><i class="fas fa-heartbeat"></i><h3>Healthcare & Assistive Tech</h3></div>
-      <div class="interest-card scroll-zoom"><i class="fas fa-drafting-compass"></i><h3>CAD & Simulation</h3></div>
-    </div>
-  </section>
-
-  <section class="parallax-divider" id="projects">
-    <div class="scroll-reveal">
-      <h2>Selected Projects</h2>
-      <p>Innovative solutions in robotics, AI, and healthcare</p>
-    </div>
-  </section>
-
-  <section class="section" id="projects-content">
-    <div class="project-card scroll-reveal">
-      <div class="project-image"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone"></div>
-      <div class="project-info">
-        <div class="project-date">Spring 2025</div>
-        <h3>Drone Coverage Optimization with Reinforcement Learning</h3>
-        <p>Designed a Q-learning-based drone placement policy achieving 100% area coverage with only 4 drones, outperforming PPO and MCTS baselines. Implemented A* pathfinding for emergency responder navigation.</p>
-        <div class="project-tags"><span>Q-Learning</span><span>Python</span><span>A* Pathfinding</span></div>
-      </div>
-    </div>
-    
-    <div class="project-card scroll-reveal">
-      <div class="project-image"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Wearable"></div>
-      <div class="project-info">
-        <div class="project-date">Fall 2024</div>
-        <h3>Wearable Assistive Navigation System</h3>
-        <p>Built a real-time obstacle detection system using ToF depth camera and Raspberry Pi with haptic feedback for visually impaired users.</p>
-        <div class="project-tags"><span>Raspberry Pi</span><span>ToF Camera</span><span>Haptic Feedback</span></div>
-      </div>
-    </div>
-    
-    <div class="project-card scroll-reveal">
-      <div class="project-image"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Medical"></div>
-      <div class="project-info">
-        <div class="project-date">Spring 2024</div>
-        <h3>Robotic Finger for Tumor Detection</h3>
-        <p>Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions, demonstrating potential for home-use biomedical diagnostics.</p>
-        <div class="project-tags"><span>IMU Sensors</span><span>Kalman Filter</span><span>Medical Robotics</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="experience">
-    <h2 class="section-title scroll-reveal">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item scroll-left">
-        <div class="timeline-content">
-          <div class="date">2022 - 2025</div>
-          <h3>Part-time Lab Researcher</h3>
-          <div class="company">Northeastern University</div>
-          <p>Soft material mechanics research. Published in European Journal of Mechanics.</p>
+      
+      <div class="project-card scroll-reveal">
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Wearable"></div>
+        <div class="project-info">
+          <div class="project-date">Fall 2024</div>
+          <h3>Wearable Assistive Navigation System</h3>
+          <p>Built a real-time obstacle detection system using ToF depth camera and Raspberry Pi with haptic feedback for visually impaired users.</p>
+          <div class="project-tags"><span>Raspberry Pi</span><span>ToF Camera</span><span>Haptic</span></div>
         </div>
       </div>
-      <div class="timeline-item scroll-right">
-        <div class="timeline-content">
-          <div class="date">2023</div>
-          <h3>Mechanical Engineering Co-op</h3>
-          <div class="company">HiRain Technologies, Beijing</div>
-          <p>PCB quality assurance, CAD modeling in SolidWorks/CREO.</p>
+      
+      <div class="project-card scroll-reveal">
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Medical"></div>
+        <div class="project-info">
+          <div class="project-date">Spring 2024</div>
+          <h3>Robotic Finger for Tumor Detection</h3>
+          <p>Designed a flexible robotic finger with dual IMU sensors to detect subdermal inclusions for home-use biomedical diagnostics.</p>
+          <div class="project-tags"><span>IMU Sensors</span><span>Kalman Filter</span><span>Medical</span></div>
         </div>
       </div>
-      <div class="timeline-item scroll-left">
-        <div class="timeline-content">
-          <div class="date">2021</div>
-          <h3>Production/Design Engineer Co-op</h3>
-          <div class="company">SharkNinja, Needham MA</div>
-          <p>CFD simulation, 3D printing prototypes, sensor integration.</p>
+    </section>
+
+    <section class="section" id="experience">
+      <h2 class="section-title scroll-reveal">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item scroll-left">
+          <div class="timeline-content">
+            <div class="date">2022 - 2025</div>
+            <h3>Part-time Lab Researcher</h3>
+            <div class="company">Northeastern University</div>
+            <p>Soft material mechanics research. Published in European Journal of Mechanics.</p>
+          </div>
+        </div>
+        <div class="timeline-item scroll-right">
+          <div class="timeline-content">
+            <div class="date">2023</div>
+            <h3>Mechanical Engineering Co-op</h3>
+            <div class="company">HiRain Technologies, Beijing</div>
+            <p>PCB quality assurance, CAD modeling in SolidWorks/CREO.</p>
+          </div>
+        </div>
+        <div class="timeline-item scroll-left">
+          <div class="timeline-content">
+            <div class="date">2021</div>
+            <h3>Production/Design Engineer Co-op</h3>
+            <div class="company">SharkNinja, Needham MA</div>
+            <p>CFD simulation, 3D printing prototypes, sensor integration.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="education">
-    <h2 class="section-title scroll-reveal">Education</h2>
-    <div class="education-grid">
-      <div class="education-card scroll-left">
-        <div class="degree">M.S. in Robotics</div>
-        <div class="school">Northeastern University</div>
-        <div class="year">2024 - 2025 | GPA: 3.67</div>
+    <section class="section" id="education">
+      <h2 class="section-title scroll-reveal">Education</h2>
+      <div class="education-grid">
+        <div class="education-card scroll-left">
+          <div class="degree">M.S. in Robotics</div>
+          <div class="school">Northeastern University</div>
+          <div class="year">2024 - 2025 | GPA: 3.67</div>
+        </div>
+        <div class="education-card scroll-right">
+          <div class="degree">B.S. in Mechanical Engineering</div>
+          <div class="school">Northeastern University</div>
+          <div class="year">2019 - 2023 | Minor in Math</div>
+        </div>
       </div>
-      <div class="education-card scroll-right">
-        <div class="degree">B.S. in Mechanical Engineering</div>
-        <div class="school">Northeastern University</div>
-        <div class="year">2019 - 2023 | Minor in Math</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section skills-section" id="skills">
-    <h2 class="section-title scroll-reveal">Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-category scroll-reveal">
-        <h3><i class="fas fa-code"></i> Programming</h3>
-        <div class="skill-bar" style="--progress: 90%"><div class="skill-name"><span>Python</span><span>90%</span></div><div class="bar"><div class="progress"></div></div></div>
-        <div class="skill-bar" style="--progress: 85%"><div class="skill-name"><span>MATLAB</span><span>85%</span></div><div class="bar"><div class="progress"></div></div></div>
-        <div class="skill-bar" style="--progress: 70%"><div class="skill-name"><span>C++</span><span>70%</span></div><div class="bar"><div class="progress"></div></div></div>
+    <section class="section skills-section" id="skills">
+      <h2 class="section-title scroll-reveal">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category scroll-reveal">
+          <h3><i class="fas fa-code"></i> Programming</h3>
+          <div class="skill-bar" style="--progress: 90%"><div class="skill-name"><span>Python</span><span>90%</span></div><div class="bar"><div class="progress"></div></div></div>
+          <div class="skill-bar" style="--progress: 85%"><div class="skill-name"><span>MATLAB</span><span>85%</span></div><div class="bar"><div class="progress"></div></div></div>
+          <div class="skill-bar" style="--progress: 70%"><div class="skill-name"><span>C++</span><span>70%</span></div><div class="bar"><div class="progress"></div></div></div>
+        </div>
+        <div class="skill-category scroll-reveal">
+          <h3><i class="fas fa-cube"></i> CAD & Simulation</h3>
+          <div class="skill-bar" style="--progress: 85%"><div class="skill-name"><span>SolidWorks</span><span>85%</span></div><div class="bar"><div class="progress"></div></div></div>
+          <div class="skill-bar" style="--progress: 80%"><div class="skill-name"><span>Simulink</span><span>80%</span></div><div class="bar"><div class="progress"></div></div></div>
+          <div class="skill-bar" style="--progress: 75%"><div class="skill-name"><span>AutoCAD</span><span>75%</span></div><div class="bar"><div class="progress"></div></div></div>
+        </div>
+        <div class="skill-category scroll-reveal">
+          <h3><i class="fas fa-microchip"></i> Hardware</h3>
+          <div class="skill-bar" style="--progress: 80%"><div class="skill-name"><span>Arduino</span><span>80%</span></div><div class="bar"><div class="progress"></div></div></div>
+          <div class="skill-bar" style="--progress: 75%"><div class="skill-name"><span>Raspberry Pi</span><span>75%</span></div><div class="bar"><div class="progress"></div></div></div>
+          <div class="skill-bar" style="--progress: 70%"><div class="skill-name"><span>ROS</span><span>70%</span></div><div class="bar"><div class="progress"></div></div></div>
+        </div>
       </div>
-      <div class="skill-category scroll-reveal">
-        <h3><i class="fas fa-cube"></i> CAD & Simulation</h3>
-        <div class="skill-bar" style="--progress: 85%"><div class="skill-name"><span>SolidWorks</span><span>85%</span></div><div class="bar"><div class="progress"></div></div></div>
-        <div class="skill-bar" style="--progress: 80%"><div class="skill-name"><span>Simulink</span><span>80%</span></div><div class="bar"><div class="progress"></div></div></div>
-        <div class="skill-bar" style="--progress: 75%"><div class="skill-name"><span>AutoCAD</span><span>75%</span></div><div class="bar"><div class="progress"></div></div></div>
-      </div>
-      <div class="skill-category scroll-reveal">
-        <h3><i class="fas fa-microchip"></i> Hardware</h3>
-        <div class="skill-bar" style="--progress: 80%"><div class="skill-name"><span>Arduino</span><span>80%</span></div><div class="bar"><div class="progress"></div></div></div>
-        <div class="skill-bar" style="--progress: 75%"><div class="skill-name"><span>Raspberry Pi</span><span>75%</span></div><div class="bar"><div class="progress"></div></div></div>
-        <div class="skill-bar" style="--progress: 70%"><div class="skill-name"><span>ROS</span><span>70%</span></div><div class="bar"><div class="progress"></div></div></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="cta-section">
-    <h2 class="scroll-reveal">Let's Connect!</h2>
-    <p class="scroll-reveal">Interested in robotics, AI, or collaboration?</p>
-    <div class="cta-buttons scroll-reveal">
-      <a href="/cv/" class="btn-white">View Full CV</a>
-      <a href="/publications/" class="btn-outline">Publications</a>
-    </div>
-  </section>
+    <section class="cta-section">
+      <h2 class="scroll-reveal">Let's Connect!</h2>
+      <p class="scroll-reveal">Interested in robotics, AI, or collaboration?</p>
+      <div class="cta-buttons scroll-reveal">
+        <a href="/cv/" class="btn-white">View Full CV</a>
+        <a href="/publications/" class="btn-outline">Publications</a>
+      </div>
+    </section>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-about">
+    <footer class="site-footer">
+      <div class="footer-content">
         <h3>Zihan Lin</h3>
         <p>Robotics M.S. graduate passionate about building intelligent systems that improve lives.</p>
-        <div class="social-links">
-          <a href="https://github.com/neulinzihan"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/zihanlin"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://scholar.google.com/citations?user=0Yic6NcAAAAJ"><i class="fas fa-graduation-cap"></i></a>
-        </div>
+        <p><i class="fas fa-envelope"></i> zlukelin@gmail.com &nbsp;|&nbsp; <i class="fas fa-map-marker-alt"></i> Waltham, MA</p>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="/cv/">CV</a></li>
-          <li><a href="/publications/">Publications</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p><i class="fas fa-envelope"></i> zlukelin@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Waltham, MA 02451</p>
-      </div>
-    </div>
-    <div class="footer-bottom"><p>© 2025 Zihan Lin. All rights reserved.</p></div>
-  </footer>
+      <div class="footer-bottom"><p>© 2025 Zihan Lin. All rights reserved.</p></div>
+    </footer>
+  </div>
 
   <script>
     // 滚动进度条
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      document.getElementById('scrollIndicator').style.width = (scrollTop / docHeight) * 100 + '%';
-    });
-
-    // 隐藏/显示顶部导航栏
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > lastScroll && window.scrollY > 100) navbar.classList.add('hidden');
-      else navbar.classList.remove('hidden');
-      lastScroll = window.scrollY;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('scrollIndicator').style.width = progress + '%';
+      document.getElementById('navProgress').style.height = progress + '%';
     });
 
     // 滚动动画观察器
@@ -933,14 +967,13 @@ redirect_from:
 
     // 侧边导航高亮当前section
     const sections = document.querySelectorAll('section[id]');
-    const sideNavLinks = document.querySelectorAll('.side-nav a');
+    const sideNavLinks = document.querySelectorAll('.side-nav-links a');
 
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
+        if (window.scrollY >= sectionTop - 250) {
           current = section.getAttribute('id');
         }
       });
@@ -949,6 +982,49 @@ redirect_from:
         link.classList.remove('active');
         if (link.getAttribute('data-section') === current) {
           link.classList.add('active');
+        }
+      });
+    });
+
+    // 拖拽排序功能
+    const navLinks = document.getElementById('navLinks');
+    let draggedItem = null;
+
+    navLinks.querySelectorAll('a').forEach(item => {
+      item.addEventListener('dragstart', function(e) {
+        draggedItem = this;
+        setTimeout(() => this.classList.add('dragging'), 0);
+      });
+
+      item.addEventListener('dragend', function() {
+        this.classList.remove('dragging');
+        navLinks.querySelectorAll('a').forEach(a => a.classList.remove('drag-over'));
+      });
+
+      item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        if (this !== draggedItem) {
+          this.classList.add('drag-over');
+        }
+      });
+
+      item.addEventListener('dragleave', function() {
+        this.classList.remove('drag-over');
+      });
+
+      item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        if (this !== draggedItem) {
+          const allItems = [...navLinks.querySelectorAll('a')];
+          const draggedIndex = allItems.indexOf(draggedItem);
+          const dropIndex = allItems.indexOf(this);
+          
+          if (draggedIndex < dropIndex) {
+            this.parentNode.insertBefore(draggedItem, this.nextSibling);
+          } else {
+            this.parentNode.insertBefore(draggedItem, this);
+          }
         }
       });
     });
