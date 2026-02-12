@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Zihan Lin"
 title_separator          : "-"
 name                     : &name "Zihan Lin"
-description              : &description "Robotics Engineer | AI & Mechatronics"
+description              : &description "Mechanical Eingineer | Robotics & AI"
 url                      : https://neulinzihan.github.io
 baseurl                  : ""
 repository               : "neulinzihan/neulinzihan.github.io"
@@ -25,12 +25,12 @@ author:
   name             : "Zihan Lin"
   pronouns         : # example: "she/her"  
   bio              : "MS Robotics | BS Mechanical Engineering"
-  location         : "Boston, MA"
+  location         : "Waltham, MA 02451"
   employer         : # "Northeastern University"
   uri              : 
   email            : 
      - lin.zihan@northeastern.edu
-     - luke903702420@gmail.com
+     - zlukelin@gmail.com
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -60,10 +60,10 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "zihanlin0577"  # 请确认这是你的正确 LinkedIn 用户名
+  linkedin         : "zlukelin"  # 请确认这是你的正确 LinkedIn 用户名
   mastodon         : # URL
   medium           : # URL
-  pinterest        : # Username
+  pinterest        : https://kr.pinterest.com/calebl1337/vehicle-aesthetic/
   soundcloud       : # Username
   steam            : # Username
   telegram         : # URL
@@ -327,3 +327,7 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+
+# 新增自定义变量：旧页面链接
+old_page_url: "https://neulinzihan.github.io/old/"

@@ -6,12 +6,6 @@ I am a Robotics M.S. graduate from Northeastern University with a B.S. in Mechan
 
 I am currently seeking **full-time opportunities** starting July 2025 in robotics, mechanical engineering, or AI-related roles.
 
-## News
-
-- **2025.08**: Completed M.S. in Robotics at Northeastern University
-- **2025.05**: Finished AI/RL course project on drone coverage optimization using Q-learning
-- **2024.12**: Developed a wearable assistive navigation system for visually impaired users
-
 ## Research Interests
 
 - Robotics & Mechatronic Systems
