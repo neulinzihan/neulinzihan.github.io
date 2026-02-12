@@ -1,10 +1,5 @@
 ---
 permalink: /
-title: "Hello, I'm Zihan!"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
 I am a Robotics M.S. graduate from Northeastern University with a B.S. in Mechanical Engineering. My research interests span **robotics**, **reinforcement learning**, **mechatronic systems**, and **healthcare technology**.
