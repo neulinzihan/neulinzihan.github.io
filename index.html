@@ -777,7 +777,6 @@ layout: null
             Seeking full-time opportunities starting Feb 2026
           </div>
         </div>
-        </div>
       </div>
     </section>
 
@@ -825,57 +824,77 @@ layout: null
       </div>
     </section>
 
-    <section class="section" id="projects-content">
-      <div class="project-card scroll-reveal">
-        <div class="project-image"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone"></div>
-        <div class="project-info">
-          <div class="project-date">Jan - May 2025</div>
-          <h3>Disaster Relief Drones Simulation</h3>
-          <p>Architected autonomous drone deployment using Q-learning RL and A* pathfinding to restore LTE coverage in disaster environments. Achieved 100% area coverage across grid sizes 7×7 to 20×20, reducing drone redundancy by 30%.</p>
-          <div class="project-tags"><span>Q-Learning</span><span>A* Pathfinding</span><span>Python</span></div>
-        </div>
-      </div>
-      
-      <div class="project-card scroll-reveal">
-        <div class="project-image"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Wearable"></div>
-        <div class="project-info">
-          <div class="project-date">Sep - Dec 2024</div>
-          <h3>ToF Cameras and Vibrational Smart Glass</h3>
-          <p>Built wearable obstacle-detection prototype for visually impaired users with Arducam ToF depth camera and dual vibration motors on custom 3D-printed glasses frame driven by Raspberry Pi 4B. Achieved 30% improvement in user feedback accuracy.</p>
-          <div class="project-tags"><span>Raspberry Pi</span><span>ToF Camera</span><span>Haptic Feedback</span></div>
-        </div>
-      </div>
-      
-      <div class="project-card scroll-reveal">
-        <div class="project-image"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Medical"></div>
-        <div class="project-info">
-          <div class="project-date">Jun 2022 - Dec 2025</div>
-          <h3>Robotic Finger for Tumor Detection</h3>
-          <p>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion to reconstruct real-time 3D inclusion trajectories. Identified Southwell-type lateral instability at critical depth (~19 mm). Published in European Journal of Mechanics.</p>
-          <div class="project-tags"><span>IMU Fusion</span><span>Raspberry Pi</span><span>PID Control</span></div>
-        </div>
-      </div>
+<section class="section" id="projects-content">
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600" alt="Biomechanics"></div>
+    <div class="project-info">
+      <div class="project-date">Jun 2022 - Dec 2025</div>
+      <h3>Micro/Nano Biomechanical Characterization Lab</h3>
+      <p>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion to reconstruct real-time 3D inclusion trajectories under misaligned indentation. Identified Southwell-type lateral instability at critical depth (~19 mm). Automated indentation testing via Raspberry Pi/Python/PID-controlled X-Y stage, reducing per-sample cycle time by 5×.</p>
+      <div class="project-tags"><span>IMU Fusion</span><span>Raspberry Pi</span><span>PID Control</span><span>SolidWorks</span></div>
+    </div>
+  </div>
+  
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="IMU"></div>
+    <div class="project-info">
+      <div class="project-date">Sep - Dec 2025</div>
+      <h3>GPS/IMU Driver Development & Sensor Fusion</h3>
+      <p>Developed inertial odometry pipeline with least-squares magnetometer calibration (hard/soft-iron correction) and complementary filter fusing gyroscope and magnetometer heading estimates. Engineered ROS 2 device driver for VectorNav VN-100 IMU over USB serial with 40 Hz sampling. Characterized gyroscope stochastic errors via Allan Variance analysis.</p>
+      <div class="project-tags"><span>ROS 2</span><span>Sensor Fusion</span><span>Allan Variance</span><span>Linux</span></div>
+    </div>
+  </div>
 
-      <div class="project-card scroll-reveal">
-        <div class="project-image"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="IMU"></div>
-        <div class="project-info">
-          <div class="project-date">Sep - Dec 2025</div>
-          <h3>GPS/IMU Driver Development & Sensor Fusion</h3>
-          <p>Developed inertial odometry pipeline with least-squares magnetometer calibration and complementary filter fusing gyroscope and magnetometer. Engineered ROS 2 device driver for VectorNav VN-100 IMU with 40 Hz sampling.</p>
-          <div class="project-tags"><span>ROS 2</span><span>Sensor Fusion</span><span>Allan Variance</span></div>
-        </div>
-      </div>
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="Drone"></div>
+    <div class="project-info">
+      <div class="project-date">Jan - May 2025</div>
+      <h3>Disaster Relief Drones Simulation</h3>
+      <p>Architected autonomous drone deployment framework using Q-learning reinforcement learning and A* pathfinding to restore LTE network coverage in simulated disaster environments. Achieved 100% area coverage across grid sizes 7×7 to 20×20. Reduced drone redundancy by 30% compared to random placement, trained over 20,000 episodes.</p>
+      <div class="project-tags"><span>Q-Learning</span><span>A* Pathfinding</span><span>Python</span><span>RL</span></div>
+    </div>
+  </div>
+  
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Wearable"></div>
+    <div class="project-info">
+      <div class="project-date">Sep - Dec 2024</div>
+      <h3>ToF Cameras and Vibrational Smart Glass</h3>
+      <p>Built wearable obstacle-detection prototype for visually impaired users, integrating Arducam ToF depth camera and dual micro-disc vibration motors on custom resin 3D-printed glasses frame driven by Raspberry Pi 4B. Implemented real-time depth pipeline with tri-zone ROI obstacle localization and PWM-controlled haptic feedback. Achieved 30% improvement in user feedback accuracy.</p>
+      <div class="project-tags"><span>Raspberry Pi</span><span>ToF Camera</span><span>Haptic Feedback</span><span>Python</span></div>
+    </div>
+  </div>
 
-      <div class="project-card scroll-reveal">
-        <div class="project-image"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" alt="Robot Arm"></div>
-        <div class="project-info">
-          <div class="project-date">Sep - Dec 2024</div>
-          <h3>6-DOF Robotic Arm Trajectory Control</h3>
-          <p>Designed 6-DOF robotic arm control system in MATLAB/Simulink using Nonlinear Model Predictive Control (NMPC) with Gaussian Process-augmented state-space model for precise trajectory tracking.</p>
-          <div class="project-tags"><span>MATLAB/Simulink</span><span>NMPC</span><span>Gaussian Process</span></div>
-        </div>
-      </div>
-    </section>
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" alt="Robot Arm"></div>
+    <div class="project-info">
+      <div class="project-date">Sep - Dec 2024</div>
+      <h3>6-DOF Robotic Arm Trajectory Control</h3>
+      <p>Designed 6-DOF robotic arm control system in MATLAB/Simulink using Nonlinear Model Predictive Control (NMPC) with Gaussian Process-augmented state-space model to capture nonlinear dynamics and reject stochastic disturbances, achieving precise trajectory tracking in dynamic environments.</p>
+      <div class="project-tags"><span>MATLAB/Simulink</span><span>NMPC</span><span>Gaussian Process</span></div>
+    </div>
+  </div>
+
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="FEA"></div>
+    <div class="project-info">
+      <div class="project-date">Jan - May 2022</div>
+      <h3>Composite Pressure Vessel FEA</h3>
+      <p>Performed FEA in ANSYS Workbench to model fibrous composite layups in a high-pressure liquid tank, verifying that peak von Mises stress remained within safety margins of material yield strength under designated internal pressures.</p>
+      <div class="project-tags"><span>ANSYS</span><span>FEA</span><span>Composite Materials</span></div>
+    </div>
+  </div>
+
+  <div class="project-card scroll-reveal">
+    <div class="project-image"><img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=600" alt="Fluid"></div>
+    <div class="project-info">
+      <div class="project-date">Sep - Dec 2021</div>
+      <h3>Tethered-Sphere Flow Sensor Modeling</h3>
+      <p>Modeled a tethered-sphere flow-velocity sensor in MATLAB by deriving force-balance governing equations with Reynolds-dependent drag coefficients. Characterized operational limits via parametric sensitivity analysis to optimize deployment across varying river flow conditions.</p>
+      <div class="project-tags"><span>MATLAB</span><span>Fluid Mechanics</span><span>Sensor Modeling</span></div>
+    </div>
+  </div>
+</section>
 
     <section class="section" id="experience">
       <h2 class="section-title scroll-reveal">Experience</h2>
@@ -885,7 +904,7 @@ layout: null
             <div class="date">Jun 2022 - Dec 2025</div>
             <h3>Research Assistant</h3>
             <div class="company">Micro/Nano Biomechanical Characterization Lab, NEU</div>
-            <p>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion. Co-authored publication in European Journal of Mechanics.</p>
+            <p>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion. Co-authored publication in European Journal of Mechanics - A/Solids.</p>
           </div>
         </div>
         <div class="timeline-item scroll-right">
@@ -893,7 +912,7 @@ layout: null
             <div class="date">Jan - Jun 2023</div>
             <h3>Mechanical Test Engineer Co-op</h3>
             <div class="company">SharkNinja, Needham MA</div>
-            <p>Designed sealed test chambers and compressed-air nozzles for Shark Air Purifier validation. Troubleshot testing protocols for vacuums.</p>
+            <p>Designed sealed test chambers, compressed-air nozzles, and fabric-attachment fixtures for Shark Air Purifier and wind tunnel validation. Troubleshot testing protocols for Shark Uprights and Robotic Vacuums.</p>
           </div>
         </div>
         <div class="timeline-item scroll-left">
@@ -901,7 +920,7 @@ layout: null
             <div class="date">Jul - Dec 2021</div>
             <h3>Mechanical Design & Production Engineering Intern</h3>
             <div class="company">HiRain Technology, Beijing</div>
-            <p>Constructed PCB test fixtures; optimized 2D/3D CAD models for PCBA enclosures ensuring DFM compliance.</p>
+            <p>Constructed PCB test fixtures; validated circuit performance through firmware flashing, Linux debugging, and soldering rework. Optimized 2D/3D CAD models for PCBA enclosures ensuring DFM compliance.</p>
           </div>
         </div>
       </div>
