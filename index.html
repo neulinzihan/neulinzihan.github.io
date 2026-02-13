@@ -416,6 +416,34 @@ layout: null
     .cta p { color: var(--text3); margin-bottom: 32px; position: relative; }
     .cta-btns { display: flex; gap: 12px; justify-content: center; position: relative; }
 
+
+    .qr-wrap {
+      position: relative;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .qr-wrap i {
+      color: var(--accent2);
+    }
+    .qr-popup {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    .qr-wrap:hover .qr-popup {
+      display: block;
+    }
+
+    
     .site-footer {
       border-top: 1px solid var(--border);
       padding: 40px; text-align: center;
@@ -785,7 +813,16 @@ layout: null
   <div class="footer-desc">Robotics Engineer · Builder · Occasional Debugger of Life</div>
   <div class="footer-contact">
     <i class="fas fa-envelope"></i> zlukelin@gmail.com &nbsp;&nbsp;
-    <i class="fas fa-map-marker-alt"></i> Waltham, MA
+    <i class="fas fa-map-marker-alt"></i> Waltham, MA &nbsp;&nbsp;
+    <span class="qr-wrap">
+      <i class="fab fa-bilibili"></i> Bilibili
+      <img src="/images/bilibili-qr.png" class="qr-popup" alt="Bilibili QR">
+    </span>
+    &nbsp;&nbsp;
+    <span class="qr-wrap">
+      <i class="fab fa-tiktok"></i> Douyin
+      <img src="/images/douyin-qr.png" class="qr-popup" alt="Douyin QR">
+    </span>
   </div>
   <div class="footer-copy">© 2025 Zihan Lin. Built with caffeine and determination.</div>
 </footer>
