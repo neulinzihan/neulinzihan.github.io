@@ -1,0 +1,46 @@
+---
+permalink: /projects/gps-imu/
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 复用你主页的 :root 变量和 body 样式 */
+    :root { --bg:#0a0a0b; --text:#fafafa; --text2:#a1a1aa; --text3:#71717a; --accent:#6366f1; --accent2:#818cf8; --border:#27272a; --card:#1c1c1f; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    .container { max-width:900px; margin:0 auto; padding:80px 40px; }
+    .back { color:var(--accent2); text-decoration:none; font-size:0.85rem; }
+    .back:hover { text-decoration:underline; }
+    h1 { font-size:2rem; margin:24px 0 8px; }
+    .subtitle { color:var(--text3); margin-bottom:40px; }
+    .photo-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
+    .photo-grid img { width:100%; border-radius:12px; border:1px solid var(--border); }
+    .description { color:var(--text2); margin-top:32px; font-size:0.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back">← Back to Home</a>
+    <h1>GPS/IMU Driver & Sensor Fusion</h1>
+    <p class="subtitle">Sep — Dec 2025</p>
+
+    <p class="description">Write a device driver that communicates with the VectorNav IMU over USB serial, collect rotation, acceleration, magnetometer, and rotational rate data. Identify device parameters (e.g., angle random walk, bias stability, rate random walk) and sources of error from Allan variance data</p>
+
+    <div class="photo-grid">
+        <img src="/images/projects/fig0_gyro.png" alt="Gyroscope Data">
+        <img src="/images/projects/fig1_accel.png" alt="Accelerometer Data">
+        <img src="/images/projects/fig2_euler.png" alt="Euler Angles">
+        <img src="/images/projects/fig3_allan_combined.png" alt="Allan Variance">
+        <img src="/images/projects/clip1_combined.png" alt="Experiment Clip 1">
+        <img src="/images/projects/clip2_combined.png" alt="Experiment Clip 2">
+        <img src="/images/projects/clip3_combined.png" alt="Experiment Clip 3">
+    </div>
+    
+  </div>
+</body>
+</html>
