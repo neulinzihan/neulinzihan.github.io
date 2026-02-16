@@ -70,6 +70,8 @@ layout: null
     }
     .nav-logo span { color: var(--accent); }
 
+
+
     .nav-links { display: flex; gap: 8px; }
     .nav-links a {
       color: var(--text3); text-decoration: none; font-size: 0.85rem;
@@ -153,6 +155,35 @@ layout: null
       background: transparent;
     }
     
+
+    .hamburger {                                                  /*menu hamburger for mobile, can be implemented later if needed*/
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
     .hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
@@ -528,10 +559,29 @@ layout: null
     .footer-contact i { color: var(--accent2); margin-right: 4px; }
     .footer-copy { color: var(--text3); font-size: 0.75rem; opacity: 0.5; }
 
+@media (max-width: 900px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        z-index: 1000;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1.2rem; padding: 12px 24px; }
+      .nav-socials { display: none; }
+    }
+
     @media (max-width: 768px) {
       .topnav { padding: 12px 20px; }
-      .nav-links { display: none; }
-      .nav-socials { display: none; }
       .section { padding: 60px 20px; }
       .hero { padding: 0 20px; }
       .about-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -542,14 +592,12 @@ layout: null
       .hero-actions { flex-direction: column; align-items: flex-start; }
       .pinterest-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-    }
+
     @media (max-width: 1100px) {
       .skills-grid { grid-template-columns: 1fr; }
       .nav-links a { padding: 6px 8px; font-size: 0.78rem; }
     }
-    }
+
   </style>
 </head>
 <body>
@@ -558,6 +606,13 @@ layout: null
 
 <nav class="topnav" id="topnav">
   <a href="/" class="nav-logo">Zihan<span>.</span></a>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">             /*hamburger button for mobile*/
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -586,6 +641,7 @@ layout: null
   <div class="hero-content">
     <p class="hero-greeting">// hello world</p>
     <h1 class="hero-name">hey, I'm <span class="gradient">Zihan.</span></h1>
+    <p style="font-family:'851MkPOP', sans-serif; font-size:2.8rem; color:var(--accent2); margin-bottom:20px; opacity:0; animation: fadeUp 0.8s ease 0.5s forwards;">我是林子涵</p>
     <p class="hero-desc">Robotics engineer who likes building things that move, sense, and (sometimes) think. Currently exploring the intersection of mechanical systems and intelligent control.</p>
     <div class="hero-tags">
       <span>sensor fusion</span>
@@ -1070,6 +1126,22 @@ layout: null
       const slider = document.getElementById('themeSlider');
       slider.addEventListener('input', () => {
         setTheme(themeOrder[slider.value]);
+      });
+
+      // Hamburger menu toggle
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+        });
       });
 </script>
 
