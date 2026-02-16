@@ -12,17 +12,17 @@ layout: null
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0b;
-      --bg2: #111113;
-      --bg3: #18181b;
-      --card: #1c1c1f;
-      --border: #27272a;
-      --text: #fafafa;
-      --text2: #a1a1aa;
-      --text3: #71717a;
-      --accent: #6366f1;
-      --accent2: #818cf8;
-      --accent-glow: rgba(99,102,241,0.15);
+      --bg: #0d1117;
+      --bg2: #131a22;
+      --bg3: #1a232e;
+      --card: #1c2633;
+      --border: #2d3a4a;
+      --text: #f0f6fc;
+      --text2: #8b9eb5;
+      --text3: #607590;
+      --accent: #5ba8a0;
+      --accent2: #7ec4bd;
+      --accent-glow: rgba(91,168,160,0.15);
       --green: #22c55e;
     }
 
@@ -41,7 +41,7 @@ layout: null
 
     .scroll-bar {
       position: fixed; top:0; left:0; height:2px; z-index:1000;
-      background: linear-gradient(90deg, var(--accent), #a78bfa, #ec4899);
+      background: linear-gradient(90deg, #5ba8a0, #7ec4bd, #a8e0d8);
       width: 0%; transition: width 0.1s;
     }
 
@@ -49,7 +49,7 @@ layout: null
       position: fixed; top:0; left:0; right:0; z-index:999;
       padding: 16px 40px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(10,10,11,0.8);
+      background: rgba(10,10,11,0.8);                   /* rgba(from var(--bg) r g b / 0.8); using hardcoded rgba for better browser support, only Safari 16.4+ 和 Chrome 119+ until 2026/2/16 */
       backdrop-filter: blur(20px);
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s;
@@ -80,6 +80,29 @@ layout: null
       font-size: 1rem;
     }
     .nav-socials a:hover { color: var(--text); background: var(--bg3); }
+
+    .theme-switcher {                                                           /* new theme switcher styles */
+      display: flex;
+      gap: 6px;
+      margin-left: 12px;
+    }
+    .theme-btn {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0;
+    }
+    .theme-btn:hover {
+      transform: scale(1.2);
+      border-color: var(--text2);
+    }
+    .theme-btn.active {
+      border-color: var(--text);
+      box-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
 
     .hero {
       min-height: 100vh;
@@ -116,7 +139,7 @@ layout: null
       opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
     }
     .hero-name .gradient {
-      background: linear-gradient(135deg, #fff 0%, var(--accent2) 50%, #c084fc 100%);
+      background: linear-gradient(135deg, #fff 0%, #7ec4bd 50%, #5ba8a0 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
@@ -303,7 +326,7 @@ layout: null
     .edu-card:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-4px); }
     .edu-card::before {
       content: ''; position: absolute; top:0; left:0; right:0; height: 3px;
-      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      background: var(--edu-top, linear-gradient(90deg, var(--accent), #a78bfa));                 /* theme-aware accent line */
     }
     .edu-card .degree { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
     .edu-card .school { color: var(--accent2); font-weight: 500; margin-bottom: 4px; font-size: 0.9rem; }
@@ -401,7 +424,6 @@ layout: null
 
     }
 
-
     .cta {
       text-align: center; padding: 120px 40px;
       position: relative;
@@ -415,7 +437,6 @@ layout: null
     .cta h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; position: relative; }
     .cta p { color: var(--text3); margin-bottom: 32px; position: relative; }
     .cta-btns { display: flex; gap: 12px; justify-content: center; position: relative; }
-
 
     .qr-wrap {
       position: relative;
@@ -495,6 +516,13 @@ layout: null
     <a href="https://linkedin.com/in/zlukelin/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     <a href="https://scholar.google.com/citations?user=0Yic6NcAAAAJ" title="Scholar"><i class="fas fa-graduation-cap"></i></a>
   </div>
+
+  <div class="theme-switcher">
+    <button class="theme-btn" data-theme="gold" title="Gold" style="background:#d4a853;"></button>
+    <button class="theme-btn active" data-theme="water" title="Water" style="background:#5ba8a0;"></button>
+    <button class="theme-btn" data-theme="purple" title="Purple" style="background:#6366f1;"></button>
+  </div>
+
 </nav>
 
 <section class="hero">
@@ -546,8 +574,9 @@ layout: null
 
 <div class="divider-section" id="projects">
   <div class="reveal">
+    <div class="section-label" style="text-align:center;">03 / Projects</div>
     <h2>selected projects</h2>
-    <p>Things I've built, broken, and rebuilt</p>
+    <p>things I've built, broken, and rebuilt</p>
   </div>
 </div>
 
@@ -711,13 +740,13 @@ layout: null
       <div class="degree">M.S. Robotics</div>
       <div class="school">Northeastern University</div>
       <div class="year">2024 — 2025 · ME Concentration</div>
-      <div class="detail">EXP Makerspace, Basketball Intramural, Toastmaster, NUCCFll</div>
+      <div class="detail">Dual Husky Scholars· EXP Makerspace · Toastmaster · NUCCF · Tried New Sports</div>
     </div>
     <div class="edu-card reveal">
       <div class="degree">B.S. Mechanical Engineering</div>
       <div class="school">Northeastern University</div>
       <div class="year">2019 — 2023 · Minor in Math</div>
-      <div class="detail">Dean's Honor List · Presidential Global Scholars · Basketball, Ski Club, International Student Mentor</div>
+      <div class="detail">Dean's Honor List · Presidential Global Scholars · Ski Club, International Student Mentor</div>
     </div>
     <div class="edu-card reveal">
       <div class="degree">High School Diploma</div>
@@ -830,9 +859,7 @@ layout: null
       <span class="legacy-tag">↗ legacy</span>
     </a>
     <a href="mailto:zlukelin@gmail.com" class="btn-ghost">
-      <i class="fas fa-envelope">
-      
-      </i> Say Hi
+      <i class="fas fa-envelope"></i> Say Hi
     </a>
   </div>
 </section>
@@ -853,7 +880,7 @@ layout: null
       <img src="/images/douyin-qr.jpg" class="qr-popup" alt="Douyin QR">
     </span>
   </div>
-  <div class="footer-copy">© 2025 Zihan Lin. Built with caffeine and determination.</div>
+  <div class="footer-copy">© 2026 Zihan Lin. Built with determination, wonder, and prayer.</div>
 </footer>
 
 <script>
@@ -885,6 +912,107 @@ layout: null
     navAs.forEach(a => {
       a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
     });
+  });
+
+// ========== Theme Switcher ==========
+  const themes = {
+    gold: {
+      bg:'#0c1220', bg2:'#111827', bg3:'#1a2332', card:'#1e293b',
+      border:'#334155', text:'#f8fafc', text2:'#94a3b8', text3:'#64748b',
+      accent:'#d4a853', accent2:'#e2bd6e', accentGlow:'rgba(212,168,83,0.15)',
+      green:'#22c55e',
+      gradient: 'linear-gradient(135deg, #fff 0%, #e2bd6e 50%, #d4a853 100%)',
+      navBg: 'rgba(12,18,32,0.8)',           // topnav background
+      scrollBar: 'linear-gradient(90deg, #d4a853, #e2bd6e, #f0d78c)', // scroll progress bar
+      skillFill: 'linear-gradient(90deg, #d4a853, #e2bd6e)',           // skill bar fill
+      eduTop: 'linear-gradient(90deg, #d4a853, #e2bd6e)',              // edu card top accent
+      heroGlow: 'rgba(212,168,83,0.08)',      // hero glow circle
+      ctaGlow: 'rgba(212,168,83,0.06)'        // cta glow circle
+    },
+    water: {
+      bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633',
+      border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590',
+      accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)',
+      green:'#22c55e',
+      gradient: 'linear-gradient(135deg, #fff 0%, #7ec4bd 50%, #5ba8a0 100%)',
+      navBg: 'rgba(13,17,23,0.8)',
+      scrollBar: 'linear-gradient(90deg, #5ba8a0, #7ec4bd, #a8e0d8)',
+      skillFill: 'linear-gradient(90deg, #5ba8a0, #7ec4bd)',
+      eduTop: 'linear-gradient(90deg, #5ba8a0, #7ec4bd)',
+      heroGlow: 'rgba(91,168,160,0.08)',
+      ctaGlow: 'rgba(91,168,160,0.06)'
+    },
+    purple: {
+      bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f',
+      border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a',
+      accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)',
+      green:'#22c55e',
+      gradient: 'linear-gradient(135deg, #fff 0%, #818cf8 50%, #c084fc 100%)',
+      navBg: 'rgba(10,10,11,0.8)',
+      scrollBar: 'linear-gradient(90deg, #6366f1, #a78bfa, #ec4899)',
+      skillFill: 'linear-gradient(90deg, #6366f1, #a78bfa)',
+      eduTop: 'linear-gradient(90deg, #6366f1, #a78bfa)',
+      heroGlow: 'rgba(99,102,241,0.08)',
+      ctaGlow: 'rgba(99,102,241,0.06)'
+    }
+  };
+
+  function setTheme(name) {
+    const t = themes[name];
+    const r = document.documentElement.style;
+
+    // CSS variables
+    r.setProperty('--bg', t.bg);
+    r.setProperty('--bg2', t.bg2);
+    r.setProperty('--bg3', t.bg3);
+    r.setProperty('--card', t.card);
+    r.setProperty('--border', t.border);
+    r.setProperty('--text', t.text);
+    r.setProperty('--text2', t.text2);
+    r.setProperty('--text3', t.text3);
+    r.setProperty('--accent', t.accent);
+    r.setProperty('--accent2', t.accent2);
+    r.setProperty('--accent-glow', t.accentGlow);
+    r.setProperty('--green', t.green);
+
+    // Hero name gradient
+    const g = document.querySelector('.hero-name .gradient');
+    g.style.background = t.gradient;
+    g.style.webkitBackgroundClip = 'text';
+    g.style.webkitTextFillColor = 'transparent';
+
+    // Topnav background
+    document.querySelector('.topnav').style.background = t.navBg;                     /* higher priority, this will override the CSS variable for backdrop-filter */
+
+    // Scroll progress bar
+    document.getElementById('scrollBar').style.background = t.scrollBar;
+
+    // Hero glow
+    document.querySelector('.hero-glow').style.background =
+      `radial-gradient(circle, ${t.heroGlow}, transparent 70%)`;
+
+    // CTA glow
+    document.querySelector('.cta-glow').style.background =
+      `radial-gradient(circle, ${t.ctaGlow}, transparent 70%)`;
+
+    // Skill bar fills
+    document.querySelectorAll('.sk-fill').forEach(el => {
+      el.style.background = t.skillFill;
+    });
+
+    // Education card top accent
+    document.querySelectorAll('.edu-card').forEach(el => {
+      el.style.setProperty('--edu-top', t.eduTop);
+    });
+
+    // Active button highlight
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`[data-theme="${name}"]`).classList.add('active');
+  }
+
+  // Theme button click handlers
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.addEventListener('click', () => setTheme(btn.dataset.theme));
   });
 </script>
 
