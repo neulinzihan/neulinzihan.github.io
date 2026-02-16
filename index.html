@@ -11,6 +11,13 @@ layout: null
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+
+    @font-face {
+      font-family: '851MkPOP';
+      src: url('/assets/fonts/851MkPOP.ttf') format('truetype');
+      font-display: swap;
+    }
+
     :root {
       --bg: #0d1117;
       --bg2: #131a22;
@@ -82,46 +89,69 @@ layout: null
     .nav-socials a:hover { color: var(--text); background: var(--bg3); }
 
 
-    .theme-slider-wrap {                                                    /* slider style  */
+    .theme-slider-wrap {
       margin-left: 12px;
       display: flex;
       align-items: center;
+      position: relative;
+      background: linear-gradient(90deg, #d4a853 25%, #5ba8a0 45%, #5ba8a0 55%, #6366f1 75%);
+      border-radius: 12px;
+      padding: 0;
+      height: 22px;
+      width: 70px;
+    }
+    .theme-slider-wrap i {
+      position: absolute;
+      font-size: 0.5rem;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .theme-slider-wrap i:first-child {
+      left: 8px;
+    }
+    .theme-slider-wrap i:last-child {
+      right: 8px;
     }
     .theme-slider {
       -webkit-appearance: none;
       appearance: none;
-      width: 60px;
-      height: 6px;
-      border-radius: 3px;
-      background: linear-gradient(90deg, #d4a853, #5ba8a0, #6366f1); /* gold → water → purple */
+      width: 100%;
+      height: 100%;
+      background: transparent;
       outline: none;
       cursor: pointer;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 1;
     }
     .theme-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: var(--accent);
-      border: 2px solid var(--text);
-      box-shadow: 0 0 6px rgba(255,255,255,0.3);
+      border: 2px solid #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
       cursor: pointer;
       transition: all 0.2s;
     }
     .theme-slider::-webkit-slider-thumb:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
     }
     .theme-slider::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: var(--accent);
-      border: 2px solid var(--text);
-      box-shadow: 0 0 6px rgba(255,255,255,0.3);
+      border: 2px solid #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
       cursor: pointer;
     }
-
+    .theme-slider::-moz-range-track {
+      background: transparent;
+    }
     
     .hero {
       min-height: 100vh;
@@ -153,11 +183,12 @@ layout: null
     }
 
     .hero-name {
+      font-family: '851MkPOP', 'Inter', sans-serif;                                             /*font tries piority*/
       font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 800; line-height: 1.1; margin-bottom: 20px;
       opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
     }
-    .hero-name .gradient {
+    .hero-name .gradient {            
       background: linear-gradient(135deg, #fff 0%, #7ec4bd 50%, #5ba8a0 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -537,7 +568,9 @@ layout: null
   </div>
 
   <div class="theme-slider-wrap">
+    <i class="fas fa-sun" style="color:#ffffff; font-size:0.7rem;"></i>
     <input type="range" min="0" max="2" value="1" class="theme-slider" id="themeSlider">
+    <i class="fas fa-moon" style="color:#000000; font-size:0.7rem;"></i>
   </div>
 </nav>
 
