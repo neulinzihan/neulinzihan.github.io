@@ -81,29 +81,48 @@ layout: null
     }
     .nav-socials a:hover { color: var(--text); background: var(--bg3); }
 
-    .theme-switcher {                                                           /* new theme switcher styles */
-      display: flex;
-      gap: 6px;
+
+    .theme-slider-wrap {                                                    /* slider style  */
       margin-left: 12px;
+      display: flex;
+      align-items: center;
     }
-    .theme-btn {
-      width: 18px;
-      height: 18px;
+    .theme-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 60px;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #d4a853, #5ba8a0, #6366f1); /* gold → water → purple */
+      outline: none;
+      cursor: pointer;
+    }
+    .theme-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      border: 2px solid var(--border);
+      background: var(--accent);
+      border: 2px solid var(--text);
+      box-shadow: 0 0 6px rgba(255,255,255,0.3);
       cursor: pointer;
       transition: all 0.2s;
-      padding: 0;
     }
-    .theme-btn:hover {
+    .theme-slider::-webkit-slider-thumb:hover {
       transform: scale(1.2);
-      border-color: var(--text2);
     }
-    .theme-btn.active {
-      border-color: var(--text);
-      box-shadow: 0 0 8px rgba(255,255,255,0.3);
+    .theme-slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--text);
+      box-shadow: 0 0 6px rgba(255,255,255,0.3);
+      cursor: pointer;
     }
 
+    
     .hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
@@ -517,12 +536,9 @@ layout: null
     <a href="https://scholar.google.com/citations?user=0Yic6NcAAAAJ" title="Scholar"><i class="fas fa-graduation-cap"></i></a>
   </div>
 
-  <div class="theme-switcher">
-    <button class="theme-btn" data-theme="gold" title="Gold" style="background:#d4a853;"></button>
-    <button class="theme-btn active" data-theme="water" title="Water" style="background:#5ba8a0;"></button>
-    <button class="theme-btn" data-theme="purple" title="Purple" style="background:#6366f1;"></button>
+  <div class="theme-slider-wrap">
+    <input type="range" min="0" max="2" value="1" class="theme-slider" id="themeSlider">
   </div>
-
 </nav>
 
 <section class="hero">
@@ -1010,10 +1026,12 @@ layout: null
     document.querySelector(`[data-theme="${name}"]`).classList.add('active');
   }
 
-  // Theme button click handlers
-  document.querySelectorAll('.theme-btn').forEach(btn => {
-    btn.addEventListener('click', () => setTheme(btn.dataset.theme));
-  });
+    // Theme slider handler
+      const themeOrder = ['gold', 'water', 'purple'];
+      const slider = document.getElementById('themeSlider');
+      slider.addEventListener('input', () => {
+        setTheme(themeOrder[slider.value]);
+      });
 </script>
 
 </body>
