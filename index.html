@@ -17,6 +17,11 @@ layout: null
       src: url('/assets/fonts/851MkPOP.ttf') format('truetype');
       font-display: swap;
     }
+    @font-face {
+      font-family: 'ZhiMangXing';
+      src: url('/assets/fonts/ZhiMangXing-Regular.ttf') format('truetype');
+      font-display: swap;
+    }
 
     :root {
       --bg: #0d1117;
@@ -253,7 +258,7 @@ layout: null
       color: white; border-radius: 10px; text-decoration: none;
       font-weight: 600; font-size: 0.9rem; transition: all 0.2s;
     }
-    .btn-main:hover { background: #4f46e5; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.3); }
+    .btn-main:hover { filter: brightness(0.85); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
 
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
@@ -606,14 +611,7 @@ layout: null
 
 <nav class="topnav" id="topnav">
   <a href="/" class="nav-logo">Zihan<span>.</span></a>
-
-  <button class="hamburger" id="hamburger" aria-label="Menu">             /*hamburger button for mobile*/
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <div class="nav-links">
+    <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
@@ -622,11 +620,18 @@ layout: null
     <a href="#garden">Garden</a>
     <a href="#inspiration">Inspiration</a>
   </div>
+
   <div class="nav-socials">
     <a href="https://github.com/neulinzihan" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="https://linkedin.com/in/zlukelin/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     <a href="https://scholar.google.com/citations?user=0Yic6NcAAAAJ" title="Scholar"><i class="fas fa-graduation-cap"></i></a>
   </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">             <!-- hamburger button for mobile -->
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
   <div class="theme-slider-wrap">
     <i class="fas fa-sun" style="color:#ffffff; font-size:0.7rem;"></i>
@@ -641,7 +646,7 @@ layout: null
   <div class="hero-content">
     <p class="hero-greeting">// hello world</p>
     <h1 class="hero-name">hey, I'm <span class="gradient">Zihan.</span></h1>
-    <p style="font-family:'851MkPOP', sans-serif; font-size:2.8rem; color:var(--accent2); margin-bottom:20px; opacity:0; animation: fadeUp 0.8s ease 0.5s forwards;">我是林子涵</p>
+    <p style="font-family:'ZhiMangXing', cursive; font-size:clamp(2.8rem, 6vw, 4.5rem); color:var(--accent2); margin-bottom:20px; opacity:0; animation: fadeUp 0.8s ease 0.5s forwards;">您好，我是林子涵</p>
     <p class="hero-desc">Robotics engineer who likes building things that move, sense, and (sometimes) think. Currently exploring the intersection of mechanical systems and intelligent control.</p>
     <div class="hero-tags">
       <span>sensor fusion</span>
@@ -685,7 +690,7 @@ layout: null
 
 <div class="divider-section" id="projects">
   <div class="reveal">
-    <div class="section-label" style="text-align:center;">03 / Projects</div>
+    <div class="section-label" style="text-align:center;">02 / Projects</div>
     <h2>selected projects</h2>
     <p>things I've built, broken, and rebuilt</p>
   </div>
@@ -808,7 +813,7 @@ layout: null
 
 <section class="section" id="experience">
   <div class="section-header reveal">
-    <div class="section-label">02 / Work Experience</div>
+    <div class="section-label">03 / Work Experience</div>
     <h2 class="section-title">where I've worked</h2>
     <div class="section-line"></div>
   </div>
@@ -1115,34 +1120,30 @@ layout: null
     document.querySelectorAll('.edu-card').forEach(el => {
       el.style.setProperty('--edu-top', t.eduTop);
     });
-
-    // Active button highlight
-    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector(`[data-theme="${name}"]`).classList.add('active');
   }
 
     // Theme slider handler
-      const themeOrder = ['gold', 'water', 'purple'];
-      const slider = document.getElementById('themeSlider');
-      slider.addEventListener('input', () => {
-        setTheme(themeOrder[slider.value]);
-      });
+    const themeOrder = ['gold', 'water', 'purple'];
+    const slider = document.getElementById('themeSlider');
+    slider.addEventListener('input', () => {
+      setTheme(themeOrder[slider.value]);
+    });
 
-      // Hamburger menu toggle
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('navLinks');
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('open');
-      });
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
 
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('open');
-        });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
       });
+    });
 </script>
 
 </body>
