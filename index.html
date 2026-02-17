@@ -901,6 +901,10 @@ layout: null
         <div class="sk-row" style="--w:70%"><div class="sk-label"><span>ANSYS (FEA)</span><span>70%</span></div><div class="sk-track"><div class="sk-fill"></div></div></div>
       </div>
     </div>
+
+    <p style="color:var(--text3); font-size:0.8rem; margin-top:20px; text-align:right;">
+      <a href="/toolbox/" id="toolboxLink" style="color:var(--text3); text-decoration:none;">full toolbox →</a>
+    </p>
   </section>
 </div>
 
@@ -1113,6 +1117,9 @@ layout: null
     document.querySelectorAll('.edu-card').forEach(el => {
       el.style.setProperty('--edu-top', t.eduTop);
     });
+    
+    // Save theme to URL for other pages
+    window.currentTheme = name;
   }
 
     // Theme slider handler
@@ -1137,6 +1144,15 @@ layout: null
         navLinks.classList.remove('open');
       });
     });
+
+    // Update toolbox link with current theme
+    const toolboxLink = document.getElementById('toolboxLink');
+    if (toolboxLink) {
+      slider.addEventListener('input', () => {
+        toolboxLink.href = '/toolbox/?theme=' + themeOrder[slider.value];
+      });
+      toolboxLink.href = '/toolbox/?theme=water'; // default
+    }
 </script>
 
 </body>
