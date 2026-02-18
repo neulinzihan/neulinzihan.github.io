@@ -13,6 +13,7 @@ layout: null
     :root {
       --bg: #0d1117;
       --bg2: #131a22;
+      --bg3: #1a232e;
       --card: #1c2633;
       --border: #2d3a4a;
       --text: #f0f6fc;
@@ -20,44 +21,172 @@ layout: null
       --text3: #607590;
       --accent: #5ba8a0;
       --accent2: #7ec4bd;
+      --accent-glow: rgba(91,168,160,0.15);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.8;
+      line-height: 1.6;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 60px 40px; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 60px 40px 80px; }
+
     .back {
       color: var(--accent2);
       text-decoration: none;
       font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
     }
-    .back:hover { text-decoration: underline; }
-    h1 {
-      font-size: 1.8rem;
-      margin: 24px 0 8px;
-      font-weight: 700;
-    }
+    .back:hover { opacity: 0.7; }
+
+    h1 { font-size: 1.8rem; margin: 24px 0 8px; font-weight: 700; }
+
     .subtitle {
       color: var(--text3);
       font-size: 0.9rem;
       margin-bottom: 40px;
     }
-    h2 {
+
+    /* ===== Matrix Table ===== */
+    .matrix-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    .matrix thead th {
       font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--text3);
+      position: sticky;
+      top: 0;
+    }
+    .matrix thead th:first-child {
+      width: 180px;
+      border-right: 1px solid var(--border);
+      border-radius: 12px 0 0 0;
+    }
+    .matrix thead th:last-child {
+      border-radius: 0 12px 0 0;
+    }
+
+    /* Proficiency column header colors */
+    .matrix thead th.col-prof { color: var(--accent2); }
+    .matrix thead th.col-work { color: #a78bfa; }
+    .matrix thead th.col-learn { color: #f59e0b; }
+
+    .matrix tbody tr { border-bottom: 1px solid var(--border); }
+    .matrix tbody tr:last-child { border-bottom: none; }
+
+    .matrix tbody td {
+      padding: 16px 20px;
+      vertical-align: top;
+    }
+    .matrix tbody td:first-child {
+      border-right: 1px solid var(--border);
+      background: var(--bg2);
+    }
+
+    .cat-label {
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .cat-label i {
       color: var(--accent2);
       font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin: 32px 0 12px;
+      width: 18px;
+      text-align: center;
     }
-    .tools {
-      color: var(--text2);
-      font-size: 0.9rem;
+
+    /* ===== Skill Pills ===== */
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Proficient — accent-teal */
+    .pill-prof {
+      background: var(--accent-glow);
+      color: var(--accent2);
+      border: 1px solid rgba(91,168,160,0.2);
+    }
+    /* Working Knowledge — purple */
+    .pill-work {
+      background: rgba(167,139,250,0.1);
+      color: #c4b5fd;
+      border: 1px solid rgba(167,139,250,0.15);
+    }
+    /* Learning — amber */
+    .pill-learn {
+      background: rgba(245,158,11,0.08);
+      color: #fbbf24;
+      border: 1px solid rgba(245,158,11,0.15);
+      font-style: italic;
+    }
+
+    /* ===== Legend ===== */
+    .legend {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: var(--text3);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 3px;
+    }
+    .legend-dot.prof { background: var(--accent); }
+    .legend-dot.work { background: #a78bfa; }
+    .legend-dot.learn { background: #f59e0b; }
+
+    /* ===== Footer note ===== */
+    .note {
+      color: var(--text3);
+      font-size: 0.78rem;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      line-height: 1.7;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .container { padding: 40px 16px 60px; }
+      .matrix thead th, .matrix tbody td { padding: 12px 14px; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
@@ -65,31 +194,233 @@ layout: null
     <h1>full toolbox</h1>
     <p class="subtitle">everything I've worked with — not all at once, hopefully</p>
 
-    <h2>Proficient</h2>
-    <p class="tools">Python, MATLAB, Simulink, SolidWorks (CSWA in progress), ROS 2, Linux, Git, Sensor Fusion (IMU/GPS/ToF), Raspberry Pi, Arduino, 3D Printing (DLP/FDM), PID Control</p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th class="col-prof">Proficient</th>
+            <th class="col-work">Working Knowledge</th>
+            <th class="col-learn">Learning</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    <h2>Working Knowledge</h2>
-    <p class="tools">C#, Java, Reinforcement Learning, ANSYS FEA, Creo, Excel, Jupyter Notebook, VS Code, Anaconda3, MySQL, LaTeX (TeXstudio), Obsidian, Pandoc</p>
+          <!-- CAD & Design -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-cube"></i> CAD & Design</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">SolidWorks</span>
+                <span class="pill pill-prof">3D Printing (DLP/FDM)</span>
+                <span class="pill pill-prof">UltiMaker Cura</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">Creo</span>
+                <span class="pill pill-work">AutoCAD</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">GD&T</span>
+              </div>
+            </td>
+          </tr>
 
-    <h2>Exposure</h2>
-    <p class="tools">Abaqus FEA, Altium Designer, Proteus, LTspice, Dassault SIMULIA Isight, WolframScript, RStudio, Android Studio, Boris FX Mocha Pro, Graphviz, UltiMaker Cura, FileZilla, WinSCP, Notion, Zotero, EndNote, Writage, DB Browser for SQLite, Oracle VirtualBox, PuTTY</p>
+          <!-- Simulation & FEA -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-chart-line"></i> Simulation & FEA</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">MATLAB</span>
+                <span class="pill pill-prof">Simulink</span>
+                <span class="pill pill-prof">Simscape</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">ANSYS (Mech + Thermal)</span>
+                <span class="pill pill-work">Abaqus</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">Isight</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Robotics & Control -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-robot"></i> Robotics & Control</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">ROS 2</span>
+                <span class="pill pill-prof">Sensor Fusion (IMU/GPS/ToF)</span>
+                <span class="pill pill-prof">PID Control</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">NMPC</span>
+                <span class="pill pill-work">Reinforcement Learning</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">Docker</span>
+                <span class="pill pill-learn">Gazebo</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Programming -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-code"></i> Programming</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">Python</span>
+                <span class="pill pill-prof">Linux / Bash</span>
+                <span class="pill pill-prof">Git</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">C#</span>
+                <span class="pill pill-work">Java</span>
+                <span class="pill pill-work">MySQL</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">C / C++</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Sensing & Prototyping -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-microchip"></i> Sensing & Prototyping</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">Raspberry Pi</span>
+                <span class="pill pill-prof">Arduino</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">MCP3008 ADC</span>
+                <span class="pill pill-work">PWM Servo Control</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">Altium Designer</span>
+                <span class="pill pill-learn">LTspice</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Hands-On / Lab Equipment -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-wrench"></i> Hands-On / Lab</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">Soldering & Rework</span>
+                <span class="pill pill-prof">Multimeter</span>
+                <span class="pill pill-prof">Oscilloscope</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">Signal Generator</span>
+                <span class="pill pill-work">Compressed-Air Fixtures</span>
+                <span class="pill pill-work">Wind Tunnel Testing</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">High Vacuum Systems</span>
+                <span class="pill pill-learn">Cryogenics</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Documentation & Workflow -->
+          <tr>
+            <td><div class="cat-label"><i class="fas fa-file-alt"></i> Docs & Workflow</div></td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-prof">BOM Management</span>
+                <span class="pill pill-prof">LaTeX</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-work">ERP Systems</span>
+                <span class="pill pill-work">Jupyter Notebook</span>
+                <span class="pill pill-work">Obsidian / Notion</span>
+              </div>
+            </td>
+            <td>
+              <div class="pills">
+                <span class="pill pill-learn">ECO / PLM</span>
+                <span class="pill pill-learn">Arena / Windchill</span>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot prof"></div> Proficient — used extensively in projects or work</div>
+      <div class="legend-item"><div class="legend-dot work"></div> Working Knowledge — used in coursework or limited scope</div>
+      <div class="legend-item"><div class="legend-dot learn"></div> Learning — actively building skills</div>
+    </div>
+
+    <div class="note">
+      Bilingual: English (professional) · Mandarin Chinese (native). Comfortable in both U.S. and China work environments.<br>
+      Regulated industry experience: medical device adjacent (biomechanics research), automotive electronics (HiRain Technology).
+    </div>
+
   </div>
 
   <script>
-    // Read theme from URL and apply
     const themes = {
-      gold: { bg:'#0c1220', bg2:'#111827', card:'#1e293b', border:'#334155', text:'#f8fafc', text2:'#94a3b8', text3:'#64748b', accent:'#d4a853', accent2:'#e2bd6e' },
-      water: { bg:'#0d1117', bg2:'#131a22', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd' },
-      purple: { bg:'#0a0a0b', bg2:'#111113', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8' }
+      gold: { bg:'#0c1220', bg2:'#111827', bg3:'#1a2332', card:'#1e293b', border:'#334155', text:'#f8fafc', text2:'#94a3b8', text3:'#64748b', accent:'#d4a853', accent2:'#e2bd6e', accentGlow:'rgba(212,168,83,0.15)' },
+      water: { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)' },
+      purple: { bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)' }
     };
     const params = new URLSearchParams(window.location.search);
     const themeName = params.get('theme');
     if (themeName && themes[themeName]) {
       const t = themes[themeName];
       const r = document.documentElement.style;
-      Object.keys(t).forEach(k => {
-        r.setProperty('--' + k.replace(/([A-Z])/g, m => '-' + m.toLowerCase()), t[k]);
+      r.setProperty('--bg', t.bg);
+      r.setProperty('--bg2', t.bg2);
+      r.setProperty('--bg3', t.bg3);
+      r.setProperty('--card', t.card);
+      r.setProperty('--border', t.border);
+      r.setProperty('--text', t.text);
+      r.setProperty('--text2', t.text2);
+      r.setProperty('--text3', t.text3);
+      r.setProperty('--accent', t.accent);
+      r.setProperty('--accent2', t.accent2);
+      r.setProperty('--accent-glow', t.accentGlow);
+
+      // Update proficient pill colors to match theme accent
+      document.querySelectorAll('.pill-prof').forEach(el => {
+        el.style.background = t.accentGlow;
+        el.style.color = t.accent2;
+        el.style.borderColor = t.accent + '33';
       });
+      document.querySelector('.col-prof').style.color = t.accent2;
+      document.querySelector('.legend-dot.prof').style.background = t.accent;
     }
   </script>
 </body>
