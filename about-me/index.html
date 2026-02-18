@@ -1,0 +1,80 @@
+---
+permalink: /about-me/
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117; --bg2: #131a22; --card: #1c2633;
+      --border: #2d3a4a; --text: #f0f6fc; --text2: #8b9eb5;
+      --text3: #607590; --accent: #5ba8a0; --accent2: #7ec4bd;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+    .container { max-width:800px; margin:0 auto; padding:60px 40px; }
+    .back { color:var(--accent2); text-decoration:none; font-size:0.85rem; }
+    .back:hover { text-decoration:underline; }
+    h1 { font-size:1.8rem; margin:24px 0 8px; font-weight:700; }
+    .subtitle { color:var(--text3); font-size:0.9rem; margin-bottom:40px; font-style:italic; }
+    h2 {
+      font-family:'JetBrains Mono',monospace;
+      color:var(--accent2); font-size:0.85rem;
+      text-transform:uppercase; letter-spacing:2px;
+      margin:40px 0 12px;
+    }
+    p { color:var(--text2); font-size:0.92rem; margin-bottom:14px; }
+    .hl { color:var(--accent2); font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back">← back to home</a>
+    <h1>more about me</h1>
+    <p class="subtitle">the unfiltered version</p>
+
+    <h2>what drives me</h2>
+    <p><span class="hl">Raspberry Pi</span> is where my curiosity lives — it's my go-to platform for exploring AI algorithms, reinforcement learning, the latest Python developments, sensor drivers, and even new eco-friendly battery materials. I also genuinely enjoy revisiting and digging deeper into control systems, vibration propagation control, thermodynamics, fluid mechanics, and material science (especially stainless steel).</p>
+
+    <h2>hands-on by nature</h2>
+    <p>I love <span class="hl">DIY car repair</span> — oil changes, hub assembly replacements, clutch/brake oil system work — and I own nearly enough tools to take apart an entire car. I also fix bikes, phones, and computers. I'm currently working toward my <span class="hl">SolidWorks certification (CSWA)</span>. Areas I'm eager to explore next include <span class="hl">AGV, multi-agent system design, and AR</span>.</p>
+
+    <h2>how I learn</h2>
+    <p>I'll be honest — <span class="hl">short-form video</span> is my favorite way to absorb information and find inspiration. Whether it's WeChat Video, Douyin, TikTok, or YouTube Shorts, when something sparks an idea, I immediately capture it in a properly formatted note in <span class="hl">Obsidian (Markdown)</span>. Or I'll ask AI right away — having AI as a learning companion lets me dive deep into any topic continuously. I also regularly add textbooks and classic publications to my digital bookshelf from online libraries.</p>
+
+    <h2>beyond engineering</h2>
+    <p>I play <span class="hl">violin</span> (pop and gospel music), love being in nature through hiking and outdoor living, and stay active with <span class="hl">basketball</span> (handles and flashy passes), skiing, tennis, skateboarding, and golf. I enjoy MOBA games, American TV series, and <span class="hl">cooking</span> — especially stir-fry and charcoal grilling. I'm drawn to a healthy, minimalist lifestyle.</p>
+    <p>I'm fascinated by art, ancient and modern history (both Eastern and Western), comparative literature and wisdom across cultures, <span class="hl">biblical theology, apologetics</span>, public speaking, communication styles for different contexts, classical Chinese prose and poetry, personal growth, emotional problem-solving, and joyful parenting and education.</p>
+    <p>Some things I want to start learning: <span class="hl">photography, dancing, drums/piano, gas bike and car modification, music production, and sales techniques</span>.</p>
+    <p>I also have ideas for novel product designs — particularly in <span class="hl">pet tech and assistive technology</span> — spanning business models to hardware/software design. I've raised chickens, turtles, and tropical fish since elementary school, and co-raised two cats with roommates.</p>
+
+    <h2>how I think</h2>
+    <p>My preferred note-taking order: <span class="hl">paper > stylus/tablet > keyboard</span>. Exploring new hobbies is how I recharge and stay curious. Learning a new language is what motivates me socially.</p>
+
+    <h2>what I watch</h2>
+    <p>Stand-up comedy (Trevor Noah), interview-style documentaries and talk shows (Jiang Wen, Dou Wentao, Xu Zhiyuan, Ellen), and updating this very website.</p>
+
+    <p style="color:var(--text3); margin-top:40px; font-style:italic;">My deepest hope is that everyone I meet feels happy and safe.</p>
+  </div>
+
+  <script>
+    const themes = {
+      gold: { bg:'#0c1220', bg2:'#111827', card:'#1e293b', border:'#334155', text:'#f8fafc', text2:'#94a3b8', text3:'#64748b', accent:'#d4a853', accent2:'#e2bd6e' },
+      water: { bg:'#0d1117', bg2:'#131a22', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd' },
+      purple: { bg:'#0a0a0b', bg2:'#111113', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8' }
+    };
+    const params = new URLSearchParams(window.location.search);
+    const themeName = params.get('theme');
+    if (themeName && themes[themeName]) {
+      const t = themes[themeName];
+      const r = document.documentElement.style;
+      Object.keys(t).forEach(k => r.setProperty('--' + k, t[k]));
+    }
+  </script>
+</body>
+</html>
