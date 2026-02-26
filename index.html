@@ -611,6 +611,96 @@ layout: null
       .nav-links a { padding: 6px 8px; font-size: 0.78rem; }
     }
 
+
+
+    .feedback-section {
+      padding: 100px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .feedback-form input,
+    .feedback-form textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      padding: 14px 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .feedback-form input::placeholder,
+    .feedback-form textarea::placeholder {
+      color: var(--text3);
+    }
+    .feedback-form input:focus,
+    .feedback-form textarea:focus {
+      border-color: var(--accent);
+    }
+    .feedback-form textarea {
+      min-height: 120px;
+    }
+    .feedback-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .feedback-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .feedback-submit:hover {
+      filter: brightness(0.85);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    .feedback-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .feedback-status {
+      font-size: 0.85rem;
+      padding: 12px 16px;
+      border-radius: 8px;
+      display: none;
+    }
+    .feedback-status.success {
+      display: block;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.2);
+      color: var(--green);
+    }
+    .feedback-status.error {
+      display: block;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.2);
+      color: #ef4444;
+    }
+    @media (max-width: 768px) {
+      .feedback-section { padding: 60px 20px; }
+      .feedback-form .form-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -986,16 +1076,36 @@ layout: null
   </div>
 </section>
 
-<section class="cta">
-  <div class="cta-glow"></div>
-  <h2 class="reveal">let's build something cool.</h2>
 
-  <div class="cta-btns reveal">  
-    <a href="mailto:zlukelin@gmail.com" class="btn-ghost">
-      <i class="fas fa-envelope"></i> Contact Me
-    </a>
-  </div>
+
+<section>
+
+<section class="feedback-section" id="feedback">
+    <div class="section-header reveal">
+      <div class="section-label">08 / Feedback</div>
+      <h2 class="section-title">Leave a message</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <form
+      class="feedback-form reveal"
+      id="feedbackForm"
+      action="https://formspree.io/f/xkovybdl"
+      method="POST"
+    >
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Name（可选）" />
+        <input type="email" name="email" placeholder="Email（可选，方便我回复你）" />
+      </div>
+      <textarea name="message" placeholder="Leave a message... 留个言吧" required></textarea>
+      <input type="text" name="_gotcha" style="display:none">  <!-- honeypot 防垃圾 -->
+      <button type="submit" class="feedback-submit" id="feedbackBtn">
+        <i class="fas fa-paper-plane"></i> Send / 发送
+      </button>
+      <div class="feedback-status" id="feedbackStatus"></div>
+    </form>
 </section>
+
 
 <footer class="site-footer">
   <div class="footer-name">Zihan Lin</div>
@@ -1191,6 +1301,44 @@ layout: null
       });
       coursesLink.href = '/courses/?theme=water';
     }
+
+
+    
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackBtn = document.getElementById('feedbackBtn');
+    const feedbackStatus = document.getElementById('feedbackStatus');
+
+    feedbackForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      feedbackBtn.disabled = true;
+      feedbackBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      feedbackStatus.className = 'feedback-status';
+      feedbackStatus.style.display = 'none';
+
+      try {
+        const res = await fetch(feedbackForm.action, {
+          method: 'POST',
+          body: new FormData(feedbackForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          feedbackStatus.className = 'feedback-status success';
+          feedbackStatus.textContent = '✓ Message sent! Thanks for reaching out. 消息已发送，感谢！';
+          feedbackStatus.style.display = 'block';
+          feedbackForm.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        feedbackStatus.className = 'feedback-status error';
+        feedbackStatus.textContent = '✗ Failed to send. Please try emailing zlukelin@gmail.com directly.';
+        feedbackStatus.style.display = 'block';
+      }
+
+      feedbackBtn.disabled = false;
+      feedbackBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send / 发送';
+    });
 </script>
 
 </body>
