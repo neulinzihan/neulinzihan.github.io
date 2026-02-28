@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+﻿# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Zihan Lin"
 title_separator          : "-"
 name                     : &name "Zihan Lin"
-description              : &description "Mechanical Eingineer | Robotics & AI"
+description              : &description "Mechanical Engineer | Robotics & AI"
 url                      : https://neulinzihan.github.io
 baseurl                  : ""
 repository               : "neulinzihan/neulinzihan.github.io"
