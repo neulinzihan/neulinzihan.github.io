@@ -268,6 +268,44 @@ layout: null
     }
     .btn-ghost:hover { border-color: var(--text3); color: var(--text); }
 
+    .cv-dropdown {
+      position: relative;
+    }
+    .cv-toggle {
+      cursor: pointer;
+      background: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .cv-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 0px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px 0;
+      min-width: 200px;
+      z-index: 100;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .cv-dropdown:hover .cv-menu {
+      display: block;
+    }
+    .cv-menu a {
+      display: block;
+      padding: 8px 16px;
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: all 0.15s;
+    }
+    .cv-menu a:hover {
+      background: var(--accent-glow);
+      color: var(--accent2);
+    }
+    
     .status-pill {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 12px 20px; border-radius: 10px;
@@ -760,10 +798,10 @@ layout: null
           <i class="fas fa-file-alt"></i> View CV <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i>
         </button>
         <div class="cv-menu">
-          <a href="/cv/" target="_blank">Full CV <span class="legacy-tag">↗ legacy</span></a>
-          <a href="/files/resume-full.pdf" target="_blank">Full Resume (2pg)</a>
-          <a href="/files/resume-rd.pdf" target="_blank">R&D Resume (1pg)</a>
-          <a href="/files/resume-field.pdf" target="_blank">Field Engineer (1pg)</a>
+          <a href="/cv/" target="_blank"> Curriculum Vitae <span class="legacy-tag">↗ legacy</span></a>
+          <a href="/resume/#full">Full Resume (2pg)</a>
+          <a href="/resume/#test">Test Engineer (1pg)</a>
+          <a href="/resume/#rd">R&D Engineer (1pg)</a>
         </div>
       </div>
       <div class="status-pill"><div class="status-dot"></div>Open to work — Feb 2026</div>
