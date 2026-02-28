@@ -659,6 +659,15 @@ layout: null
     const hash = window.location.hash.replace('#', '');
     if (['full', 'test', 'rd'].includes(hash)) switchTab(hash);
   })();
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+  const valid = ['full', 'test', 'rd'];
+  if (valid.includes(hash)) {
+    switchTab(hash);
+  }
+});
 </script>
 </body>
 </html>
