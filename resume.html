@@ -1,8 +1,3 @@
----
-permalink: /resume/
-layout: null
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,7 +214,7 @@ layout: null
   <div class="contact-row">
     <span>Waltham, MA</span>
     <span>857-294-5016</span>
-    <a href="mailto:zlukelin@gmail.com">zlukelin@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#0b71677e606e6762654b6c666a626725686466"><span class="__cf_email__" data-cfemail="a7ddcbd2ccc2cbcec9e7c0cac6cecb89c4c8ca">[email&#160;protected]</span></a>
     <a href="http://neulinzihan.github.io" target="_blank">neulinzihan.github.io</a>
     <a href="https://linkedin.com/in/zlukelin" target="_blank">linkedin.com/in/zlukelin</a>
   </div>
@@ -651,8 +646,14 @@ layout: null
     document.querySelectorAll('.panel').forEach(p => {
       p.classList.toggle('active', p.id === 'panel-' + name);
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.replaceState(null, '', '#' + name);
   }
+
+  // Auto-switch based on URL hash on page load
+  (function () {
+    const hash = window.location.hash.replace('#', '');
+    if (['full', 'test', 'rd'].includes(hash)) switchTab(hash);
+  })();
 </script>
 </body>
 </html>
