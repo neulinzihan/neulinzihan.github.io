@@ -755,10 +755,17 @@ layout: null
     </div>
     <div class="hero-actions">
       <a href="#projects" class="btn-main">See Projects <i class="fas fa-arrow-down"></i></a>
-      <a href="/cv/" class="btn-ghost" target="_blank">
-        <i class="fas fa-file-alt"></i> View CV
-        <span class="legacy-tag">↗ legacy</span>
-      </a>
+      <div class="cv-dropdown">
+        <button class="btn-ghost cv-toggle">
+          <i class="fas fa-file-alt"></i> View CV <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i>
+        </button>
+        <div class="cv-menu">
+          <a href="/cv/" target="_blank">Full CV <span class="legacy-tag">↗ legacy</span></a>
+          <a href="/files/resume-full.pdf" target="_blank">Full Resume (2pg)</a>
+          <a href="/files/resume-rd.pdf" target="_blank">R&D Resume (1pg)</a>
+          <a href="/files/resume-field.pdf" target="_blank">Field Engineer (1pg)</a>
+        </div>
+      </div>
       <div class="status-pill"><div class="status-dot"></div>Open to work — Feb 2026</div>
     </div>
   </div>
