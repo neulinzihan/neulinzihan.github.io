@@ -1,0 +1,599 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zihan Lin — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117; --bg2: #131a22; --bg3: #1a232e;
+    --card: #1c2633; --border: #2d3a4a;
+    --text: #f0f6fc; --text2: #8b9eb5; --text3: #607590;
+    --accent: #5ba8a0; --accent2: #7ec4bd;
+    --accent-glow: rgba(91,168,160,0.15);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Inter',sans-serif;
+    background:var(--bg); color:var(--text);
+    line-height:1.6; max-width:860px;
+    margin:0 auto; padding:0 24px 100px;
+  }
+
+  /* ── Header ── */
+  .page-header { padding:56px 0 36px; border-bottom:1px solid var(--border); margin-bottom:40px; }
+  .page-header h1 { font-size:2.4rem; font-weight:800; letter-spacing:-0.03em; margin-bottom:6px; }
+  .page-header h1 a { color:inherit; text-decoration:none; }
+  .page-header .sub { color:var(--accent2); font-size:0.88rem; font-family:'JetBrains Mono',monospace; margin-bottom:16px; }
+  .contact-row { display:flex; flex-wrap:wrap; gap:6px 20px; font-size:0.8rem; color:var(--text3); margin-top:12px; }
+  .contact-row a { color:var(--text3); text-decoration:none; transition:color 0.15s; }
+  .contact-row a:hover { color:var(--accent2); }
+
+  /* ── Tabs ── */
+  .tabs { display:flex; border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:48px; width:fit-content; background:var(--bg2); }
+  .tab-btn { padding:10px 26px; background:transparent; color:var(--text3); border:none; border-right:1px solid var(--border); font-family:'Inter',sans-serif; font-size:0.83rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+  .tab-btn:last-child { border-right:none; }
+  .tab-btn:hover { color:var(--text); background:var(--bg3); }
+  .tab-btn.active { background:var(--accent); color:#fff; box-shadow:inset 0 1px 0 rgba(255,255,255,0.15); }
+  .panel { display:none; }
+  .panel.active { display:block; }
+
+  /* ── Download bar ── */
+  .dl-bar { display:flex; align-items:center; justify-content:space-between; background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:14px 20px; margin-bottom:40px; }
+  .dl-bar .label { font-size:0.83rem; color:var(--text2); }
+  .dl-bar .label strong { color:var(--text); }
+  .btn-dl { display:inline-flex; align-items:center; gap:6px; padding:8px 18px; background:var(--accent); color:#fff; border-radius:8px; text-decoration:none; font-size:0.78rem; font-weight:600; transition:all 0.2s; }
+  .btn-dl:hover { filter:brightness(0.85); transform:translateY(-1px); }
+
+  /* ── Section heading ── */
+  .section-title { font-size:0.68rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); font-family:'JetBrains Mono',monospace; border-bottom:1px solid var(--border); padding-bottom:8px; margin:36px 0 0; }
+
+  /* ── Summary ── */
+  .summary { color:var(--text2); line-height:1.8; padding:20px 0 4px; font-size:0.92rem; }
+
+  /* ── Card group ── */
+  .section-group { background:var(--bg2); border-radius:12px; padding:0 20px; margin-top:8px; border:1px solid var(--border); }
+
+  /* ── Expandable entries ── */
+  .entry { border-bottom:1px solid var(--border); }
+  .entry:last-child { border-bottom:none; }
+  .entry-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; padding:20px 0 16px; cursor:pointer; user-select:none; }
+  .entry-header:hover .entry-title { color:var(--accent2); }
+  .entry-left { flex:1; min-width:0; }
+  .entry-title { font-weight:700; color:var(--text); font-size:1rem; letter-spacing:-0.01em; transition:color 0.15s; }
+  .entry-org { font-size:0.82rem; color:var(--accent2); font-weight:500; margin-top:3px; }
+  .entry-pitch { font-size:0.75rem; color:var(--text3); font-family:'JetBrains Mono',monospace; margin-top:4px; }
+  .entry-right { display:flex; align-items:center; gap:14px; flex-shrink:0; }
+  .entry-date { font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--text3); white-space:nowrap; }
+  .entry-toggle { width:22px; height:22px; border-radius:50%; background:var(--bg3); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.25s; font-size:1rem; color:var(--text3); line-height:1; }
+  .entry.open .entry-toggle { background:var(--accent-glow); border-color:var(--accent); color:var(--accent2); transform:rotate(45deg); }
+  .entry-detail { max-height:0; overflow:hidden; transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .entry.open .entry-detail { max-height:800px; }
+  .entry-detail-inner { padding-bottom:20px; }
+  .entry-detail-inner ul { padding-left:20px; margin-bottom:12px; }
+  .entry-detail-inner ul li { margin-bottom:7px; color:var(--text2); font-size:0.88rem; line-height:1.7; }
+
+  /* ── Simple entries (education) ── */
+  .entry-simple { padding:20px 0; border-bottom:1px solid var(--border); }
+  .entry-simple:last-child { border-bottom:none; }
+  .entry-simple .row { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px; margin-bottom:3px; }
+  .entry-simple .entry-title { font-size:1rem; font-weight:700; letter-spacing:-0.01em; }
+  .entry-simple .entry-date { font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--text3); }
+  .entry-simple .note { font-size:0.8rem; color:var(--text3); margin-top:4px; }
+
+  /* ── Tags ── */
+  .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .tag { font-family:'JetBrains Mono',monospace; font-size:0.68rem; padding:3px 10px; background:var(--accent-glow); color:var(--accent2); border:1px solid rgba(91,168,160,0.2); border-radius:4px; }
+
+  /* ── Skills ── */
+  .skills-block { display:flex; flex-direction:column; margin-top:8px; }
+  .skill-row { display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--border); align-items:flex-start; }
+  .skill-row:last-child { border-bottom:none; }
+  .skill-row .sk-cat { min-width:160px; color:var(--accent2); font-weight:600; font-size:0.8rem; padding-top:1px; flex-shrink:0; }
+  .skill-row .sk-vals { color:var(--text2); line-height:1.6; font-size:0.85rem; }
+
+  /* ── Publication ── */
+  .pub { background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:10px; padding:18px 20px; font-size:0.85rem; color:var(--text2); line-height:1.75; margin-top:16px; }
+  .pub a { color:var(--accent2); text-underline-offset:3px; }
+
+  @media (max-width:600px) {
+    .tabs { flex-wrap:wrap; width:100%; }
+    .tab-btn { flex:1; }
+    .dl-bar { flex-direction:column; gap:12px; align-items:flex-start; }
+    .skill-row { flex-direction:column; gap:4px; }
+    .skill-row .sk-cat { min-width:unset; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1><a href="/">Zihan Lin</a></h1>
+  <div class="sub">Robotics &amp; Mechanical Engineer</div>
+  <div class="contact-row">
+    <span>Waltham, MA</span>
+    <span>857-294-5016</span>
+    <a href="mailto:zlukelin@gmail.com">zlukelin@gmail.com</a>
+    <a href="http://neulinzihan.github.io" target="_blank">neulinzihan.github.io</a>
+    <a href="https://linkedin.com/in/zlukelin" target="_blank">linkedin.com/in/zlukelin</a>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('full')">Full Resume</button>
+  <button class="tab-btn" onclick="switchTab('test')">Test Engineer</button>
+  <button class="tab-btn" onclick="switchTab('rd')">R&amp;D Engineer</button>
+</div>
+
+<!-- ══ PANEL 1 — Full ══ -->
+<div class="panel active" id="panel-full">
+  <div class="dl-bar">
+    <div class="label"><strong>Full Resume</strong> — 2-page comprehensive version</div>
+    <a class="btn-dl" href="/files/resume-full.pdf" download>↓ Download PDF</a>
+  </div>
+
+  <div class="section-title">Education</div>
+  <div class="section-group">
+    <div class="entry-simple">
+      <div class="row">
+        <span class="entry-title">Master of Science in Robotics</span>
+        <span class="entry-date">Dec 2025</span>
+      </div>
+      <div class="entry-org">Northeastern University, Boston, MA</div>
+      <div class="note">Dual Husky Scholars · Presidential Global Scholars · Dean's Honor List</div>
+    </div>
+    <div class="entry-simple">
+      <div class="row">
+        <span class="entry-title">Bachelor of Science in Mechanical Engineering</span>
+        <span class="entry-date">Dec 2023</span>
+      </div>
+      <div class="entry-org">Northeastern University, Boston, MA</div>
+      <div class="note">Minor in Mathematics · GPA: 3.2 · Dean's Honor List</div>
+    </div>
+  </div>
+
+  <div class="section-title">Skills</div>
+  <div class="skills-block">
+    <div class="skill-row"><span class="sk-cat">Sensing &amp; Prototyping</span><span class="sk-vals">Sensor Fusion, IMU/GPS, ToF, Raspberry Pi, Arduino, 3D Printing (DLP/FDM)</span></div>
+    <div class="skill-row"><span class="sk-cat">Robotics &amp; Software</span><span class="sk-vals">Git, Python, ROS 2, C#, Linux, Reinforcement Learning, PID Control</span></div>
+    <div class="skill-row"><span class="sk-cat">CAD / CAE</span><span class="sk-vals">SolidWorks, Creo, ANSYS (FEA), MATLAB / Simulink</span></div>
+  </div>
+
+  <div class="section-title">Work Experience</div>
+  <div class="section-group">
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Mechanical Test Engineer Co-op</div>
+          <div class="entry-org">SharkNinja, Needham MA</div>
+          <div class="entry-pitch">Sealed chambers · wind tunnel validation · Python data logging</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jan – Jun 2023</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Designed sealed test chambers, compressed-air nozzles, and fabric-attachment fixtures to validate Shark Air Purifier compress air system and wind tunnel.</li>
+          <li>Troubleshot testing protocol failures for Shark Uprights and Robotic Vacuums, improving test reliability.</li>
+          <li>Wrote Python scripts to parse pressure-sensor and wind-tunnel datasets, flagging out-of-spec readings. Configured Prometheus for automated data logging.</li>
+          <li>Logged defects and non-conformance findings; delivered weekly test-result summaries to engineering leadership.</li>
+        </ul>
+        <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Test Fixtures</span><span class="tag">Python</span><span class="tag">Prometheus</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Mechanical Design &amp; Production Engineering Intern</div>
+          <div class="entry-org">HiRain Technology, Chaoyang, Beijing</div>
+          <div class="entry-pitch">PCB test fixtures · firmware flashing · DFM-compliant PCBA enclosures</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jul – Dec 2021</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Constructed PCB test fixtures; validated circuit performance through firmware flashing, Linux debugging, and soldering rework in post-production testing.</li>
+          <li>Optimized 2D/3D CAD models for PCBA enclosures in AutoCAD and Creo, ensuring DFM compliance and geometric tolerance.</li>
+          <li>Interpreted wiring diagrams and schematics to troubleshoot board-level hardware failures.</li>
+        </ul>
+        <div class="tags"><span class="tag">AutoCAD</span><span class="tag">Creo</span><span class="tag">PCB</span><span class="tag">Linux</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Project Experience</div>
+  <div class="section-group">
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Micro/Nano Biomechanical Characterization Lab</div>
+          <div class="entry-org">Research Assistant · Northeastern University</div>
+          <div class="entry-pitch">Published in EJM · dual-IMU fusion · 5× faster test cycle</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jun 2022 – Dec 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion to reconstruct real-time 3D inclusion trajectories; identified Southwell-type lateral instability at critical depth (~19 mm).</li>
+          <li>Co-authored publication in European Journal of Mechanics - A/Solids (DOI: 10.1016/j.euromechsol.2024.105343).</li>
+          <li>Automated indentation testing via Raspberry Pi/Python/PID-controlled X-Y stage, reducing per-sample cycle time by 5×.</li>
+          <li>Designed multi-geometry indenters in SolidWorks and fabricated via DLP 3D printing.</li>
+        </ul>
+        <div class="tags"><span class="tag">IMU Fusion</span><span class="tag">Raspberry Pi</span><span class="tag">PID</span><span class="tag">SolidWorks</span><span class="tag">DLP 3D Print</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">GPS/IMU Driver Development &amp; Sensor Fusion</div>
+          <div class="entry-pitch">40 Hz ROS 2 driver · Allan Variance · 2+ km trajectory reconstruction</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Developed inertial odometry pipeline with least-squares magnetometer calibration and complementary filter fusing gyroscope and magnetometer heading estimates.</li>
+          <li>Characterized gyroscope stochastic errors (ARW, Bias Instability, RRW) via Allan Variance on a 5-hour stationary dataset.</li>
+          <li>Engineered a ROS 2 device driver for VectorNav VN-100 IMU over USB serial at 40 Hz; collaborated via Git.</li>
+        </ul>
+        <div class="tags"><span class="tag">ROS 2</span><span class="tag">Sensor Fusion</span><span class="tag">Allan Variance</span><span class="tag">Linux</span><span class="tag">Git</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Disaster Relief Drones Simulation</div>
+          <div class="entry-pitch">100% coverage · 30% less redundancy · 20k RL episodes</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jan – May 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Architected autonomous drone deployment using Q-learning RL and A* pathfinding to restore LTE coverage; achieved 100% area coverage across 7×7 to 20×20 grids.</li>
+          <li>Designed multi-objective reward function; reduced drone redundancy by 30% vs. random placement over 20,000 episodes.</li>
+        </ul>
+        <div class="tags"><span class="tag">Q-Learning</span><span class="tag">A*</span><span class="tag">Python</span><span class="tag">RL</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">ToF Cameras &amp; Vibrational Smart Glass</div>
+          <div class="entry-pitch">Wearable obstacle detection · PWM haptics · 30% accuracy improvement</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2024</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Built wearable obstacle-detection prototype — Arducam ToF camera and dual vibration motors on a custom resin 3D-printed frame driven by Raspberry Pi 4B.</li>
+          <li>Implemented real-time depth pipeline with tri-zone ROI and PWM haptic feedback, achieving 30% improvement in user feedback accuracy.</li>
+        </ul>
+        <div class="tags"><span class="tag">ToF</span><span class="tag">Raspberry Pi</span><span class="tag">Haptics</span><span class="tag">Python</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">6-DOF Robotic Arm Trajectory Control</div>
+          <div class="entry-pitch">NMPC + Gaussian Process · disturbance rejection · MATLAB/Simulink</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2024</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Designed 6-DOF robotic arm control system using NMPC with a Gaussian Process-augmented state-space model for precise trajectory tracking and disturbance rejection.</li>
+        </ul>
+        <div class="tags"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">NMPC</span><span class="tag">Gaussian Process</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Composite Pressure Vessel FEA</div>
+          <div class="entry-pitch">ANSYS Workbench · fibrous composites · von Mises stress validation</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jan – May 2022</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Performed FEA in ANSYS Workbench to model fibrous composite layups in a high-pressure liquid tank, verifying peak von Mises stress remained within safety margins.</li>
+        </ul>
+        <div class="tags"><span class="tag">ANSYS</span><span class="tag">FEA</span><span class="tag">Composites</span></div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /panel-full -->
+
+
+<!-- ══ PANEL 2 — Test ══ -->
+<div class="panel" id="panel-test">
+  <div class="dl-bar">
+    <div class="label"><strong>Test Engineer</strong> — Hardware testing, instruments &amp; validation workflows</div>
+    <a class="btn-dl" href="/files/resume-test.pdf" download>↓ Download PDF</a>
+  </div>
+  <div class="section-title">Summary</div>
+  <p class="summary">Mechanical Engineer with M.S. in Robotics and hands-on experience in hardware testing, electromechanical system troubleshooting, and sensor integration. Experienced in interpreting schematics, writing test documentation, and collaborating cross-functionally to resolve hardware defects. Bilingual in English and Mandarin Chinese.</p>
+
+  <div class="section-title">Education</div>
+  <div class="section-group">
+    <div class="entry-simple"><div class="row"><span class="entry-title">Master of Science in Robotics</span><span class="entry-date">Dec 2025</span></div><div class="entry-org">Northeastern University, Boston, MA</div></div>
+    <div class="entry-simple"><div class="row"><span class="entry-title">Bachelor of Science in Mechanical Engineering</span><span class="entry-date">Dec 2023</span></div><div class="entry-org">Northeastern University, Boston, MA</div></div>
+  </div>
+
+  <div class="section-title">Skills</div>
+  <div class="skills-block">
+    <div class="skill-row"><span class="sk-cat">Hardware &amp; Test</span><span class="sk-vals">Oscilloscope, Signal Generator, Multimeter, Soldering, Calibration, Sealed Test Chambers</span></div>
+    <div class="skill-row"><span class="sk-cat">Design &amp; Prototyping</span><span class="sk-vals">SolidWorks, Creo, AutoCAD, 3D Printing (DLP/FDM), DFM</span></div>
+    <div class="skill-row"><span class="sk-cat">Programming &amp; Systems</span><span class="sk-vals">Python, Linux/Bash, Git, Raspberry Pi, Arduino, ROS 2, Serial Communication (UART/USB)</span></div>
+    <div class="skill-row"><span class="sk-cat">Controls</span><span class="sk-vals">PID Control, Sensor Fusion (IMU/GPS/ToF), Motion Control, MATLAB/Simulink</span></div>
+  </div>
+
+  <div class="section-title">Work Experience</div>
+  <div class="section-group">
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Test Engineer Co-op</div>
+          <div class="entry-org">SharkNinja, Needham MA</div>
+          <div class="entry-pitch">Sealed chambers · Python data pipeline · cross-functional triage</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jan – Jun 2023</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Built sealed test chambers with pressure sensors for air purifier leak validation; configured Prometheus for automated data logging.</li>
+          <li>Wrote Python scripts to parse pressure-sensor and wind-tunnel datasets, flagging out-of-spec readings.</li>
+          <li>Developed test procedure and test cases for additional-filter qualification, documented for future tester reproducibility.</li>
+          <li>Isolated root causes of test-fixture failures (worn fittings, seal degradation); updated test protocols to reduce false failures.</li>
+          <li>Joined cross-functional weekly reviews to triage defects, adjust test scope, and reprioritize coverage.</li>
+        </ul>
+        <div class="tags"><span class="tag">Test Fixtures</span><span class="tag">Python</span><span class="tag">Prometheus</span><span class="tag">SolidWorks</span><span class="tag">Data Logging</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Mechanical Design &amp; Product Test Engineer Co-op</div>
+          <div class="entry-org">HiRain Technology, Beijing, China</div>
+          <div class="entry-pitch">PCB fixtures · schematics debugging · DFM compliance</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jul – Dec 2021</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Constructed PCB test fixtures; validated circuit performance through firmware flashing, Linux debugging, and soldering rework.</li>
+          <li>Interpreted wiring diagrams and schematics to troubleshoot board-level hardware failures.</li>
+          <li>Optimized CAD models for PCBA enclosures in AutoCAD/Creo, ensuring DFM compliance.</li>
+        </ul>
+        <div class="tags"><span class="tag">PCB Fixtures</span><span class="tag">Soldering</span><span class="tag">Linux</span><span class="tag">Creo</span><span class="tag">DFM</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Project Experience</div>
+  <div class="section-group">
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Micro/Nano Biomechanical Characterization Lab</div>
+          <div class="entry-org">Research Assistant · Northeastern University</div>
+          <div class="entry-pitch">5× faster test cycle · PID automation · published in EJM</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jun 2022 – Dec 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Automated indentation testing via Raspberry Pi/Python/PID-controlled X-Y stage with serial communication, reducing per-sample cycle time by 5×.</li>
+          <li>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion; co-authored publication in EJM.</li>
+          <li>Designed multi-geometry test indenters in SolidWorks via DLP 3D printing; maintained detailed test documentation.</li>
+        </ul>
+        <div class="tags"><span class="tag">PID</span><span class="tag">Raspberry Pi</span><span class="tag">Serial Comm</span><span class="tag">SolidWorks</span><span class="tag">IMU</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">GPS/IMU Driver Development &amp; Sensor Fusion</div>
+          <div class="entry-pitch">ROS 2 driver · 40 Hz USB serial · magnetometer calibration</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Engineered a ROS 2 device driver for VectorNav VN-100 IMU over USB serial, configuring register-level 40 Hz sampling.</li>
+          <li>Developed inertial odometry pipeline with magnetometer calibration and complementary filter.</li>
+        </ul>
+        <div class="tags"><span class="tag">ROS 2</span><span class="tag">IMU</span><span class="tag">Magnetometer</span><span class="tag">Linux</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">ToF Cameras &amp; Vibrational Smart Glass</div>
+          <div class="entry-pitch">Wearable prototype · tri-zone ROI · 30% accuracy improvement</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2024</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Built wearable obstacle-detection device integrating Arducam ToF camera and dual vibration motors on a custom 3D-printed frame driven by Raspberry Pi 4B.</li>
+          <li>Implemented real-time depth pipeline with PWM-controlled haptic feedback, achieving 30% improvement in user feedback accuracy.</li>
+        </ul>
+        <div class="tags"><span class="tag">ToF</span><span class="tag">Raspberry Pi</span><span class="tag">PWM</span><span class="tag">Haptics</span></div>
+      </div></div>
+    </div>
+  </div>
+</div><!-- /panel-test -->
+
+
+<!-- ══ PANEL 3 — R&D ══ -->
+<div class="panel" id="panel-rd">
+  <div class="dl-bar">
+    <div class="label"><strong>R&amp;D / Mechanical Engineer</strong> — CAD, FEA, prototyping &amp; research</div>
+    <a class="btn-dl" href="/files/resume-rd.pdf" download>↓ Download PDF</a>
+  </div>
+
+  <div class="section-title">Education</div>
+  <div class="section-group">
+    <div class="entry-simple"><div class="row"><span class="entry-title">Master of Science in Robotics</span><span class="entry-date">Dec 2025</span></div><div class="entry-org">Northeastern University, Boston, MA</div></div>
+    <div class="entry-simple"><div class="row"><span class="entry-title">Bachelor of Science in Mechanical Engineering</span><span class="entry-date">Dec 2023</span></div><div class="entry-org">Northeastern University, Boston, MA</div></div>
+  </div>
+
+  <div class="section-title">Skills</div>
+  <div class="skills-block">
+    <div class="skill-row"><span class="sk-cat">Design &amp; Prototyping</span><span class="sk-vals">SolidWorks, Creo, AutoCAD, 3D Printing (DLP/FDM), DFM, Serial Communication</span></div>
+    <div class="skill-row"><span class="sk-cat">Simulation &amp; Analysis</span><span class="sk-vals">ANSYS FEA (Mechanical &amp; Thermal), MATLAB, Simulink, Simscape</span></div>
+    <div class="skill-row"><span class="sk-cat">Programming &amp; Tools</span><span class="sk-vals">Python, PID Control, C#, Java, Raspberry Pi, Arduino, Linux/Bash, Git, ROS 2, Sensor Fusion</span></div>
+  </div>
+
+  <div class="section-title">Project Experience</div>
+  <div class="section-group">
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Micro/Nano Biomechanical Characterization Lab</div>
+          <div class="entry-org">Research Assistant · Northeastern University</div>
+          <div class="entry-pitch">SolidWorks indenters · DLP fabrication · EJM publication</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jun 2022 – Dec 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Designed and fabricated multi-geometry test indenters in SolidWorks via DLP 3D printing; created verification protocols for force-displacement characterization.</li>
+          <li>Automated indentation testing via Raspberry Pi/Python/PID-controlled X-Y stage, reducing per-sample cycle time by 5×.</li>
+          <li>Engineered 3D-printed compliant linkage with dual-IMU sensor fusion; co-authored publication in European Journal of Mechanics - A/Solids.</li>
+        </ul>
+        <div class="tags"><span class="tag">SolidWorks</span><span class="tag">DLP 3D Print</span><span class="tag">PID</span><span class="tag">IMU Fusion</span><span class="tag">Raspberry Pi</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">6-DOF Robotic Arm Trajectory Control</div>
+          <div class="entry-pitch">NMPC + GP state-space · disturbance rejection · MATLAB/Simulink</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2024</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Designed 6-DOF robotic arm control system using NMPC with a Gaussian Process-augmented state-space model for precise trajectory tracking and disturbance rejection.</li>
+        </ul>
+        <div class="tags"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">NMPC</span><span class="tag">Gaussian Process</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Composite Pressure Vessel FEA</div>
+          <div class="entry-pitch">ANSYS Workbench · fibrous composites · safety margin validation</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jan – May 2022</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Performed FEA in ANSYS Workbench to model fibrous composite layups in a high-pressure liquid tank, verifying that peak von Mises stress remained within safety margins.</li>
+        </ul>
+        <div class="tags"><span class="tag">ANSYS</span><span class="tag">FEA</span><span class="tag">Composites</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">GPS/IMU Driver Development &amp; Sensor Fusion</div>
+          <div class="entry-pitch">40 Hz ROS 2 driver · magnetometer calibration · trajectory reconstruction</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Sep – Dec 2025</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Engineered a ROS 2 device driver for VectorNav VN-100 IMU over USB serial at 40 Hz; developed sensor fusion pipeline with magnetometer calibration for vehicle trajectory reconstruction.</li>
+        </ul>
+        <div class="tags"><span class="tag">ROS 2</span><span class="tag">Sensor Fusion</span><span class="tag">IMU</span><span class="tag">Linux</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Work Experience</div>
+  <div class="section-group">
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Test Engineer Co-op</div>
+          <div class="entry-org">SharkNinja, Needham MA</div>
+          <div class="entry-pitch">Sealed chambers · filter qualification · Python data analysis</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jan – Jun 2023</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Designed sealed test chambers with pressure sensors and compressed-air fixtures in SolidWorks; configured Prometheus for automated data logging.</li>
+          <li>Developed test procedure for air purifier filter qualification with documentation for reproducibility.</li>
+          <li>Isolated root causes of test-fixture failures; updated test protocols and wrote Python scripts to flag out-of-spec data.</li>
+        </ul>
+        <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Test Design</span><span class="tag">Python</span><span class="tag">Prometheus</span></div>
+      </div></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header" onclick="toggleEntry(this)">
+        <div class="entry-left">
+          <div class="entry-title">Mechanical Design &amp; Product Test Engineer Co-op</div>
+          <div class="entry-org">HiRain Technology, Beijing, China</div>
+          <div class="entry-pitch">PCBA enclosures · DFM compliance · engineering drawings</div>
+        </div>
+        <div class="entry-right"><span class="entry-date">Jul – Dec 2021</span><span class="entry-toggle">+</span></div>
+      </div>
+      <div class="entry-detail"><div class="entry-detail-inner">
+        <ul>
+          <li>Constructed PCB test fixtures; validated circuit performance through firmware flashing, Linux debugging, and soldering rework.</li>
+          <li>Optimized 2D/3D CAD models for PCBA enclosures in AutoCAD and Creo, ensuring DFM compliance; created engineering drawings for manufacturing handoff.</li>
+          <li>Interpreted wiring diagrams and schematics to troubleshoot board-level hardware failures.</li>
+        </ul>
+        <div class="tags"><span class="tag">AutoCAD</span><span class="tag">Creo</span><span class="tag">DFM</span><span class="tag">PCB</span><span class="tag">Linux</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Publication</div>
+  <div class="pub">
+    Duo Wen, <strong>Zihan Lin</strong>, Yustianto Tjiptowidjojo, Kai-tak Wan.<br>
+    <em>Indenting a thick gel with a solid spherical inclusion.</em><br>
+    European Journal of Mechanics - A/Solids, Volume 106, 105343, July 2024.<br>
+    DOI: <a href="https://doi.org/10.1016/j.euromechsol.2024.105343" target="_blank">10.1016/j.euromechsol.2024.105343</a>
+  </div>
+</div><!-- /panel-rd -->
+
+<script>
+  function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', ['full','test','rd'][i] === name);
+    });
+    document.querySelectorAll('.panel').forEach(p => {
+      p.classList.toggle('active', p.id === 'panel-' + name);
+    });
+    history.replaceState(null, '', '#' + name);
+  }
+  (function () {
+    const hash = window.location.hash.replace('#', '');
+    if (['full', 'test', 'rd'].includes(hash)) switchTab(hash);
+  })();
+
+  function toggleEntry(header) {
+    header.closest('.entry').classList.toggle('open');
+  }
+
+  const themes = {
+    gold:   { bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff', border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e', accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)' },
+    water:  { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)' },
+    purple: { bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)' }
+  };
+  function applyTheme(name) {
+    const t = themes[name]; if (!t) return;
+    const r = document.documentElement.style;
+    Object.entries({ '--bg':t.bg,'--bg2':t.bg2,'--bg3':t.bg3,'--card':t.card,'--border':t.border,'--text':t.text,'--text2':t.text2,'--text3':t.text3,'--accent':t.accent,'--accent2':t.accent2,'--accent-glow':t.accentGlow }).forEach(([k,v])=>r.setProperty(k,v));
+    document.querySelectorAll('.tag').forEach(el => { el.style.background=t.accentGlow; el.style.color=t.accent2; el.style.borderColor=t.accent+'33'; });
+  }
+  (function(){ const n = sessionStorage.getItem('theme') || new URLSearchParams(location.search).get('theme'); if(n) applyTheme(n); })();
+</script>
+</body>
+</html>
