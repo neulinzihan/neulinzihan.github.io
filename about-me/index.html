@@ -3,76 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — Zihan Lin</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117; --bg2: #131a22; --card: #1c2633;
-      --border: #2d3a4a; --text: #f0f6fc; --text2: #8b9eb5;
-      --text3: #607590; --accent: #5ba8a0; --accent2: #7ec4bd;
+      --bg:#0d1117; --bg2:#131a22; --bg3:#1a232e;
+      --card:#1c2633; --border:#2d3a4a;
+      --text:#f0f6fc; --text2:#8b9eb5; --text3:#607590;
+      --accent:#5ba8a0; --accent2:#7ec4bd;
+      --accent-glow:rgba(91,168,160,0.15);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
-    .container { max-width:800px; margin:0 auto; padding:60px 40px; }
-    .back { color:var(--accent2); text-decoration:none; font-size:0.85rem; }
-    .back:hover { text-decoration:underline; }
-    h1 { font-size:1.8rem; margin:24px 0 8px; font-weight:700; }
-    .subtitle { color:var(--text3); font-size:0.9rem; margin-bottom:40px; font-style:italic; }
-    h2 {
-      font-family:'JetBrains Mono',monospace;
-      color:var(--accent2); font-size:0.85rem;
-      text-transform:uppercase; letter-spacing:2px;
-      margin:40px 0 12px;
+    .container { max-width:800px; margin:0 auto; padding:60px 40px 100px; }
+
+    .back { color:var(--accent2); text-decoration:none; font-size:0.85rem; display:inline-flex; align-items:center; gap:6px; transition:opacity 0.2s; }
+    .back:hover { opacity:0.7; }
+
+    .page-header { margin:24px 0 48px; }
+    .page-header h1 { font-size:2rem; font-weight:800; letter-spacing:-0.03em; margin-bottom:6px; }
+    .page-header .sub { color:var(--text3); font-size:0.9rem; font-style:italic; }
+
+    /* ── Accordion ── */
+    .accordion { display:flex; flex-direction:column; gap:0; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+
+    .acc-item { border-bottom:1px solid var(--border); background:var(--card); transition:background 0.2s; }
+    .acc-item:last-child { border-bottom:none; }
+    .acc-item.open { background:var(--bg2); }
+
+    .acc-trigger {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:20px 24px;
+      cursor:pointer;
+      user-select:none;
+      gap:12px;
     }
-    p { color:var(--text2); font-size:0.92rem; margin-bottom:14px; }
+    .acc-trigger:hover .acc-label { color:var(--accent2); }
+
+    .acc-icon-wrap {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex:1;
+    }
+    .acc-emoji { font-size:1.1rem; width:28px; text-align:center; flex-shrink:0; }
+    .acc-label { font-size:1rem; font-weight:600; color:var(--text); letter-spacing:-0.01em; transition:color 0.15s; }
+    .acc-toggle { width:24px; height:24px; border-radius:50%; background:var(--bg3); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.25s; font-size:1rem; color:var(--text3); line-height:1; }
+    .acc-item.open .acc-toggle { background:var(--accent-glow); border-color:var(--accent); color:var(--accent2); transform:rotate(45deg); }
+
+    .acc-content { max-height:0; overflow:hidden; transition:max-height 0.45s cubic-bezier(0.16,1,0.3,1); }
+    .acc-item.open .acc-content { max-height:600px; }
+
+    .acc-inner { padding:0 24px 24px 66px; color:var(--text2); font-size:0.92rem; line-height:1.8; }
+    .acc-inner p { margin-bottom:10px; }
+    .acc-inner p:last-child { margin-bottom:0; }
     .hl { color:var(--accent2); font-weight:600; }
+
+    /* ── Closing note ── */
+    .closing-note { margin-top:48px; padding:24px; background:var(--bg2); border:1px solid var(--border); border-radius:12px; border-left:3px solid var(--accent); }
+    .closing-note p { color:var(--text3); font-size:0.88rem; font-style:italic; line-height:1.7; }
+
+    @media (max-width:600px) {
+      .container { padding:40px 16px 80px; }
+      .acc-inner { padding-left:24px; }
+      .acc-emoji { display:none; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="/" class="back">← back to home</a>
-    <h1>more about me</h1>
-    <p class="subtitle">the unfiltered version</p>
 
-    <h2>what drives me</h2>
-    <p><span class="hl">Raspberry Pi</span> is where my curiosity lives — it's my go-to platform for exploring AI algorithms, reinforcement learning, the latest Python developments, sensor drivers, and new eco-friendly battery materials. I also enjoy revisiting and exploring control systems, vibration propagation control, thermodynamics, fluid mechanics, and mechanics of materials (especially stainless steel). Areas I'm eager to dive into next include <span class="hl">AGV, multi-agent system design, and AR</span>.</p>
+    <div class="page-header">
+      <h1>more about me</h1>
+      <p class="sub">the unfiltered version</p>
+    </div>
 
-    <h2>hands-on by nature</h2>
-    <p>I love <span class="hl">DIY car repair</span> — oil changes, hub assembly replacements, clutch/brake oil system work — and I own nearly enough tools to take apart an entire car. I also fix bikes, phones, and computers. I'm currently working toward my <span class="hl">SolidWorks certification (CSWA)</span>.</p>
+    <div class="accordion">
 
-    <h2>how I learn</h2>
-    <p>I'll be honest — <span class="hl">short-form video</span> is my favorite way to absorb information and find inspiration. Whether it's WeChat Video, Douyin, TikTok, or YouTube Shorts, when something sparks an idea, I immediately capture it in a properly formatted note in <span class="hl">Obsidian (Markdown)</span>. Or I'll ask AI right away — having AI as a learning companion lets me dive deep into any topic continuously. I also regularly add textbooks and classic publications to my digital bookshelf from online libraries.</p>
+      <div class="acc-item open" id="acc-drives">
+        <div class="acc-trigger" onclick="toggleAcc('acc-drives')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">⚡</span>
+            <span class="acc-label">what drives me</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p><span class="hl">Raspberry Pi</span> is where my curiosity lives — it's my go-to platform for exploring AI algorithms, reinforcement learning, the latest Python developments, sensor drivers, and new eco-friendly battery materials. I also enjoy revisiting and exploring control systems, vibration propagation control, thermodynamics, fluid mechanics, and mechanics of materials (especially stainless steel).</p>
+            <p>Areas I'm eager to dive into next include <span class="hl">AGV, multi-agent system design, and AR</span>.</p>
+          </div>
+        </div>
+      </div>
 
-    <h2>beyond engineering</h2>
-    <p>I play <span class="hl">violin</span> (pop and gospel music), love being in nature through hiking and outdoor living, and stay active with <span class="hl">basketball</span> (handles and creative passes), skiing, tennis, skateboarding, and golf. I enjoy MOBA games, American TV series, and <span class="hl">cooking</span> — especially stir-fry and charcoal grilling. I'm drawn to a healthy, minimalist lifestyle.</p>
-    <p>I'm fascinated by art, ancient and modern history (both Eastern and Western), comparative literature and wisdom across cultures, <span class="hl">biblical theology, apologetics</span>, public speaking, communication styles for different contexts, classical Chinese prose and poetry, personal growth, emotional problem-solving, and joyful parenting and education.</p>
-    <p>Some things I want to start learning: <span class="hl">photography, dancing, drums/piano, gas bike and car modification, music production, and sales techniques</span>.</p>
+      <div class="acc-item" id="acc-hands">
+        <div class="acc-trigger" onclick="toggleAcc('acc-hands')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">🔧</span>
+            <span class="acc-label">hands-on by nature</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p>I love <span class="hl">DIY car repair</span> — oil changes, hub assembly replacements, clutch/brake oil system work — and I own nearly enough tools to take apart an entire car. I also fix bikes, phones, and computers.</p>
+            <p>I'm currently working toward my <span class="hl">SolidWorks certification (CSWA)</span>.</p>
+          </div>
+        </div>
+      </div>
 
-    <h2>product ideas</h2>
-    <p>I have ideas for novel product designs — particularly in <span class="hl">pet tech and assistive technology</span> — spanning business models to hardware/software design. I've raised chickens, turtles, and tropical fish since elementary school, and co-raised two cats with roommates.</p>
+      <div class="acc-item" id="acc-learn">
+        <div class="acc-trigger" onclick="toggleAcc('acc-learn')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">📱</span>
+            <span class="acc-label">how I learn</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p>I'll be honest — <span class="hl">short-form video</span> is my favorite way to absorb information and find inspiration. Whether it's WeChat Video, Douyin, TikTok, or YouTube Shorts, when something sparks an idea, I immediately capture it in a properly formatted note in <span class="hl">Obsidian (Markdown)</span>.</p>
+            <p>Or I'll ask AI right away — having AI as a learning companion lets me dive deep into any topic continuously. I also regularly add textbooks and classic publications to my digital bookshelf from online libraries.</p>
+          </div>
+        </div>
+      </div>
 
-    <h2>what I watch</h2>
-    <p>Stand-up comedy (Trevor Noah), interview-style documentaries and talk shows (Jiang Wen, Dou Wentao, Xu Zhiyuan, Ellen).</p>
+      <div class="acc-item" id="acc-beyond">
+        <div class="acc-trigger" onclick="toggleAcc('acc-beyond')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">🎾</span>
+            <span class="acc-label">beyond engineering</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p>I play <span class="hl">violin</span> (pop and gospel music), love being in nature through hiking and outdoor living, and stay active with <span class="hl">basketball</span> (handles and creative passes), skiing, tennis, skateboarding, and golf. I enjoy MOBA games, American TV series, and <span class="hl">cooking</span> — especially stir-fry and charcoal grilling. I'm drawn to a healthy, minimalist lifestyle.</p>
+            <p>I'm fascinated by art, ancient and modern history (both Eastern and Western), comparative literature and wisdom across cultures, <span class="hl">biblical theology, apologetics</span>, public speaking, classical Chinese prose and poetry, personal growth, and emotional problem-solving.</p>
+            <p>Some things I want to start learning: <span class="hl">photography, dancing, drums/piano, gas bike and car modification, music production, and sales techniques</span>.</p>
+          </div>
+        </div>
+      </div>
 
-    <h2>a few more things</h2>
-    <p>My preferred note-taking order: <span class="hl">paper > stylus/tablet > keyboard</span>. Exploring new hobbies is how I unwind and have fun. Learning a new language is what motivates me socially. I also enjoy updating this very website.</p>
+      <div class="acc-item" id="acc-products">
+        <div class="acc-trigger" onclick="toggleAcc('acc-products')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">💡</span>
+            <span class="acc-label">product ideas</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p>I have ideas for novel product designs — particularly in <span class="hl">pet tech and assistive technology</span> — spanning business models to hardware/software design. I've raised chickens, turtles, and tropical fish since elementary school, and co-raised two cats with roommates.</p>
+          </div>
+        </div>
+      </div>
 
-    <p style="color:var(--text3); margin-top:40px; font-style:italic;">As an ISFJ, My deepest hope is that everyone I meet feels happy and safe.</p>
+      <div class="acc-item" id="acc-watch">
+        <div class="acc-trigger" onclick="toggleAcc('acc-watch')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">📺</span>
+            <span class="acc-label">what I watch</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p>Stand-up comedy (Trevor Noah), interview-style documentaries and talk shows (Jiang Wen, Dou Wentao, Xu Zhiyuan, Ellen).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" id="acc-more">
+        <div class="acc-trigger" onclick="toggleAcc('acc-more')">
+          <div class="acc-icon-wrap">
+            <span class="acc-emoji">✦</span>
+            <span class="acc-label">a few more things</span>
+          </div>
+          <span class="acc-toggle">+</span>
+        </div>
+        <div class="acc-content">
+          <div class="acc-inner">
+            <p>My preferred note-taking order: <span class="hl">paper > stylus/tablet > keyboard</span>. Exploring new hobbies is how I unwind and have fun. Learning a new language is what motivates me socially. I also enjoy updating this very website.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="closing-note">
+      <p>As an ISFJ, my deepest hope is that everyone I meet feels happy and safe.</p>
+    </div>
   </div>
 
   <script>
-    const themes = {
-      gold: { bg:'#0c1220', bg2:'#111827', card:'#1e293b', border:'#334155', text:'#f8fafc', text2:'#94a3b8', text3:'#64748b', accent:'#d4a853', accent2:'#e2bd6e' },
-      water: { bg:'#0d1117', bg2:'#131a22', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd' },
-      purple: { bg:'#0a0a0b', bg2:'#111113', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8' }
-    };
-    const params = new URLSearchParams(window.location.search);
-    const themeName = params.get('theme');
-    if (themeName && themes[themeName]) {
-      const t = themes[themeName];
-      const r = document.documentElement.style;
-      Object.keys(t).forEach(k => r.setProperty('--' + k, t[k]));
+    function toggleAcc(id) {
+      document.getElementById(id).classList.toggle('open');
     }
+
+    const themes = {
+      gold:   { bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff', border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e', accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)' },
+      water:  { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)' },
+      purple: { bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)' }
+    };
+    function applyTheme(name) {
+      const t = themes[name]; if (!t) return;
+      const r = document.documentElement.style;
+      Object.entries({'--bg':t.bg,'--bg2':t.bg2,'--bg3':t.bg3,'--card':t.card,'--border':t.border,'--text':t.text,'--text2':t.text2,'--text3':t.text3,'--accent':t.accent,'--accent2':t.accent2,'--accent-glow':t.accentGlow}).forEach(([k,v])=>r.setProperty(k,v));
+    }
+    (function(){ const n = sessionStorage.getItem('theme') || new URLSearchParams(location.search).get('theme'); if(n) applyTheme(n); })();
   </script>
 </body>
 </html>
-
