@@ -620,6 +620,24 @@ layout: null
       background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #ef4444;
     }
 
+    /* ── View more button ── */
+    .btn-view-more {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 36px;
+      border: 1px solid var(--accent);
+      color: var(--accent2); border-radius: 10px; text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
+      background: var(--accent-glow);
+    }
+    .btn-view-more:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(91,168,160,0.2);
+    }
+    .btn-view-more i { transition: transform 0.2s; }
+    .btn-view-more:hover i { transform: translateX(4px); }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
       .hamburger { display: flex; margin-left: auto; margin-right: 8px; }
@@ -848,95 +866,14 @@ layout: null
     </div>
   </div>
 
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" alt="Robot Arm">
-    </div>
-    <div class="project-info">
-      <div class="project-date">Sep — Dec 2024</div>
-      <h3>6-DOF Robotic Arm Trajectory Control</h3>
-      <p class="project-pitch">NMPC + Gaussian Process augmentation captures nonlinear dynamics for precise trajectory tracking in MATLAB/Simulink.</p>
-      <p class="project-detail">NMPC with Gaussian Process-augmented state-space model for precise trajectory tracking. Captures nonlinear dynamics and rejects stochastic disturbances in MATLAB/Simulink.</p>
-      <div class="project-tags"><span>MATLAB</span><span>NMPC</span><span>Gaussian Process</span></div>
-    </div>
-  </div>
-
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" alt="Humanoid Robot">
-    </div>
-    <div class="project-info">
-      <div class="project-date">Jul — Dec 2022</div>
-      <h3>Anime-Styled Humanoid Robot Torso</h3>
-      <p class="project-pitch">4-DOF modular arm — joystick-controlled via RPi and MCP3008, 3 SolidWorks iterations, ABS/carbon fiber printed.</p>
-      <p class="project-detail">4-DOF modular robotic arm in SolidWorks through 3 design iterations. Joystick control on RPi with MCP3008 ADC for real-time PWM servo control. 3D printed in ABS/carbon fiber.</p>
-      <div class="project-tags"><span>SolidWorks</span><span>RPi</span><span>Python</span><span>3D Print</span></div>
-    </div>
-  </div>
-
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Simulink">
-    </div>
-    <div class="project-info">
-      <div class="project-date">Summer 2024</div>
-      <h3>Vehicle Motion Control System</h3>
-      <p class="project-pitch">Transfer function estimated to under 5% error — PID-tuned in Simulink/Simscape with FFT noise analysis.</p>
-      <p class="project-detail">Simulink/Simscape models for position and speed control via encoder and Arduino. Transfer function estimation with &lt;5% error. PID tuning and FFT analysis for noise stability.</p>
-      <div class="project-tags"><span>Simulink</span><span>Simscape</span><span>PID</span><span>Arduino</span></div>
-    </div>
-  </div>
-
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="FEA Analysis">
-    </div>
-    <div class="project-info">
-      <div class="project-date">Jan — May 2022</div>
-      <h3>Biomechanics & Composite FEA</h3>
-      <p class="project-pitch">5800+ element mesh, crack propagation modeling, and ANSYS static validation at 750 psi — all in MATLAB and ANSYS.</p>
-      <p class="project-detail">MATLAB FEA for bone with variable cross-section + mesh convergence study. 2D truss solver for fibrous composites (2000 nodes, 5800+ elements) with crack propagation. ANSYS static analysis at 750 psi.</p>
-      <div class="project-tags"><span>MATLAB</span><span>ANSYS</span><span>FEA</span><span>Biomechanics</span></div>
-    </div>
-  </div>
-
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=600" alt="Fluid Sensor">
-    </div>
-    <div class="project-info">
-      <div class="project-date">Sep — Dec 2021</div>
-      <h3>Tethered-Sphere Flow Sensor</h3>
-      <p class="project-pitch">Reynolds-dependent drag model with parametric sensitivity analysis — optimized for real river deployment conditions.</p>
-      <p class="project-detail">MATLAB model of tethered-sphere flow-velocity sensor with Reynolds-dependent drag. Parametric sensitivity analysis for deployment optimization across varying river conditions.</p>
-      <div class="project-tags"><span>MATLAB</span><span>Fluid Mechanics</span><span>Modeling</span></div>
-    </div>
-  </div>
-
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Arduino">
-    </div>
-    <div class="project-info">
-      <div class="project-date">Mar — Apr 2020</div>
-      <h3>Light Level vs. Sleep Quality</h3>
-      <p class="project-pitch">Arduino-based 4-week self-experiment — photoresistor + LCD monitors nighttime light exposure vs. resting heart rate.</p>
-      <p class="project-detail">Arduino-based ambient light monitor with photoresistor and LCD. 4-week self-experiment on nighttime light exposure effects on resting heart rate and recovery.</p>
-      <div class="project-tags"><span>Arduino</span><span>Sensors</span><span>Experiment Design</span></div>
-    </div>
-  </div>
-
-  <div class="project-card reveal">
-    <div class="project-img">
-      <img src="https://images.unsplash.com/photo-1545566104-85e1bb17c8dc?w=600" alt="Bridge">
-    </div>
-    <div class="project-info">
-      <div class="project-date">April 2019</div>
-      <h3>Spaghetti Bridge Design</h3>
-      <p class="project-pitch">AutoCAD-designed prototype — the original engineering project. Beam mechanics, weight capacity, and teamwork.</p>
-      <p class="project-detail">Researched bridge structures, analyzed beam mechanics and weight capacity. AutoCAD design with team-built prototype. The OG engineering project.</p>
-      <div class="project-tags"><span>AutoCAD</span><span>Structural</span><span>Prototyping</span></div>
-    </div>
+  <!-- View More button -->
+  <div class="reveal" style="text-align:center; margin-top: 8px;">
+    <a href="/projects-more/" class="btn-view-more">
+      View more projects <i class="fas fa-arrow-right"></i>
+    </a>
+    <p style="color:var(--text3); font-size:0.8rem; margin-top:12px;">
+      7 more — Robotic Arm · Drone Sim · Vehicle Control · FEA · Flow Sensor · Sleep Study · Bridge
+    </p>
   </div>
 
 </section>
@@ -1274,7 +1211,11 @@ layout: null
 
   const themeOrder = ['gold', 'water', 'purple'];
   const slider = document.getElementById('themeSlider');
-  slider.addEventListener('input', () => setTheme(themeOrder[slider.value]));
+  slider.addEventListener('input', () => {
+    const name = themeOrder[slider.value];
+    setTheme(name);
+    sessionStorage.setItem('theme', name);
+  });
 
   // ── Toolbox / Courses links inherit theme ──
   const toolboxLink = document.getElementById('toolboxLink');
