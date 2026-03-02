@@ -101,11 +101,11 @@ layout: null
       display: flex;
       align-items: center;
       position: relative;
-      background: linear-gradient(90deg, #f7f5f0 25%, #5ba8a0 45%, #5ba8a0 55%, #6366f1 75%);
+      background: linear-gradient(90deg, #f7f5f0, #0d1117); 
       border-radius: 12px;
       padding: 0;
       height: 22px;
-      width: 70px;
+      width: 55px;
     }
     .theme-slider-wrap i {
       position: absolute;
@@ -704,9 +704,9 @@ layout: null
   </button>
 
   <div class="theme-slider-wrap">
-    <i class="fas fa-sun" style="color:#ffffff; font-size:0.7rem;"></i>
-    <input type="range" min="0" max="2" value="1" class="theme-slider" id="themeSlider">
-    <i class="fas fa-moon" style="color:#000000; font-size:0.7rem;"></i>
+    <i class="fas fa-sun" style="color:#000000; font-size:0.7rem;"></i>
+    <input type="range" min="0" max="1" value="1" class="theme-slider" id="themeSlider">
+    <i class="fas fa-moon" style="color:#ffffff; font-size:0.7rem;"></i></i>
   </div>
 </nav>
 
@@ -1132,7 +1132,7 @@ layout: null
 
   // ── Theme switcher ──
   const themes = {
-    gold: {
+    light: {
       bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff',
       border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e',
       accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)',
@@ -1145,7 +1145,7 @@ layout: null
       heroGlow: 'rgba(45,106,79,0.06)',
       ctaGlow: 'rgba(45,106,79,0.04)'
     },
-    water: {
+    dark: {
       bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633',
       border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590',
       accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)',
@@ -1158,19 +1158,6 @@ layout: null
       heroGlow: 'rgba(91,168,160,0.08)',
       ctaGlow: 'rgba(91,168,160,0.06)'
     },
-    purple: {
-      bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f',
-      border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a',
-      accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)',
-      green:'#22c55e',
-      gradient: 'linear-gradient(135deg, #fff 0%, #818cf8 50%, #c084fc 100%)',
-      navBg: 'rgba(10,10,11,0.8)',
-      scrollBar: 'linear-gradient(90deg, #6366f1, #a78bfa, #ec4899)',
-      skillFill: 'linear-gradient(90deg, #6366f1, #a78bfa)',
-      eduTop: 'linear-gradient(90deg, #6366f1, #a78bfa)',
-      heroGlow: 'rgba(99,102,241,0.08)',
-      ctaGlow: 'rgba(99,102,241,0.06)'
-    }
   };
 
   function setTheme(name) {
@@ -1209,7 +1196,7 @@ layout: null
     window.currentTheme = name;
   }
 
-  const themeOrder = ['gold', 'water', 'purple'];
+  const themeOrder = ['light', 'dark'];
   const slider = document.getElementById('themeSlider');
   slider.addEventListener('input', () => {
     const name = themeOrder[slider.value];
