@@ -1,3 +1,8 @@
+---
+permalink: /projects-more/
+layout: null
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,193 +13,172 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117;
-      --bg2: #131a22;
-      --bg3: #1a232e;
-      --card: #1c2633;
-      --border: #2d3a4a;
-      --text: #f0f6fc;
-      --text2: #8b9eb5;
-      --text3: #607590;
-      --accent: #5ba8a0;
-      --accent2: #7ec4bd;
+      --bg: #0d1117; --bg2: #131a22; --bg3: #1a232e;
+      --card: #1c2633; --border: #2d3a4a;
+      --text: #f0f6fc; --text2: #8b9eb5; --text3: #607590;
+      --accent: #5ba8a0; --accent2: #7ec4bd;
       --accent-glow: rgba(91,168,160,0.15);
-      --green: #22c55e;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
     ::selection { background: var(--accent); color: white; }
 
-    .scroll-bar {
-      position: fixed; top:0; left:0; height:2px; z-index:1000;
-      background: linear-gradient(90deg, #5ba8a0, #7ec4bd, #a8e0d8);
-      width: 0%; transition: width 0.1s;
-    }
+    /* ── Scroll bar ── */
+    .scroll-bar { position:fixed; top:0; left:0; height:2px; z-index:1001; background:linear-gradient(90deg,#5ba8a0,#7ec4bd,#a8e0d8); width:0%; transition:width 0.1s; }
 
     /* ── Top nav ── */
-    .topnav {
-      position: fixed; top:0; left:0; right:0; z-index:999;
-      padding: 16px 40px;
-      display: flex; align-items: center; justify-content: space-between;
-      background: rgba(10,10,11,0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s;
-    }
-    .topnav.scrolled { border-bottom-color: var(--border); }
-    .nav-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600; font-size: 1.1rem; color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-back {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--text3); text-decoration: none; font-size: 0.88rem;
-      padding: 6px 14px; border-radius: 8px; transition: all 0.2s;
-      border: 1px solid var(--border);
-    }
-    .nav-back:hover { color: var(--text); border-color: var(--accent); background: var(--accent-glow); }
-    .nav-socials { display: flex; gap: 6px; }
-    .nav-socials a {
-      color: var(--text3); width: 36px; height: 36px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 8px; text-decoration: none; transition: all 0.2s; font-size: 1rem;
-    }
-    .nav-socials a:hover { color: var(--text); background: var(--bg3); }
+    .topnav { position:fixed; top:0; left:0; right:0; z-index:999; padding:16px 40px; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,11,0.8); backdrop-filter:blur(20px); border-bottom:1px solid transparent; transition:border-color 0.3s; }
+    .topnav.scrolled { border-bottom-color:var(--border); }
+    .nav-logo { font-family:'JetBrains Mono',monospace; font-weight:600; font-size:1.1rem; color:var(--text); text-decoration:none; }
+    .nav-logo span { color:var(--accent); }
+    .nav-back { display:inline-flex; align-items:center; gap:8px; color:var(--text3); text-decoration:none; font-size:0.88rem; padding:6px 14px; border-radius:8px; transition:all 0.2s; border:1px solid var(--border); }
+    .nav-back:hover { color:var(--text); border-color:var(--accent); background:var(--accent-glow); }
+    .nav-socials { display:flex; gap:6px; }
+    .nav-socials a { color:var(--text3); width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-decoration:none; transition:all 0.2s; font-size:1rem; }
+    .nav-socials a:hover { color:var(--text); background:var(--bg3); }
 
     /* ── Theme slider ── */
-    .theme-slider-wrap {
-      margin-left: 12px; display: flex; align-items: center;
-      position: relative;
-      background: linear-gradient(90deg, #f7f5f0 25%, #5ba8a0 45%, #5ba8a0 55%, #6366f1 75%);
-      border-radius: 12px; height: 22px; width: 70px;
+    .theme-slider-wrap { margin-left:12px; display:flex; align-items:center; position:relative; background:linear-gradient(90deg,#f7f5f0 25%,#5ba8a0 45%,#5ba8a0 55%,#6366f1 75%); border-radius:12px; height:22px; width:70px; }
+    .theme-slider-wrap i { position:absolute; font-size:0.5rem; z-index:0; pointer-events:none; }
+    .theme-slider-wrap i:first-child { left:8px; }
+    .theme-slider-wrap i:last-child  { right:8px; }
+    .theme-slider { -webkit-appearance:none; appearance:none; width:100%; height:100%; background:transparent; outline:none; cursor:pointer; margin:0; padding:0; position:relative; z-index:1; }
+    .theme-slider::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:var(--accent); border:2px solid #fff; box-shadow:0 0 6px rgba(0,0,0,0.3); cursor:pointer; transition:all 0.2s; }
+    .theme-slider::-webkit-slider-thumb:hover { transform:scale(1.15); }
+    .theme-slider::-moz-range-thumb { width:20px; height:20px; border-radius:50%; background:var(--accent); border:2px solid #fff; cursor:pointer; }
+    .theme-slider::-moz-range-track { background:transparent; }
+
+    /* ── Chapter nav ── */
+    .chapter-nav {
+      position: fixed;
+      top: 57px;
+      left: 0; right: 0;
+      z-index: 998;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 40px;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      scrollbar-width: none;
+      transition: top 0.3s;
     }
-    .theme-slider-wrap i { position: absolute; font-size: 0.5rem; z-index: 0; pointer-events: none; }
-    .theme-slider-wrap i:first-child { left: 8px; }
-    .theme-slider-wrap i:last-child  { right: 8px; }
-    .theme-slider {
-      -webkit-appearance: none; appearance: none;
-      width: 100%; height: 100%; background: transparent; outline: none;
-      cursor: pointer; margin: 0; padding: 0; position: relative; z-index: 1;
+    .chapter-nav::-webkit-scrollbar { display:none; }
+    .chapter-nav a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px;
+      color: var(--text3);
+      font-size: 0.78rem; font-weight: 500;
+      text-decoration: none;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      flex-shrink: 0;
     }
-    .theme-slider::-webkit-slider-thumb {
-      -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
-      background: var(--accent); border: 2px solid #fff;
-      box-shadow: 0 0 6px rgba(0,0,0,0.3); cursor: pointer; transition: all 0.2s;
-    }
-    .theme-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
-    .theme-slider::-moz-range-thumb {
-      width: 20px; height: 20px; border-radius: 50%;
-      background: var(--accent); border: 2px solid #fff; cursor: pointer;
-    }
-    .theme-slider::-moz-range-track { background: transparent; }
+    .chapter-nav a:hover { color:var(--text); border-color:var(--accent); background:var(--accent-glow); }
+    .chapter-nav a.active { color:var(--accent2); border-color:var(--accent); background:var(--accent-glow); }
+    .chapter-nav a .num { font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--text3); }
 
     /* ── Page header ── */
-    .page-hero {
-      padding: 140px 40px 60px;
-      max-width: 1000px; margin: 0 auto;
-    }
-    .page-hero .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--accent2); font-size: 0.8rem;
-      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
-    }
-    .page-hero h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 12px; }
-    .page-hero p { color: var(--text3); font-size: 1rem; max-width: 500px; }
-    .section-line { width: 40px; height: 3px; background: var(--accent); border-radius: 2px; margin-top: 16px; }
+    .page-hero { padding: 140px 40px 40px; max-width: 1000px; margin: 0 auto; }
+    .section-label { font-family:'JetBrains Mono',monospace; color:var(--accent2); font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px; }
+    .page-hero h1 { font-size:2.4rem; font-weight:800; letter-spacing:-0.02em; margin-bottom:12px; }
+    .page-hero p { color:var(--text3); font-size:1rem; max-width:500px; }
+    .section-line { width:40px; height:3px; background:var(--accent); border-radius:2px; margin-top:16px; }
 
-    /* ── Project cards (identical to main page) ── */
-    .section { padding: 20px 40px 100px; max-width: 1000px; margin: 0 auto; }
+    /* ── Project section ── */
+    .section { padding: 20px 40px 60px; max-width: 1000px; margin: 0 auto; }
 
-    .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: all 0.7s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal { opacity:0; transform:translateY(30px); transition:all 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
 
+    /* ── Project cards ── */
     .project-card {
       display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-      align-items: center; padding: 32px;
+      align-items: start; padding: 32px;
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; margin-bottom: 32px; transition: all 0.3s;
+      scroll-margin-top: 110px; /* offset for both navbars */
     }
-    .project-card:hover {
-      border-color: rgba(91,168,160,0.3);
-      box-shadow: 0 0 40px rgba(91,168,160,0.05);
-      transform: translateY(-4px);
-    }
-    .project-card:nth-child(even) { direction: rtl; }
-    .project-card:nth-child(even) > * { direction: ltr; }
-    .project-img { border-radius: 12px; overflow: hidden; }
-    .project-img img {
-      width: 100%; height: 200px; object-fit: cover;
-      transition: transform 0.5s; filter: brightness(0.9);
-    }
-    .project-card:hover .project-img img { transform: scale(1.05); filter: brightness(1); }
-    .project-date {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--accent2); font-size: 0.8rem; margin-bottom: 8px;
-    }
-    .project-info h3 { font-size: 1.15rem; margin-bottom: 10px; color: var(--text); }
-    .project-pitch {
-      font-size: 0.95rem; font-weight: 600; color: var(--text);
-      margin-bottom: 12px; line-height: 1.45;
-      border-left: 2px solid var(--accent); padding-left: 10px;
-    }
-    .project-detail { color: var(--text3); font-size: 0.9rem; line-height: 1.7; }
-    .project-tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .project-tags span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem; padding: 4px 10px;
-      background: var(--accent-glow); color: var(--accent2);
-      border-radius: 6px; border: 1px solid rgba(91,168,160,0.15);
-    }
+    .project-card:hover { border-color:rgba(91,168,160,0.3); box-shadow:0 0 40px rgba(91,168,160,0.05); transform:translateY(-4px); }
+    .project-card:nth-child(even) { direction:rtl; }
+    .project-card:nth-child(even) > * { direction:ltr; }
 
-    /* ── Back to home button ── */
-    .back-home {
-      text-align: center; padding: 0 40px 80px;
+    .project-img { border-radius:12px; overflow:hidden; }
+    .project-img img { width:100%; height:200px; object-fit:cover; transition:transform 0.5s; filter:brightness(0.9); }
+    .project-card:hover .project-img img { transform:scale(1.05); filter:brightness(1); }
+
+    .project-date { font-family:'JetBrains Mono',monospace; color:var(--accent2); font-size:0.8rem; margin-bottom:8px; }
+    .project-info h3 { font-size:1.1rem; font-weight:700; letter-spacing:-0.01em; margin-bottom:10px; color:var(--text); }
+
+    /* Pitch line */
+    .project-pitch { font-size:0.92rem; font-weight:600; color:var(--text); margin-bottom:0; line-height:1.5; border-left:2px solid var(--accent); padding-left:10px; }
+
+    /* Expandable detail */
+    .project-expand { margin-top:10px; }
+    .expand-btn {
+      display: inline-flex; align-items:center; gap:6px;
+      font-size:0.75rem; color:var(--text3);
+      background:none; border:none; cursor:pointer;
+      font-family:'Inter',sans-serif; padding:4px 0;
+      transition:color 0.15s;
     }
-    .btn-back {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 14px 36px;
+    .expand-btn:hover { color:var(--accent2); }
+    .expand-btn .icon { width:16px; height:16px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:0.7rem; transition:all 0.25s; }
+    .expand-btn.open .icon { background:var(--accent-glow); border-color:var(--accent); color:var(--accent2); transform:rotate(45deg); }
+
+    .project-detail-wrap { max-height:0; overflow:hidden; transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .project-detail-wrap.open { max-height:300px; }
+    .project-detail { color:var(--text3); font-size:0.88rem; line-height:1.7; padding-top:10px; }
+
+    .project-tags { margin-top:12px; display:flex; flex-wrap:wrap; gap:6px; }
+    .project-tags span { font-family:'JetBrains Mono',monospace; font-size:0.72rem; padding:4px 10px; background:var(--accent-glow); color:var(--accent2); border-radius:6px; border:1px solid rgba(91,168,160,0.15); }
+
+    /* ── Sticky back button ── */
+    .btn-back-sticky {
+      position: fixed;
+      bottom: 32px; left: 32px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px;
       border: 1px solid var(--accent);
       color: var(--accent2); border-radius: 10px; text-decoration: none;
-      font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
-      background: var(--accent-glow);
+      font-weight: 600; font-size: 0.85rem; transition: all 0.2s;
+      background: var(--bg2);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 100;
+      opacity: 0; transform: translateY(8px);
+      transition: all 0.3s;
     }
-    .btn-back:hover {
-      background: var(--accent); color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(91,168,160,0.2);
-    }
-    .btn-back i { transition: transform 0.2s; }
-    .btn-back:hover i { transform: translateX(-4px); }
+    .btn-back-sticky.visible { opacity:1; transform:translateY(0); }
+    .btn-back-sticky:hover { background:var(--accent); color:white; box-shadow:0 8px 30px rgba(91,168,160,0.25); }
+    .btn-back-sticky i { transition:transform 0.2s; }
+    .btn-back-sticky:hover i { transform:translateX(-3px); }
+
+    /* ── Bottom back button (kept for context) ── */
+    .back-home { text-align:center; padding:20px 40px 80px; }
+    .btn-back { display:inline-flex; align-items:center; gap:10px; padding:14px 36px; border:1px solid var(--accent); color:var(--accent2); border-radius:10px; text-decoration:none; font-weight:600; font-size:0.95rem; transition:all 0.2s; background:var(--accent-glow); }
+    .btn-back:hover { background:var(--accent); color:white; transform:translateY(-2px); box-shadow:0 8px 30px rgba(91,168,160,0.2); }
+    .btn-back i { transition:transform 0.2s; }
+    .btn-back:hover i { transform:translateX(-4px); }
 
     /* ── Footer ── */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 40px; text-align: center;
-    }
-    .footer-copy { color: var(--text3); font-size: 0.75rem; opacity: 0.5; }
+    .site-footer { border-top:1px solid var(--border); padding:32px 40px; text-align:center; }
+    .footer-copy { color:var(--text3); font-size:0.75rem; opacity:0.5; }
 
     /* ── Responsive ── */
-    @media (max-width: 768px) {
-      .topnav { padding: 12px 20px; }
-      .page-hero { padding: 100px 20px 40px; }
-      .section { padding: 20px 20px 60px; }
-      .project-card, .project-card:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
-      .back-home { padding: 0 20px 60px; }
+    @media (max-width:768px) {
+      .topnav { padding:12px 20px; }
+      .chapter-nav { padding:8px 16px; }
+      .page-hero { padding:110px 20px 32px; }
+      .section { padding:16px 20px 60px; }
+      .project-card, .project-card:nth-child(even) { grid-template-columns:1fr; direction:ltr; }
+      .back-home { padding:0 20px 60px; }
+      .btn-back-sticky { left:16px; bottom:20px; }
     }
   </style>
 </head>
@@ -211,11 +195,22 @@
     <a href="https://linkedin.com/in/zlukelin/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
   </div>
   <div class="theme-slider-wrap">
-    <i class="fas fa-sun" style="color:#ffffff; font-size:0.7rem;"></i>
+    <i class="fas fa-sun" style="color:#ffffff;font-size:0.7rem;"></i>
     <input type="range" min="0" max="2" value="1" class="theme-slider" id="themeSlider">
-    <i class="fas fa-moon" style="color:#000000; font-size:0.7rem;"></i>
+    <i class="fas fa-moon" style="color:#000000;font-size:0.7rem;"></i>
   </div>
 </nav>
+
+<!-- ── Chapter nav ── -->
+<div class="chapter-nav" id="chapterNav">
+  <a href="#arm" data-target="arm"><span class="num">01</span> Robotic Arm</a>
+  <a href="#drone" data-target="drone"><span class="num">02</span> Drone Sim</a>
+  <a href="#vehicle" data-target="vehicle"><span class="num">03</span> Vehicle Control</a>
+  <a href="#fea" data-target="fea"><span class="num">04</span> FEA</a>
+  <a href="#flow" data-target="flow"><span class="num">05</span> Flow Sensor</a>
+  <a href="#sleep" data-target="sleep"><span class="num">06</span> Sleep Study</a>
+  <a href="#bridge" data-target="bridge"><span class="num">07</span> Bridge</a>
+</div>
 
 <!-- ── Page header ── -->
 <div class="page-hero">
@@ -225,10 +220,10 @@
   <div class="section-line"></div>
 </div>
 
-<!-- ── Project cards ── -->
+<!-- ── Cards ── -->
 <section class="section">
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="arm">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" alt="Robot Arm">
     </div>
@@ -236,12 +231,19 @@
       <div class="project-date">Sep — Dec 2024</div>
       <h3>6-DOF Robotic Arm Trajectory Control</h3>
       <p class="project-pitch">NMPC + Gaussian Process augmentation captures nonlinear dynamics for precise trajectory tracking in MATLAB/Simulink.</p>
-      <p class="project-detail">NMPC with Gaussian Process-augmented state-space model for precise trajectory tracking. Captures nonlinear dynamics and rejects stochastic disturbances in MATLAB/Simulink.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">NMPC with Gaussian Process-augmented state-space model for precise trajectory tracking. Captures nonlinear dynamics and rejects stochastic disturbances in MATLAB/Simulink.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>MATLAB</span><span>NMPC</span><span>Gaussian Process</span></div>
     </div>
   </div>
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="drone">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?w=600" alt="Drone Simulation">
     </div>
@@ -249,12 +251,19 @@
       <div class="project-date">Jan — May 2025</div>
       <h3>Disaster Relief Drones Simulation</h3>
       <p class="project-pitch">100% area coverage across all grid sizes — 30% less redundancy vs. random placement over 20k RL episodes.</p>
-      <p class="project-detail">Architected autonomous drone deployment using Q-learning RL and A* pathfinding to restore LTE coverage in disaster zones. 100% area coverage across 7×7 to 20×20 grids. 30% less drone redundancy vs. random placement over 20k episodes.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">Architected autonomous drone deployment using Q-learning RL and A* pathfinding to restore LTE coverage in disaster zones. 100% area coverage across 7×7 to 20×20 grids. 30% less drone redundancy vs. random placement over 20k episodes.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>Q-Learning</span><span>A*</span><span>Python</span><span>RL</span></div>
     </div>
   </div>
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="vehicle">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Simulink">
     </div>
@@ -262,12 +271,19 @@
       <div class="project-date">Summer 2024</div>
       <h3>Vehicle Motion Control System</h3>
       <p class="project-pitch">Transfer function estimated to under 5% error — PID-tuned in Simulink/Simscape with FFT noise analysis.</p>
-      <p class="project-detail">Simulink/Simscape models for position and speed control via encoder and Arduino. Transfer function estimation with &lt;5% error. PID tuning and FFT analysis for noise stability.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">Simulink/Simscape models for position and speed control via encoder and Arduino. Transfer function estimation with &lt;5% error. PID tuning and FFT analysis for noise stability.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>Simulink</span><span>Simscape</span><span>PID</span><span>Arduino</span></div>
     </div>
   </div>
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="fea">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="FEA Analysis">
     </div>
@@ -275,12 +291,19 @@
       <div class="project-date">Jan — May 2022</div>
       <h3>Biomechanics & Composite FEA</h3>
       <p class="project-pitch">5800+ element mesh, crack propagation modeling, and ANSYS static validation at 750 psi.</p>
-      <p class="project-detail">MATLAB FEA for bone with variable cross-section + mesh convergence study. 2D truss solver for fibrous composites (2000 nodes, 5800+ elements) with crack propagation. ANSYS static analysis at 750 psi.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">MATLAB FEA for bone with variable cross-section + mesh convergence study. 2D truss solver for fibrous composites (2000 nodes, 5800+ elements) with crack propagation. ANSYS static analysis at 750 psi.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>MATLAB</span><span>ANSYS</span><span>FEA</span><span>Biomechanics</span></div>
     </div>
   </div>
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="flow">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=600" alt="Fluid Sensor">
     </div>
@@ -288,12 +311,19 @@
       <div class="project-date">Sep — Dec 2021</div>
       <h3>Tethered-Sphere Flow Sensor</h3>
       <p class="project-pitch">Reynolds-dependent drag model with parametric sensitivity analysis — optimized for real river deployment conditions.</p>
-      <p class="project-detail">MATLAB model of tethered-sphere flow-velocity sensor with Reynolds-dependent drag. Parametric sensitivity analysis for deployment optimization across varying river conditions.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">MATLAB model of tethered-sphere flow-velocity sensor with Reynolds-dependent drag. Parametric sensitivity analysis for deployment optimization across varying river conditions.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>MATLAB</span><span>Fluid Mechanics</span><span>Modeling</span></div>
     </div>
   </div>
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="sleep">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Arduino">
     </div>
@@ -301,12 +331,19 @@
       <div class="project-date">Mar — Apr 2020</div>
       <h3>Light Level vs. Sleep Quality</h3>
       <p class="project-pitch">Arduino-based 4-week self-experiment — photoresistor + LCD monitors nighttime light exposure vs. resting heart rate.</p>
-      <p class="project-detail">Arduino-based ambient light monitor with photoresistor and LCD. 4-week self-experiment on nighttime light exposure effects on resting heart rate and recovery.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">Arduino-based ambient light monitor with photoresistor and LCD. 4-week self-experiment on nighttime light exposure effects on resting heart rate and recovery.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>Arduino</span><span>Sensors</span><span>Experiment Design</span></div>
     </div>
   </div>
 
-  <div class="project-card reveal">
+  <div class="project-card reveal" id="bridge">
     <div class="project-img">
       <img src="https://images.unsplash.com/photo-1545566104-85e1bb17c8dc?w=600" alt="Bridge">
     </div>
@@ -314,91 +351,110 @@
       <div class="project-date">April 2019</div>
       <h3>Spaghetti Bridge Design</h3>
       <p class="project-pitch">AutoCAD-designed prototype — the original engineering project. Beam mechanics, weight capacity, and teamwork.</p>
-      <p class="project-detail">Researched bridge structures, analyzed beam mechanics and weight capacity. AutoCAD design with team-built prototype. The OG engineering project.</p>
+      <div class="project-expand">
+        <button class="expand-btn" onclick="toggleDetail(this)">
+          <span class="icon">+</span> Details
+        </button>
+        <div class="project-detail-wrap">
+          <p class="project-detail">Researched bridge structures, analyzed beam mechanics and weight capacity. AutoCAD design with team-built prototype. The OG engineering project.</p>
+        </div>
+      </div>
       <div class="project-tags"><span>AutoCAD</span><span>Structural</span><span>Prototyping</span></div>
     </div>
   </div>
 
 </section>
 
-<!-- ── Back button ── -->
+<!-- ── Bottom back button ── -->
 <div class="back-home">
   <a href="/#projects" class="btn-back">
     <i class="fas fa-arrow-left"></i> Back to main projects
   </a>
 </div>
 
+<!-- ── Sticky back button ── -->
+<a href="/#projects" class="btn-back-sticky" id="stickyBack">
+  <i class="fas fa-arrow-left"></i> Main projects
+</a>
+
 <footer class="site-footer">
   <div class="footer-copy">© 2026 Zihan Lin</div>
 </footer>
 
 <script>
-  // Scroll progress
+  // ── Scroll progress + nav border ──
   window.addEventListener('scroll', () => {
     const p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     document.getElementById('scrollBar').style.width = p + '%';
     document.getElementById('topnav').classList.toggle('scrolled', window.scrollY > 50);
+    // Show sticky back button after scrolling past hero
+    document.getElementById('stickyBack').classList.toggle('visible', window.scrollY > 300);
   });
 
-  // Reveal on scroll
+  // ── Reveal on scroll ──
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Theme switcher
+  // ── Chapter nav active state ──
+  const cards = ['arm','drone','vehicle','fea','flow','sleep','bridge'];
+  const chapLinks = document.querySelectorAll('.chapter-nav a');
+
+  const cardObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        chapLinks.forEach(a => a.classList.toggle('active', a.dataset.target === id));
+        // scroll active link into view in chapter nav
+        const activeLink = document.querySelector(`.chapter-nav a[data-target="${id}"]`);
+        if (activeLink) activeLink.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-100px 0px -40% 0px' });
+
+  cards.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) cardObs.observe(el);
+  });
+
+  // ── Expand/collapse detail ──
+  function toggleDetail(btn) {
+    btn.classList.toggle('open');
+    const wrap = btn.nextElementSibling;
+    wrap.classList.toggle('open');
+    btn.querySelector('.icon').textContent = btn.classList.contains('open') ? '+' : '+';
+  }
+
+  // ── Theme ──
   const themes = {
-    gold: {
-      bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff',
-      border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e',
-      accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)',
-      navBg: 'rgba(247,245,240,0.85)',
-      scrollBar: 'linear-gradient(90deg, #2d6a4f, #40916c, #74c69d)',
-    },
-    water: {
-      bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633',
-      border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590',
-      accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)',
-      navBg: 'rgba(13,17,23,0.8)',
-      scrollBar: 'linear-gradient(90deg, #5ba8a0, #7ec4bd, #a8e0d8)',
-    },
-    purple: {
-      bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f',
-      border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a',
-      accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)',
-      navBg: 'rgba(10,10,11,0.8)',
-      scrollBar: 'linear-gradient(90deg, #6366f1, #a78bfa, #ec4899)',
-    }
+    gold:   { bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff', border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e', accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)', navBg:'rgba(247,245,240,0.85)', scrollBar:'linear-gradient(90deg,#2d6a4f,#40916c,#74c69d)' },
+    water:  { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)', navBg:'rgba(13,17,23,0.8)', scrollBar:'linear-gradient(90deg,#5ba8a0,#7ec4bd,#a8e0d8)' },
+    purple: { bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)', navBg:'rgba(10,10,11,0.8)', scrollBar:'linear-gradient(90deg,#6366f1,#a78bfa,#ec4899)' }
   };
 
   function setTheme(name) {
-    const t = themes[name];
+    const t = themes[name]; if (!t) return;
     const r = document.documentElement.style;
-    r.setProperty('--bg', t.bg);
-    r.setProperty('--bg2', t.bg2);
-    r.setProperty('--bg3', t.bg3);
-    r.setProperty('--card', t.card);
-    r.setProperty('--border', t.border);
-    r.setProperty('--text', t.text);
-    r.setProperty('--text2', t.text2);
-    r.setProperty('--text3', t.text3);
-    r.setProperty('--accent', t.accent);
-    r.setProperty('--accent2', t.accent2);
-    r.setProperty('--accent-glow', t.accentGlow);
+    Object.entries({'--bg':t.bg,'--bg2':t.bg2,'--bg3':t.bg3,'--card':t.card,'--border':t.border,'--text':t.text,'--text2':t.text2,'--text3':t.text3,'--accent':t.accent,'--accent2':t.accent2,'--accent-glow':t.accentGlow}).forEach(([k,v])=>r.setProperty(k,v));
     document.querySelector('.topnav').style.background = t.navBg;
     document.getElementById('scrollBar').style.background = t.scrollBar;
   }
 
-  const themeOrder = ['gold', 'water', 'purple'];
+  const themeOrder = ['gold','water','purple'];
   const slider = document.getElementById('themeSlider');
-  slider.addEventListener('input', () => setTheme(themeOrder[slider.value]));
+  slider.addEventListener('input', () => {
+    setTheme(themeOrder[slider.value]);
+    sessionStorage.setItem('theme', themeOrder[slider.value]);
+  });
 
-  // Inherit theme from sessionStorage if set by main page
-  const savedTheme = sessionStorage.getItem('theme');
-  if (savedTheme) {
-    const idx = themeOrder.indexOf(savedTheme);
-    if (idx !== -1) { slider.value = idx; setTheme(savedTheme); }
-  }
+  (function () {
+    const saved = sessionStorage.getItem('theme');
+    if (saved) {
+      const idx = themeOrder.indexOf(saved);
+      if (idx !== -1) { slider.value = idx; setTheme(saved); }
+    }
+  })();
 </script>
 
 </body>
