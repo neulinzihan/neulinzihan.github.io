@@ -966,7 +966,7 @@ layout: null
     </div>
   </div>
   <p style="color:var(--text3); font-size:0.8rem; margin-top:20px; text-align:right;">
-    <a href="/courses/" id="coursesLink" style="color:var(--text3); text-decoration:none;">full coursework →</a>
+    <a href="courses/index.html" id="coursesLink" style="color:var(--text3); text-decoration:none;">full coursework →</a>
   </p>
 </section>
 
@@ -1255,6 +1255,8 @@ layout: null
       toolboxLink.href = '/toolbox/?theme=' + themeOrder[slider.value];
     });
   }
+
+  const themeToSub = { light: 'gold', dark: 'water' };
   if (coursesLink) {
     coursesLink.href = '/courses/?theme=water';
     slider.addEventListener('input', () => {
