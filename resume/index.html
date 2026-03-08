@@ -121,11 +121,14 @@
   </div>
 </div>
 
+<!--
+
 <div class="tabs">
   <button class="tab-btn active" onclick="switchTab('full')">Full Resume</button>
   <button class="tab-btn" onclick="switchTab('test')">Test Engineer</button>
   <button class="tab-btn" onclick="switchTab('rd')">R&amp;D Engineer</button>
-</div>
+</div> 
+-->
 
 <!-- ══ PANEL 1 — Full ══ -->
 <div class="panel active" id="panel-full">
@@ -133,6 +136,9 @@
     <div class="label"><strong>Full Resume</strong> — 2-page comprehensive version</div>
     <a class="btn-dl" href="/files/resume-full.pdf" download>↓ Download PDF</a>
   </div>
+
+  <div class="section-title">Summary</div>
+  <p class="summary">Mechanical Engineer with M.S. in Robotics and hands-on experience in hardware testing, electromechanical system troubleshooting, and sensor integration. Experienced in interpreting schematics, writing test documentation, and collaborating cross-functionally to resolve hardware defects. Bilingual in English and Mandarin Chinese.</p>
 
   <div class="section-title">Education</div>
   <div class="section-group">
@@ -306,7 +312,7 @@
 </div><!-- /panel-full -->
 
 
-<!-- ══ PANEL 2 — Test ══ -->
+<!-- ══ PANEL 2 — Test ══ 
 <div class="panel" id="panel-test">
   <div class="dl-bar">
     <div class="label"><strong>Test Engineer</strong> — Hardware testing, instruments &amp; validation workflows</div>
@@ -426,8 +432,7 @@
   </div>
 </div><!-- /panel-test -->
 
-
-<!-- ══ PANEL 3 — R&D ══ -->
+<!-- ══ PANEL 3 — R&D ══
 <div class="panel" id="panel-rd">
   <div class="dl-bar">
     <div class="label"><strong>R&amp;D / Mechanical Engineer</strong> — CAD, FEA, prototyping &amp; research</div>
@@ -561,7 +566,9 @@
     European Journal of Mechanics - A/Solids, Volume 106, 105343, July 2024.<br>
     DOI: <a href="https://doi.org/10.1016/j.euromechsol.2024.105343" target="_blank">10.1016/j.euromechsol.2024.105343</a>
   </div>
-</div><!-- /panel-rd -->
+</div>
+
+<!-- /panel-rd -->
 
 <script>
   function switchTab(name) {
