@@ -54,7 +54,7 @@ layout: null
     /* ── Chapter nav ── */
     .chapter-nav {
       position: fixed;
-      top: 57px;
+      top: 65px;
       left: 0; right: 0;
       z-index: 998;
       background: var(--bg2);
@@ -189,16 +189,15 @@ layout: null
 
 <!-- ── Nav ── -->
 <nav class="topnav" id="topnav">
-  <a href="/" class="nav-logo">Zihan<span>.</span></a>
-  <a href="/#projects" class="nav-back"><i class="fas fa-arrow-left"></i> Back to home</a>
-  <div class="nav-socials">
-    <a href="https://github.com/neulinzihan" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/zlukelin/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <a href="/" class="nav-logo">Zihan<span>.</span></a>
+    <a href="/#projects" class="nav-back"><i class="fas fa-arrow-left"></i> Back to home</a>
   </div>
-  <div class="theme-slider-wrap">
-    <i class="fas fa-sun" style="color:#ffffff;font-size:0.7rem;"></i>
-    <input type="range" min="0" max="2" value="1" class="theme-slider" id="themeSlider">
-    <i class="fas fa-moon" style="color:#000000;font-size:0.7rem;"></i>
+  <div style="display:flex; align-items:center; gap:6px;">
+    <div class="nav-socials">
+      <a href="https://github.com/neulinzihan" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/zlukelin/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
   </div>
 </nav>
 
@@ -442,21 +441,16 @@ layout: null
     document.getElementById('scrollBar').style.background = t.scrollBar;
   }
 
-  const themeOrder = ['gold','water','purple'];
-  const slider = document.getElementById('themeSlider');
-  slider.addEventListener('input', () => {
-    setTheme(themeOrder[slider.value]);
-    sessionStorage.setItem('theme', themeOrder[slider.value]);
-  });
+const fromMain = { light: 'gold', dark: 'water' };
 
   (function () {
     const saved = sessionStorage.getItem('theme');
     if (saved) {
-      const idx = themeOrder.indexOf(saved);
-      if (idx !== -1) { slider.value = idx; setTheme(saved); }
+      const mapped = fromMain[saved] || saved;
+      setTheme(mapped);
     }
   })();
-</script>
 
+</script>
 </body>
 </html>
