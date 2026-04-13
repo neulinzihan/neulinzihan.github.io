@@ -246,9 +246,8 @@
 
   <script>
     const themes = {
-      gold:   { bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff', border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e', accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)' },
-      water:  { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)' },
-      purple: { bg:'#0a0a0b', bg2:'#111113', bg3:'#18181b', card:'#1c1c1f', border:'#27272a', text:'#fafafa', text2:'#a1a1aa', text3:'#71717a', accent:'#6366f1', accent2:'#818cf8', accentGlow:'rgba(99,102,241,0.15)' }
+      light: { bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff', border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e', accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)' },
+      dark:  { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)' }
     };
     function applyTheme(name) {
       const t = themes[name]; if (!t) return;
@@ -258,7 +257,10 @@
       document.querySelector('.col-prof').style.color = t.accent2;
       document.querySelector('.legend-dot.prof').style.background = t.accent;
     }
-    (function(){ const n = sessionStorage.getItem('theme') || new URLSearchParams(location.search).get('theme'); if(n) applyTheme(n); })();
+    (function(){
+      const n = sessionStorage.getItem('theme') || new URLSearchParams(location.search).get('theme') || 'light';
+      applyTheme(n);
+    })();
   </script>
 </body>
 </html>

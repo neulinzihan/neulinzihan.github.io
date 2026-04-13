@@ -1,16 +1,17 @@
----
-permalink: /projects/gps-imu/
-layout: null
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* 复用你主页的 :root 变量和 body 样式 */
-    :root { --bg:#0a0a0b; --text:#fafafa; --text2:#a1a1aa; --text3:#71717a; --accent:#6366f1; --accent2:#818cf8; --border:#27272a; --card:#1c1c1f; }
+    :root { 
+      --bg:#f7f5f0; --bg2:#eeebe4; --bg3:#e5e1d8; 
+      --card:#ffffff; --border:#ddd9d0; 
+      --text:#1a1a18; --text2:#4a4a42; --text3:#8a8a7e; 
+      --accent:#2d6a4f; --accent2:#40916c; 
+      --accent-glow:rgba(45,106,79,0.1); 
+    }
+
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
     .container { max-width:900px; margin:0 auto; padding:80px 40px; }
@@ -42,5 +43,22 @@ layout: null
     </div>
     
   </div>
+
+  <script>
+    const themes = {
+      light: { bg:'#f7f5f0', bg2:'#eeebe4', bg3:'#e5e1d8', card:'#ffffff', border:'#ddd9d0', text:'#1a1a18', text2:'#4a4a42', text3:'#8a8a7e', accent:'#2d6a4f', accent2:'#40916c', accentGlow:'rgba(45,106,79,0.1)' },
+      dark:  { bg:'#0d1117', bg2:'#131a22', bg3:'#1a232e', card:'#1c2633', border:'#2d3a4a', text:'#f0f6fc', text2:'#8b9eb5', text3:'#607590', accent:'#5ba8a0', accent2:'#7ec4bd', accentGlow:'rgba(91,168,160,0.15)' }
+    };
+    function applyTheme(name) {
+      const t = themes[name]; if (!t) return;
+      const r = document.documentElement.style;
+      Object.entries({'--bg':t.bg,'--bg2':t.bg2,'--bg3':t.bg3,'--card':t.card,'--border':t.border,'--text':t.text,'--text2':t.text2,'--text3':t.text3,'--accent':t.accent,'--accent2':t.accent2,'--accent-glow':t.accentGlow}).forEach(([k,v])=>r.setProperty(k,v));
+    }
+    (function(){
+      const n = sessionStorage.getItem('theme') || new URLSearchParams(location.search).get('theme') || 'light';
+      applyTheme(n);
+    })();
+  </script>
+
 </body>
 </html>
