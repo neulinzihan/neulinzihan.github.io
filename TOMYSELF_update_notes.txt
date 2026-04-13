@@ -4,5 +4,5 @@ some pages needs to update simultaniously:
 /about-me/             v
 /projects/gps-imu/     v
 /projects-more/        v
-/courses/?theme=gold
-/toolbox/?theme=gold
+/courses/?theme=gold   v
+/toolbox/?theme=gold   v
