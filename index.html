@@ -25,12 +25,12 @@ layout: null
     }
 
     :root {
-      --bg: #0d1117;      --bg2: #131a22;      --bg3: #1a232e;
-      --card: #1c2633;      --border: #2d3a4a;
-      --text: #f0f6fc;      --text2: #8b9eb5;      --text3: #607590;
-      --accent: #5ba8a0;      --accent2: #7ec4bd;
-      --accent-glow: rgba(91,168,160,0.15);
-      --green: #22c55e;
+      --bg: #f7f5f0;      --bg2: #eeebe4;      --bg3: #e5e1d8;
+      --card: #ffffff;      --border: #ddd9d0;
+      --text: #1a1a18;      --text2: #4a4a42;      --text3: #8a8a7e;
+      --accent: #2d6a4f;      --accent2: #40916c;
+      --accent-glow: rgba(45,106,79,0.1);
+      --green: #2d6a4f;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -759,7 +759,7 @@ layout: null
     <div class="hero-actions">
       <a href="#projects" class="btn-main">See Projects <i class="fas fa-arrow-down"></i></a>
 
-      <a href="/resume/index.html" target="_blank" class="btn-ghost">
+      <a href="/resume/index.html" class="btn-ghost">
         <i class="fas fa-file-alt"></i> Resume <i class="fas fa-arrow-up-right-from-square" style="font-size:0.7rem; opacity:0.6;"></i>
       </a>
 
@@ -1235,19 +1235,18 @@ layout: null
   });
 
   // ── Toolbox / Courses links inherit theme ──
-  const themeToSub = { light: 'gold', dark: 'water' };
   const toolboxLink = document.getElementById('toolboxLink');
   const coursesLink = document.getElementById('coursesLink');
   if (toolboxLink) {
-    toolboxLink.href = '/toolbox/?theme=gold';
+    toolboxLink.href = '/toolbox/?theme=light';
     slider.addEventListener('input', () => {
-      toolboxLink.href = '/toolbox/?theme=' + themeToSub[themeOrder[slider.value]];
+      toolboxLink.href = '/toolbox/?theme=' + themeOrder[slider.value];
     });
   }
   if (coursesLink) {
-    coursesLink.href = '/courses/?theme=gold';
+    coursesLink.href = '/courses/?theme=light';
     slider.addEventListener('input', () => {
-      coursesLink.href = '/courses/?theme=' + themeToSub[themeOrder[slider.value]];
+      coursesLink.href = '/courses/?theme=' + themeOrder[slider.value];
     });
   }
 
